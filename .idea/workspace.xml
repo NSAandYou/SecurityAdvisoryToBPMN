@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SATB/llm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SATB/pdf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SATB/satb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/SecurityAdvisoryToBPMN.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SecurityAdvisoryToBPMN.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SATB/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/llm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SATB/satb.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/satb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,17 +102,19 @@
       <option name="presentableId" value="Default" />
       <updated>1714300219380</updated>
     </task>
+    <task id="LOCAL-00001" summary="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output">
+      <option name="closed" value="true" />
+      <created>1716985927756</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716985927756</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/SATB/satb.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output" />
   </component>
 </project>

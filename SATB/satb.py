@@ -36,7 +36,6 @@ class SATB:
 
     def ask_pdf(self, file) -> str:
         feedback = self.llm.ask(prompt + pdf_to_text(file))
-        print(feedback)
         return feedback.content##.replace("\n","<br>")
 
     def run(self):
