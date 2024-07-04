@@ -24,6 +24,24 @@ def to_dict(json_string: str) -> dict:
     return json.loads(json_string)
 
 
+def repair_dict(d: dict):
+    if "mentioned_cpes" not in d:
+        d["mentioned_cpes"] = []
+    if "issue_name" not in d:
+        d["issue_name"] = "UNKNOWN"
+    if "steps_to_fix" not in d:
+        raise Exception("ERROR: JSON not repairable.")
+
+    for key, values in d["steps_to_fix"].items():
+        if "command" not in values:
+            values["command"] = []
+        if "description" not in values:
+            values["description"] = ""
+        if "depends_on_steps" not in values:
+            values["depends_on_steps"] = []
+    return d
+
+
 def advance_dict(d: dict) -> dict:
     d["process_id"] = f"Process_{generate_string_id()}"
 
@@ -244,4 +262,4 @@ def generate_xml_body_diagram(steps_dict: dict) -> str:
 
 
 def raw_json_to_bpmn_xml(raw_json: str) -> str:
-    return generate_xml(advance_dict(to_dict(raw_json)))
+    return generate_xml(advance_dict(repair_dict(to_dict(raw_json))))
