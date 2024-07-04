@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output">
+    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 0.2&#10;- temperature=0, top_p = 1">
+      <change afterPath="$PROJECT_DIR$/SATB/json_to_xml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SATB/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/llm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SATB/pdf.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/container_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SATB/satb.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/satb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,6 +49,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.json_to_xml.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
@@ -89,7 +91,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-babbdf50b680-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.15989.155" />
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
       </set>
     </attachedChunks>
   </component>
@@ -110,11 +112,20 @@
       <option name="project" value="LOCAL" />
       <updated>1716985927756</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Version 0.2&#10;- temperature=0, top_p = 1">
+      <option name="closed" value="true" />
+      <created>1716993698610</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716993698610</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.1&#10;- First working way&#10;- Converting pdf to json&#10;- No hyperparameter and random output" />
+    <MESSAGE value="Version 0.2&#10;- temperature=0, top_p = 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 0.2&#10;- temperature=0, top_p = 1" />
   </component>
 </project>
