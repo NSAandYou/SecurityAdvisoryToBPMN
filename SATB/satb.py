@@ -7,8 +7,8 @@ from SATB.container_extractor import *
 from SATB.json_to_xml import raw_json_to_bpmn_xml
 
 prompt = """
-Take the text following "---START---" is extracted from a pdf file and provides information about a security advisory.
-Please extract the steps necessary to fix the issue.
+Take the text following "---START---" provides information from a security advisory.
+Please extract the steps necessary to fix the issue. If there is a workaround take the steps of the workaround.
 Then write them down in Json Format like this:
 {
     "mentioned_cpes": [...],
@@ -22,8 +22,8 @@ Then write them down in Json Format like this:
     }
 }
 
-Mentioned_cpes and issue_name you also get from the text.
 For every step should be a command either create by you or written in the text.
+depends_on_steps and description is are necessary fields.
 
 ---START---
 
@@ -75,11 +75,11 @@ class SATB:
         return output_string
 
     def run(self):
-        demo = gr.Interface(
+        interface = gr.Interface(
             fn=self.process_input,
             inputs="text",
             outputs="text",
             title="Security Advisories to BPMN-FILE",
             description="Just insert the Security Advisory Path into the text field. You can insert multiple at the same time using multiple lines.",
         )
-        demo.launch()
+        interface.launch()

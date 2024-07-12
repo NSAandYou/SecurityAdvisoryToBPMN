@@ -8,6 +8,7 @@ SECRET_API_KEY = "sk-proj-WESeYqSCKmS05ykqIZHST3BlbkFJ817JuF39HAUyELOBpXXb"
 os.environ["OPENAI_API_KEY"] = SECRET_API_KEY
 os.environ.get("OPENAI_API_KEY")
 MODEL = "gpt-3.5-turbo"
+##MODEL = "gpt-4-turbo"
 TEMPERATURE = 0
 TOP_P = 1
 
