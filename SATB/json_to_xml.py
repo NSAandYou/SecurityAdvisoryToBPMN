@@ -52,6 +52,21 @@ def advance_dict(d: dict) -> dict:
         'depends_on_steps': []
     }} | d["steps_to_fix"]
 
+    for path_key, path in d["paths"].items():
+        for index in range(1, len(path)):
+            step_keys = path[index]
+            if type(step_keys) == type([]):
+                for step_key in step_keys:
+                    if type(path[index - 1]) == type([]):
+                        d["steps_to_fix"][str(step_key)]['depends_on_steps'].extend(path[index - 1])
+                    else:
+                        d["steps_to_fix"][str(step_key)]['depends_on_steps'].append(path[index - 1])
+            else:
+                if type(path[index - 1]) == type([]):
+                    d["steps_to_fix"][str(step_keys)]['depends_on_steps'].extend(path[index - 1])
+                else:
+                    d["steps_to_fix"][str(step_keys)]['depends_on_steps'].append(path[index - 1])
+
     for key, values in d["steps_to_fix"].items():
         ## Add element_id, required for later steps, element_type
         values['element_id'] = f"Activity_{generate_string_id()}"
@@ -80,6 +95,8 @@ def advance_dict(d: dict) -> dict:
     for key, values in d["steps_to_fix"].items():
         if not values['required_for_steps'] and key != '9999':
             values['required_for_steps'] = ['9999']
+
+    d = advance_dict_gateway(d)
 
     ## Fill flows
     for key, values in d["steps_to_fix"].items():
@@ -111,6 +128,13 @@ def advance_dict_coor(d: dict) -> dict:
                 'y': BASE_POINT_Y,
                 'w': BASE_POINT_W,
                 'h': BASE_POINT_H,
+            }
+        elif value['element_type'].startswith("gate_"):
+            value['coor'] = {
+                'x': BASE_POINT_X,
+                'y': BASE_POINT_Y,
+                'w': BASE_POINT_W // 2,
+                'h': BASE_POINT_H // 2,
             }
         else:
             print("JSON-TO-XML Coordinates: Element Typ unknown")
@@ -168,6 +192,47 @@ def advance_dict_coor(d: dict) -> dict:
     return d
 
 
+def advance_dict_gateway(d: dict) -> dict:
+    gatekey = 10000
+    gateways = {}
+    for key, value in d['steps_to_fix'].items():
+        if len(value['required_for_steps']) > 1:
+            gatekey += 1
+            gateways[str(gatekey)] = {
+                'element_id': f'Gateway_{generate_string_id()}',
+                'element_type': 'gate_split',
+                'depends_on_steps': [key],
+                'required_for_steps': value['required_for_steps'],
+                'flows': {'in': {}, 'out': {}}
+            }
+
+            for required_for_key in value['required_for_steps']:
+                if required_for_key in d['steps_to_fix']:
+                    d['steps_to_fix'][required_for_key]['depends_on_steps'] = [step if step != key else str(gatekey) for step in d['steps_to_fix'][required_for_key]['depends_on_steps']]
+
+            value['required_for_steps'] = [str(gatekey)]
+
+        if len(value['depends_on_steps']) > 1:
+            gatekey += 1
+            gateways[str(gatekey)] = {
+                'element_id': f'Gateway_{generate_string_id()}',
+                'element_type': 'gate_unite',
+                'depends_on_steps': value['depends_on_steps'],
+                'required_for_steps': [key],
+                'flows': {'in': {}, 'out': {}}
+            }
+
+            for depends_on_key in value['depends_on_steps']:
+                if depends_on_key in d['steps_to_fix']:
+                    d['steps_to_fix'][depends_on_key]['required_for_steps'] = [step if step != key else str(gatekey) for step in d['steps_to_fix'][depends_on_key]['required_for_steps']]
+
+            value['depends_on_steps'] = [str(gatekey)]
+
+    d['steps_to_fix'] = d['steps_to_fix'] | gateways
+
+    return d
+
+
 def add_element_flows(content: dict) -> str:
     text = ""
     for key in content['in']:
@@ -192,15 +257,21 @@ def generate_element_task(element_id: str, content: dict) -> str:
 
 
 def generate_element_start(element_id: str, content: dict) -> str:
-    return f"""<bpmn:startEvent id="{element_id}">
+    return f"""<bpmn:startEvent id="{element_id}" name="Start Patch">
 {inline(add_element_flows(content['flows']))}
 </bpmn:startEvent>"""
 
 
 def generate_element_end(element_id: str, content: dict) -> str:
-    return f"""<bpmn:endEvent id="{element_id}">
+    return f"""<bpmn:endEvent id="{element_id}" name="Finished Patch">
 {inline(add_element_flows(content['flows']))}
 </bpmn:endEvent>"""
+
+
+def generate_element_gate(element_id: str, content: dict, split_gate: bool) -> str:
+    return f"""<bpmn:exclusiveGateway id="{element_id}" name="{"Split" if split_gate else "Unite"}">
+{inline(add_element_flows(content['flows']))}
+</bpmn:exclusiveGateway>"""
 
 
 def generate_xml(process_dict: dict) -> str:
@@ -229,6 +300,10 @@ def generate_xml_body_process(steps_dict: dict) -> str:
             body_text += generate_element_start(element_id=value['element_id'], content=value) + "\n"
         elif value['element_type'] == 'end':
             body_text += generate_element_end(element_id=value['element_id'], content=value) + "\n"
+        elif value['element_type'] == 'gate_split':
+            body_text += generate_element_gate(element_id=value['element_id'], content=value, split_gate=True) + "\n"
+        elif value['element_type'] == 'gate_unite':
+            body_text += generate_element_gate(element_id=value['element_id'], content=value, split_gate=False) + "\n"
         else:
             print("JSON-TO-XML: Element Typ unknown")
     body_text += generate_all_element_flows(steps_dict)
@@ -243,7 +318,8 @@ def generate_xml_body_diagram(steps_dict: dict) -> str:
 </bpmndi:BPMNShape>
 """
         for flow_id, target in value['flows']['out'].items():
-            if value['coor']['y'] + value['coor']['h'] // 2 == steps_dict[target]['coor']['y'] + steps_dict[target]['coor']['h'] // 2:
+            if value['coor']['y'] + value['coor']['h'] // 2 == steps_dict[target]['coor']['y'] + \
+                    steps_dict[target]['coor']['h'] // 2:
                 body_text += f"""<bpmndi:BPMNEdge id="{flow_id}_di" bpmnElement="{flow_id}">
   <di:waypoint x="{value['coor']['x'] + value['coor']['w']}" y="{value['coor']['y'] + value['coor']['h'] // 2}" />
   <di:waypoint x="{steps_dict[target]['coor']['x']}" y="{steps_dict[target]['coor']['y'] + steps_dict[target]['coor']['h'] // 2}" />
