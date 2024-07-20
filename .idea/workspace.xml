@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 0.5&#10;- Last working version with depends_on_steps">
+    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 1.0&#10;- First working version&#10;- switched to paths&#10;- added gateways">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SATB/json_to_xml.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/json_to_xml.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SATB/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/llm.py" afterDir="false" />
@@ -195,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720795973236</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Version 1.0&#10;- First working version&#10;- switched to paths&#10;- added gateways">
+      <option name="closed" value="true" />
+      <created>1721456766232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721456766232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,6 +223,7 @@
     <MESSAGE value="Version 0.3&#10;- Ability to process multiple Advisories at once&#10;- Creates JSON and XML output&#10;&#10;Problem:&#10;- creation often fails" />
     <MESSAGE value="Version 0.4&#10;- Added repair dict function&#10;&#10;Problem:&#10;- depends on often not right recognized" />
     <MESSAGE value="Version 0.5&#10;- Last working version with depends_on_steps" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 0.5&#10;- Last working version with depends_on_steps" />
+    <MESSAGE value="Version 1.0&#10;- First working version&#10;- switched to paths&#10;- added gateways" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 1.0&#10;- First working version&#10;- switched to paths&#10;- added gateways" />
   </component>
 </project>
