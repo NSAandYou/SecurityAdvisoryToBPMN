@@ -1,4 +1,4 @@
-from SATB.satb import SATB
+from SATB.main import SATB
 
 
 if __name__ == "__main__":

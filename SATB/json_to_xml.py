@@ -1,4 +1,6 @@
-import json, random, string
+import json
+import random
+import string
 
 BASE_POINT_X = 500
 BASE_POINT_Y = 500
@@ -8,9 +10,10 @@ BASE_ADD_X = 200
 
 
 def generate_string_id(size: int = 7) -> str:
-    return ''.join(random.choice(string.ascii_lowercase) for i in range(size))
+    return ''.join(random.choice(string.ascii_lowercase) for _ in range(size))
 
 
+# indent text block for better look
 def inline(text: str, spaces: int = 2):
     inline_str = " " * spaces
     return_value = text.strip("\n").replace("\n", "\n" + inline_str)
@@ -24,6 +27,7 @@ def to_dict(json_string: str) -> dict:
     return json.loads(json_string)
 
 
+# repairs dict from llm on basic level
 def repair_dict(d: dict):
     if "mentioned_cpes" not in d:
         d["mentioned_cpes"] = []
@@ -42,48 +46,51 @@ def repair_dict(d: dict):
     return d
 
 
+# expends dict for later use
 def advance_dict(d: dict) -> dict:
     d["process_id"] = f"Process_{generate_string_id()}"
 
-    ##Add Start Element
+    # Add Start Element
     d["steps_to_fix"] = {'0': {
         'element_id': 'StartEvent_1',
         'element_type': 'start',
         'depends_on_steps': []
     }} | d["steps_to_fix"]
 
+    # Translates paths into depends_on_steps for later processing
     for path_key, path in d["paths"].items():
         for index in range(1, len(path)):
             step_keys = path[index]
-            if type(step_keys) == type([]):
+            if isinstance(step_keys, list):
                 for step_key in step_keys:
-                    if type(path[index - 1]) == type([]):
+                    if isinstance(path[index - 1], list):
                         d["steps_to_fix"][str(step_key)]['depends_on_steps'].extend(path[index - 1])
                     else:
                         d["steps_to_fix"][str(step_key)]['depends_on_steps'].append(path[index - 1])
             else:
-                if type(path[index - 1]) == type([]):
+                if isinstance(path[index - 1], list):
                     d["steps_to_fix"][str(step_keys)]['depends_on_steps'].extend(path[index - 1])
                 else:
                     d["steps_to_fix"][str(step_keys)]['depends_on_steps'].append(path[index - 1])
 
     for key, values in d["steps_to_fix"].items():
-        ## Add element_id, required for later steps, element_type
+        # Add element_id, required for later steps, element_type
         values['element_id'] = f"Activity_{generate_string_id()}"
         values['required_for_steps'] = []
         values['flows'] = {'in': {}, 'out': {}}
         if 'element_type' not in values:
             values['element_type'] = "task"
 
-        ## Add Start element as dependency
+        # Add Start element as dependency
         if not values['depends_on_steps'] and key != '0':
             values['depends_on_steps'] = [0]
 
-        ## Fill required for later steps list
+        # Fill required_for_steps
         for index, depend in enumerate(values['depends_on_steps']):
             depend = values['depends_on_steps'][index] = str(depend)
             d["steps_to_fix"][depend]['required_for_steps'].append(key)
 
+    # Add end element
     d["steps_to_fix"] = d["steps_to_fix"] | {'9999': {
         'element_id': f'Event_{generate_string_id()}',
         'element_type': 'end',
@@ -92,13 +99,14 @@ def advance_dict(d: dict) -> dict:
         'flows': {'in': {}, 'out': {}}
     }}
 
+    # Make all steps 'useless' so for required for end
     for key, values in d["steps_to_fix"].items():
         if not values['required_for_steps'] and key != '9999':
             values['required_for_steps'] = ['9999']
 
     d = advance_dict_gateway(d)
 
-    ## Fill flows
+    # Fill flows
     for key, values in d["steps_to_fix"].items():
         for following_step in values['required_for_steps']:
             flow_id = f'Flow_{generate_string_id()}'
@@ -113,7 +121,7 @@ def advance_dict(d: dict) -> dict:
 def advance_dict_coor(d: dict) -> dict:
     done = False
 
-    ## Define x coor
+    # Define start coordinates
     for key, value in d['steps_to_fix'].items():
         if value['element_type'] in ['start', 'end']:
             value['coor'] = {
@@ -139,6 +147,7 @@ def advance_dict_coor(d: dict) -> dict:
         else:
             print("JSON-TO-XML Coordinates: Element Typ unknown")
 
+    # sort all elements on the x-axis based on required_for_steps
     while not done:
         done = True
         for step, value in d['steps_to_fix'].items():
@@ -148,7 +157,10 @@ def advance_dict_coor(d: dict) -> dict:
                     done = False
 
     lines = {}
+    min_y = BASE_POINT_Y
+    max_y = BASE_POINT_Y
 
+    # separate the x values into lines.
     for step, value in d['steps_to_fix'].items():
         x = value['coor']['x']
         line_key = (x - BASE_POINT_X) // BASE_ADD_X
@@ -157,7 +169,7 @@ def advance_dict_coor(d: dict) -> dict:
         else:
             lines[line_key].append(step)
 
-    ## Define y coor first try
+    # Define y coor first try by averaging the line before
     for index, line in lines.items():
         for step in line:
             s = 0
@@ -170,7 +182,7 @@ def advance_dict_coor(d: dict) -> dict:
             else:
                 d['steps_to_fix'][step]['coor']['y'] = s // c
 
-        ## Change y so nothing overlaps
+        # Change y so nothing overlaps
         done = False
         while not done:
             done = True
@@ -180,22 +192,24 @@ def advance_dict_coor(d: dict) -> dict:
                             d['steps_to_fix'][step]['coor']['y'] - d['steps_to_fix'][walker]['coor']['y']) < 200:
                         d['steps_to_fix'][step]['coor']['y'] += 200
                         done = False
+                if d['steps_to_fix'][step]['coor']['y'] > max_y:
+                    max_y = d['steps_to_fix'][step]['coor']['y']
+                elif d['steps_to_fix'][step]['coor']['y'] < min_y:
+                    min_y = d['steps_to_fix'][step]['coor']['y']
 
-        ## Finally adjust start
-        s = 0
-        c = 0
-        for following_step in d['steps_to_fix']['0']['required_for_steps']:
-            s += d['steps_to_fix'][following_step]['coor']['y']
-            c += 1
-        d['steps_to_fix']['0']['coor']['y'] = s // c
+        # Finally adjust start and end
+        d['steps_to_fix']['0']['coor']['y'] = (min_y + max_y) // 2
+        d['steps_to_fix']['9999']['coor']['y'] = (min_y + max_y) // 2
 
     return d
 
 
+# adds gates(exclusive) if necessary (starting with step_id 10001)
 def advance_dict_gateway(d: dict) -> dict:
     gatekey = 10000
     gateways = {}
     for key, value in d['steps_to_fix'].items():
+        # if step is required for multiple other steps create exclusive(split) gate
         if len(value['required_for_steps']) > 1:
             gatekey += 1
             gateways[str(gatekey)] = {
@@ -206,12 +220,17 @@ def advance_dict_gateway(d: dict) -> dict:
                 'flows': {'in': {}, 'out': {}}
             }
 
+            # make all following steps refer to exclusive(split) gate
             for required_for_key in value['required_for_steps']:
                 if required_for_key in d['steps_to_fix']:
-                    d['steps_to_fix'][required_for_key]['depends_on_steps'] = [step if step != key else str(gatekey) for step in d['steps_to_fix'][required_for_key]['depends_on_steps']]
+                    d['steps_to_fix'][required_for_key]['depends_on_steps'] = [step if step != key else str(gatekey) for
+                                                                               step in
+                                                                               d['steps_to_fix'][required_for_key][
+                                                                                   'depends_on_steps']]
 
             value['required_for_steps'] = [str(gatekey)]
 
+        # if step depends on multiple other steps create exclusive(unite) gate
         if len(value['depends_on_steps']) > 1:
             gatekey += 1
             gateways[str(gatekey)] = {
@@ -222,12 +241,17 @@ def advance_dict_gateway(d: dict) -> dict:
                 'flows': {'in': {}, 'out': {}}
             }
 
+            # make all previous steps refer to exclusive(unite) gate
             for depends_on_key in value['depends_on_steps']:
                 if depends_on_key in d['steps_to_fix']:
-                    d['steps_to_fix'][depends_on_key]['required_for_steps'] = [step if step != key else str(gatekey) for step in d['steps_to_fix'][depends_on_key]['required_for_steps']]
+                    d['steps_to_fix'][depends_on_key]['required_for_steps'] = [step if step != key else str(gatekey) for
+                                                                               step in
+                                                                               d['steps_to_fix'][depends_on_key][
+                                                                                   'required_for_steps']]
 
             value['depends_on_steps'] = [str(gatekey)]
 
+    # add gates to the usual steps
     d['steps_to_fix'] = d['steps_to_fix'] | gateways
 
     return d
@@ -274,6 +298,7 @@ def generate_element_gate(element_id: str, content: dict, split_gate: bool) -> s
 </bpmn:exclusiveGateway>"""
 
 
+# generate the bpmn-file string
 def generate_xml(process_dict: dict) -> str:
     process_id = process_dict['process_id']
     process_name = process_dict['issue_name']
@@ -291,6 +316,7 @@ def generate_xml(process_dict: dict) -> str:
 </bpmn:definitions>"""
 
 
+# add the xml process part of a BPMN-file containing the objects
 def generate_xml_body_process(steps_dict: dict) -> str:
     body_text = ""
     for step, value in steps_dict.items():
@@ -310,6 +336,7 @@ def generate_xml_body_process(steps_dict: dict) -> str:
     return body_text
 
 
+# add the xml body part of a BPMN-file containing the positions
 def generate_xml_body_diagram(steps_dict: dict) -> str:
     body_text = ""
     for step, value in steps_dict.items():
@@ -337,5 +364,6 @@ def generate_xml_body_diagram(steps_dict: dict) -> str:
     return body_text
 
 
+# takes raw_json in form of a string and return bpmn-file string
 def raw_json_to_bpmn_xml(raw_json: str) -> str:
     return generate_xml(advance_dict(repair_dict(to_dict(raw_json))))

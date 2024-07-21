@@ -1,11 +1,13 @@
-import gradio as gr
-from datetime import datetime
 import os
+from datetime import datetime
 
-from SATB.llm import LLM
+import gradio as gr
+
 from SATB.container_extractor import *
 from SATB.json_to_xml import raw_json_to_bpmn_xml
+from SATB.llm import LLM
 
+# static prompt presented to the LLM before the security advisory
 prompt = """
 The text following "---START---" provides information from a security advisory. Please extract the steps necessary to fix the issue. If there is a workaround, extract the steps of the workaround.
 
@@ -32,10 +34,10 @@ Write the extracted information in JSON format as follows:
 
 steps_to_fix: Enumerate each atomic step necessary for mitigation/fix. Each step should include a command and description.
 paths: Enumerate each set of sequential steps which represent different options to fix the issue. The order in the list represents the order mentioned in the advisory.
-	- If steps within a path must be executed in parallel, use a nested list structure (e.g., [ [1, 2], 3 ] means steps 1 and 2 are parallel and followed by step 3).
-	- Do not use a nested list for a single step; steps should only be nested if they are explicitly parallel.
-	- Paths represent one way to fix the issue and so everything should be fixed after running the steps in one path.
-	- Every step should be mentioned in at least one path.
+    - If steps within a path must be executed in parallel, use a nested list structure (e.g., [ [1, 2], 3 ] means steps 1 and 2 are parallel and followed by step 3).
+    - Do not use a nested list for a single step; steps should only be nested if they are explicitly parallel.
+    - Paths represent one way to fix the issue and so everything should be fixed after running the steps in one path.
+    - Every step should be mentioned in at least one path.
 
 Instructions for Extraction:
 
@@ -50,15 +52,18 @@ Security Advisory Text:
 """
 
 
+# creates folder for the output
 def create_folder() -> str:
     creation_name = "created_" + datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     os.makedirs(creation_name)
     return os.path.join(os.path.dirname(os.path.abspath(creation_name)), creation_name)
 
 
+# SATB - Security Advisory to BPMN
 class SATB:
     initDone = False
 
+    # initialize LLM
     def __init__(self):
         self.llm = LLM()
 
@@ -68,6 +73,8 @@ class SATB:
         answer = self.llm.ask(prompt + advisory_text).content
         return answer[answer.index("{"):answer.rfind("}")+1]
 
+    # methode called, when submit is pressed in the interface
+    # creates folder, searches for the security advisories, converts them to BPMN and saves them
     def process_input(self, input_string: str) -> str:
         folder_path = create_folder()
 
@@ -96,6 +103,7 @@ class SATB:
             output_string += "\n\nErrors while processing:\n" + "\n".join(errors)
         return output_string
 
+    # run web interface using gradio
     def run(self):
         interface = gr.Interface(
             fn=self.process_input,

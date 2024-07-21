@@ -1,13 +1,12 @@
-from langchain_openai import ChatOpenAI
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
 import os
 
+from langchain.chains import LLMChain
+from langchain.prompts import PromptTemplate
+from langchain_openai import ChatOpenAI
 
-SECRET_API_KEY = "sk-proj-WESeYqSCKmS05ykqIZHST3BlbkFJ817JuF39HAUyELOBpXXb"
+SECRET_API_KEY = "sk-XXXX"
 os.environ["OPENAI_API_KEY"] = SECRET_API_KEY
 os.environ.get("OPENAI_API_KEY")
-MODEL = "gpt-3.5-turbo"
 MODEL = "gpt-4-turbo"
 TEMPERATURE = 0
 TOP_P = 1

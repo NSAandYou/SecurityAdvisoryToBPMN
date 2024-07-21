@@ -1,8 +1,9 @@
-from pdfminer.high_level import extract_text
+import io
 from urllib.request import urlopen
+
 import requests
 from bs4 import BeautifulSoup
-import io
+from pdfminer.high_level import extract_text
 
 
 def given_advisory_to_text(advisory_string: str):
@@ -33,9 +34,3 @@ def html_to_text(html):
     text = soup.get_text()
 
     return text
-
-
-if __name__ == "__main__":
-    print("!"+url_to_text("https://learn.microsoft.com/en-us/security-updates/securitybulletins/2017/ms17-014"))
-    ##print("!"+url_to_text("https://sps.honeywell.com/content/dam/honeywell-edam/sps/ppr/en-us/public/support/cyber-security-notifications/sps-ppr-vc-xss-security-notification.pdf"))
-
