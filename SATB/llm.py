@@ -1,13 +1,13 @@
 import os
 
-from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
-SECRET_API_KEY = "sk-XXXX"
+# TODO remove
+SECRET_API_KEY = "sk-proj-DkDCIuko5FJRnUDPP8H4T3BlbkFJUmZotEBeaTE591lk7mZQ"
 os.environ["OPENAI_API_KEY"] = SECRET_API_KEY
 os.environ.get("OPENAI_API_KEY")
-MODEL = "gpt-4-turbo"
+MODEL = "gpt-4o"
 TEMPERATURE = 0
 TOP_P = 1
 
@@ -18,12 +18,9 @@ class LLM:
             openai_api_key=SECRET_API_KEY,
             model_name=MODEL,
             temperature=TEMPERATURE,
-            model_kwargs={
-                "top_p": TOP_P,
-            }
+            top_p=TOP_P,
         )
         self.prompt = PromptTemplate(input_variables=["input_text"], template="{input_text}")
-        self.chain = LLMChain(llm=self.llm, prompt=self.prompt)
 
     def ask(self, input_text: str):
         if self.llm is None:
