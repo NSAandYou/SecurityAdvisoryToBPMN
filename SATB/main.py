@@ -37,7 +37,7 @@ paths: Enumerate each set of sequential steps which represent different options 
     - If steps within a path must be executed in parallel, use a nested list structure (e.g., [ [1, 2], 3 ] means steps 1 and 2 are parallel and followed by step 3).
     - Do not use a nested list for a single step; steps should only be nested if they are explicitly parallel.
     - Paths represent one way to fix the issue and so everything should be fixed after running the steps in one path.
-    - Every step should be mentioned in at least one path.
+    - Every step should be mentioned exactly once over all paths.
 
 Instructions for Extraction:
 

@@ -1,28 +1,46 @@
 import json
 import random
 import string
+from enum import Enum
 
-BASE_POINT_X = 500
-BASE_POINT_Y = 500
+# Diagram sizes and points
+BASE_POINT_X = 160
+BASE_POINT_Y = 0
 BASE_POINT_W = 100
 BASE_POINT_H = 100
 BASE_ADD_X = 200
+TASK_WIDTH = 120
+TASK_HEIGHT = 60
+SQUARE_ELEMENTS_SIZE = 40
+BASE_GAP_SIZE = 20
 
 
+# Different kinds of diagram objects
+class ElementType(Enum):
+    START = 1
+    END = 2
+    GATEWAY = 3
+    SUBPROCESS = 4
+    TASK = 5
+    FLOW = 6
+
+
+# generates random string for ids
 def generate_string_id(size: int = 7) -> str:
     return ''.join(random.choice(string.ascii_lowercase) for _ in range(size))
 
 
 # indent text block for better look
-def inline(text: str, spaces: int = 2):
+def inline(text: str, spaces: int = 2, no_next_line: bool = True):
     inline_str = " " * spaces
     return_value = text.strip("\n").replace("\n", "\n" + inline_str)
     if return_value == "":
         return ""
     else:
-        return inline_str + return_value
+        return inline_str + return_value + ("" if no_next_line else "\n")
 
 
+# string to python dict
 def to_dict(json_string: str) -> dict:
     return json.loads(json_string)
 
@@ -41,8 +59,6 @@ def repair_dict(d: dict):
             values["command"] = []
         if "description" not in values:
             values["description"] = ""
-        if "depends_on_steps" not in values:
-            values["depends_on_steps"] = []
     return d
 
 
@@ -50,252 +66,216 @@ def repair_dict(d: dict):
 def advance_dict(d: dict) -> dict:
     d["process_id"] = f"Process_{generate_string_id()}"
 
-    # Add Start Element
-    d["steps_to_fix"] = {'0': {
-        'element_id': 'StartEvent_1',
-        'element_type': 'start',
-        'depends_on_steps': []
-    }} | d["steps_to_fix"]
+    for task in d['steps_to_fix'].values():
+        task['element_id'] = f'Activity_{generate_string_id()}'
 
-    # Translates paths into depends_on_steps for later processing
-    for path_key, path in d["paths"].items():
-        for index in range(1, len(path)):
-            step_keys = path[index]
-            if isinstance(step_keys, list):
-                for step_key in step_keys:
-                    if isinstance(path[index - 1], list):
-                        d["steps_to_fix"][str(step_key)]['depends_on_steps'].extend(path[index - 1])
-                    else:
-                        d["steps_to_fix"][str(step_key)]['depends_on_steps'].append(path[index - 1])
-            else:
-                if isinstance(path[index - 1], list):
-                    d["steps_to_fix"][str(step_keys)]['depends_on_steps'].extend(path[index - 1])
-                else:
-                    d["steps_to_fix"][str(step_keys)]['depends_on_steps'].append(path[index - 1])
+    d['subprocesses'] = {}
 
-    for key, values in d["steps_to_fix"].items():
-        # Add element_id, required for later steps, element_type
-        values['element_id'] = f"Activity_{generate_string_id()}"
-        values['required_for_steps'] = []
-        values['flows'] = {'in': {}, 'out': {}}
-        if 'element_type' not in values:
-            values['element_type'] = "task"
+    for key, path in d['paths'].items():
+        d['subprocesses'][key] = {
+            'element_id': f'Activity_{generate_string_id()}',
+            'element_type': ElementType.SUBPROCESS,
+        }
+        for step_line in range(len(path)):
+            if not isinstance(d['paths'][key][step_line], list):
+                d['paths'][key][step_line] = [d['paths'][key][step_line]]
+            for step_index in range(len(d['paths'][key][step_line])):
+                d['paths'][key][step_line][step_index] = str(d['paths'][key][step_line][step_index])
 
-        # Add Start element as dependency
-        if not values['depends_on_steps'] and key != '0':
-            values['depends_on_steps'] = [0]
+    d['flows'] = {}
+    d['flows_inverse'] = {}
 
-        # Fill required_for_steps
-        for index, depend in enumerate(values['depends_on_steps']):
-            depend = values['depends_on_steps'][index] = str(depend)
-            d["steps_to_fix"][depend]['required_for_steps'].append(key)
-
-    # Add end element
-    d["steps_to_fix"] = d["steps_to_fix"] | {'9999': {
-        'element_id': f'Event_{generate_string_id()}',
-        'element_type': 'end',
-        'depends_on_steps': [key for key, values in d["steps_to_fix"].items() if not values['required_for_steps']],
-        'required_for_steps': [],
-        'flows': {'in': {}, 'out': {}}
-    }}
-
-    # Make all steps 'useless' so for required for end
-    for key, values in d["steps_to_fix"].items():
-        if not values['required_for_steps'] and key != '9999':
-            values['required_for_steps'] = ['9999']
-
-    d = advance_dict_gateway(d)
-
-    # Fill flows
-    for key, values in d["steps_to_fix"].items():
-        for following_step in values['required_for_steps']:
-            flow_id = f'Flow_{generate_string_id()}'
-            values['flows']['out'][flow_id] = following_step
-            d["steps_to_fix"][following_step]['flows']['in'][flow_id] = key
-
-    d = advance_dict_coor(d)
+    d['coordinates'] = []
 
     return d
 
 
-def advance_dict_coor(d: dict) -> dict:
-    done = False
+# adds elements to the coordinates list to be used later
+def add_to_coordinates(d: dict, element_id: str, element_type: ElementType, subprocess: str = None):
+    d['coordinates'].append({
+        'element_id': element_id,
+        'element_type': element_type,
+        'subprocess': subprocess,
+        'coordinates': {
+            'x': 0,
+            'y': 0,
+            'width': 0,
+            'height': 0
+        }
+    })
 
-    # Define start coordinates
-    for key, value in d['steps_to_fix'].items():
-        if value['element_type'] in ['start', 'end']:
-            value['coor'] = {
-                'x': BASE_POINT_X,
-                'y': BASE_POINT_Y,
-                'w': BASE_POINT_W // 3,
-                'h': BASE_POINT_H // 3,
-            }
-        elif value['element_type'] == 'task':
-            value['coor'] = {
-                'x': BASE_POINT_X,
-                'y': BASE_POINT_Y,
-                'w': BASE_POINT_W,
-                'h': BASE_POINT_H,
-            }
-        elif value['element_type'].startswith("gate_"):
-            value['coor'] = {
-                'x': BASE_POINT_X,
-                'y': BASE_POINT_Y,
-                'w': BASE_POINT_W // 2,
-                'h': BASE_POINT_H // 2,
-            }
+
+# fill in the right coordinates for elements in the list
+def calculate_coordinates(d: dict):
+    max_width = 0
+    x = BASE_POINT_X + 2 * (SQUARE_ELEMENTS_SIZE + 2 * BASE_GAP_SIZE)
+    y = BASE_POINT_Y
+
+    # Subprocesses
+    for sub_key, sub in d['subprocesses'].items():
+        sub_width = 0
+        sub_height = 0
+        # Subprocess
+        for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == sub['element_id']]:
+            element['x'] = x
+            element['y'] = y
+            element['width'] = sub_width = 4 * SQUARE_ELEMENTS_SIZE + 5 * BASE_GAP_SIZE + (TASK_WIDTH + BASE_GAP_SIZE) * max([len(p) for p in d['paths'].values()])
+            element['height'] = sub_height = BASE_GAP_SIZE + (TASK_HEIGHT + BASE_GAP_SIZE) * max([len(p) for p in d['paths'][sub_key]])
+
+        # Sub Start
+        for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Activity_{sub_key}AAAAAA']:
+            element['x'] = x + BASE_GAP_SIZE
+            element['y'] = y + sub_height // 2 - SQUARE_ELEMENTS_SIZE // 2
+            element['width'] = SQUARE_ELEMENTS_SIZE
+            element['height'] = SQUARE_ELEMENTS_SIZE
+
+        # Sub End
+        for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Activity_{sub_key}ZZZZZZ']:
+            element['x'] = x + sub_width - BASE_GAP_SIZE - SQUARE_ELEMENTS_SIZE
+            element['y'] = y + sub_height // 2 - SQUARE_ELEMENTS_SIZE // 2
+            element['width'] = SQUARE_ELEMENTS_SIZE
+            element['height'] = SQUARE_ELEMENTS_SIZE
+
+        # Sub Start Gate
+        for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Gateway_{sub_key}BBBBBB']:
+            element['x'] = x + 2*BASE_GAP_SIZE + SQUARE_ELEMENTS_SIZE
+            element['y'] = y + sub_height // 2 - SQUARE_ELEMENTS_SIZE // 2
+            element['width'] = SQUARE_ELEMENTS_SIZE
+            element['height'] = SQUARE_ELEMENTS_SIZE
+
+        # Sub End Gate
+        for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Gateway_{sub_key}YYYYYY']:
+            element['x'] = x + sub_width - 2*(BASE_GAP_SIZE + SQUARE_ELEMENTS_SIZE)
+            element['y'] = y + sub_height // 2 - SQUARE_ELEMENTS_SIZE // 2
+            element['width'] = SQUARE_ELEMENTS_SIZE
+            element['height'] = SQUARE_ELEMENTS_SIZE
+
+        # Tasks
+        for step_line_index, step_line in enumerate(d['paths'][sub_key]):
+            for step_index, step_key in enumerate(step_line):
+                step = d['steps_to_fix'][step_key]
+                element = [e['coordinates'] for e in d['coordinates'] if e['element_id'] == step['element_id']][0]
+                element['x'] = x + BASE_GAP_SIZE + 2 * (SQUARE_ELEMENTS_SIZE + BASE_GAP_SIZE) + step_line_index * (TASK_WIDTH + BASE_GAP_SIZE)
+                element['y'] = y + BASE_GAP_SIZE + (len(step_line) - (step_index + 1)) * (TASK_HEIGHT + BASE_GAP_SIZE)
+                element['width'] = TASK_WIDTH
+                element['height'] = TASK_HEIGHT
+        y += sub_height + BASE_GAP_SIZE
+        max_width = sub_width if sub_width > max_width else max_width
+
+    # Start
+    for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Activity_AAAAAAA']:
+        element['x'] = BASE_POINT_X
+        element['y'] = BASE_POINT_Y + (y - BASE_GAP_SIZE) // 2 - SQUARE_ELEMENTS_SIZE // 2
+        element['width'] = SQUARE_ELEMENTS_SIZE
+        element['height'] = SQUARE_ELEMENTS_SIZE
+
+    # End
+    for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Activity_ZZZZZZZ']:
+        element['x'] = BASE_POINT_X + 4 * (SQUARE_ELEMENTS_SIZE + 2 * BASE_GAP_SIZE) + max_width - SQUARE_ELEMENTS_SIZE
+        element['y'] = BASE_POINT_Y + (y - BASE_GAP_SIZE) // 2 - SQUARE_ELEMENTS_SIZE // 2
+        element['width'] = SQUARE_ELEMENTS_SIZE
+        element['height'] = SQUARE_ELEMENTS_SIZE
+
+    # Start Gate
+    for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Gateway_BBBBBBB']:
+        element['x'] = BASE_POINT_X + SQUARE_ELEMENTS_SIZE + 2 * BASE_GAP_SIZE
+        element['y'] = BASE_POINT_Y + (y - BASE_GAP_SIZE) // 2 - SQUARE_ELEMENTS_SIZE // 2
+        element['width'] = SQUARE_ELEMENTS_SIZE
+        element['height'] = SQUARE_ELEMENTS_SIZE
+
+    # End Gate
+    for element in [e['coordinates'] for e in d['coordinates'] if e['element_id'] == f'Gateway_YYYYYYY']:
+        element['x'] = BASE_POINT_X + 4 * (SQUARE_ELEMENTS_SIZE + 2 * BASE_GAP_SIZE) + max_width - SQUARE_ELEMENTS_SIZE - 2 * BASE_GAP_SIZE - SQUARE_ELEMENTS_SIZE
+        element['y'] = BASE_POINT_Y + (y - BASE_GAP_SIZE) // 2 - SQUARE_ELEMENTS_SIZE // 2
+        element['width'] = SQUARE_ELEMENTS_SIZE
+        element['height'] = SQUARE_ELEMENTS_SIZE
+
+    # Flows
+    for element in [e for e in d['coordinates'] if e['element_type'] == ElementType.FLOW]:
+        target_ids = d['flows'][element['element_id']].values()
+        target_coordinates = [e for e in d['coordinates'] if e['element_id'] in target_ids]
+
+        if target_coordinates[0]['coordinates']['x'] < target_coordinates[1]['coordinates']['x']:
+            source_element = target_coordinates[0]
+            target_element = target_coordinates[1]
         else:
-            print("JSON-TO-XML Coordinates: Element Typ unknown")
+            target_element = target_coordinates[0]
+            source_element = target_coordinates[1]
 
-    # sort all elements on the x-axis based on required_for_steps
-    while not done:
-        done = True
-        for step, value in d['steps_to_fix'].items():
-            for following_step in value['required_for_steps']:
-                if value['coor']['x'] >= d['steps_to_fix'][following_step]['coor']['x']:
-                    d['steps_to_fix'][following_step]['coor']['x'] += BASE_ADD_X
-                    done = False
-
-    lines = {}
-    min_y = BASE_POINT_Y
-    max_y = BASE_POINT_Y
-
-    # separate the x values into lines.
-    for step, value in d['steps_to_fix'].items():
-        x = value['coor']['x']
-        line_key = (x - BASE_POINT_X) // BASE_ADD_X
-        if line_key not in lines:
-            lines[line_key] = [step]
+        # Should different edge be used for source element?
+        # Yes
+        if source_element['element_type'] == ElementType.GATEWAY and abs(source_element['coordinates']['y'] - target_element['coordinates']['y']) > BASE_GAP_SIZE*4:
+            element['coordinates']['x'] = source_element['coordinates']['x'] + source_element['coordinates']['width'] // 2
+            element['coordinates']['y'] = source_element['coordinates']['y'] + (source_element['coordinates']['height'] if source_element['coordinates']['y'] < target_element['coordinates']['y'] else 0)
+        # No
         else:
-            lines[line_key].append(step)
+            element['coordinates']['x'] = source_element['coordinates']['x'] + source_element['coordinates']['width']
+            element['coordinates']['y'] = source_element['coordinates']['y'] + source_element['coordinates']['height'] // 2
 
-    # Define y coor first try by averaging the line before
-    for index, line in lines.items():
-        for step in line:
-            s = 0
-            c = 0
-            for dependency in d['steps_to_fix'][step]['depends_on_steps']:
-                s += d['steps_to_fix'][dependency]['coor']['y']
-                c += 1
-            if c == 0:
-                d['steps_to_fix'][step]['coor']['y'] = BASE_POINT_Y
+        # Should different edge be used for target element?
+        # Yes
+        if target_element['element_type'] == ElementType.GATEWAY and abs(source_element['coordinates']['y'] - target_element['coordinates']['y']) > BASE_GAP_SIZE*4:
+            element['coordinates']['width'] = target_element['coordinates']['x'] + target_element['coordinates']['width'] // 2
+            element['coordinates']['height'] = target_element['coordinates']['y'] + (target_element['coordinates']['height'] if source_element['coordinates']['y'] > target_element['coordinates']['y'] else 0)
+
+        # No
+        else:
+            element['coordinates']['width'] = target_element['coordinates']['x']
+            element['coordinates']['height'] = target_element['coordinates']['y'] + target_element['coordinates']['height'] // 2
+
+        # Waypoints
+        element['coordinates']['waypoints'] = []
+
+        # No Waypoint
+        if element['coordinates']['y'] == element['coordinates']['height']:
+            pass
+        # Add one waypoint
+        elif abs(source_element['coordinates']['y'] - target_element['coordinates']['y']) > BASE_GAP_SIZE*4:
+            # First x or y axis?
+            # y
+            if source_element['element_type'] == ElementType.GATEWAY:
+                element['coordinates']['waypoints'].append([
+                    element['coordinates']['x'],
+                    element['coordinates']['height']
+                ])
+            # x
             else:
-                d['steps_to_fix'][step]['coor']['y'] = s // c
+                element['coordinates']['waypoints'].append([
+                    element['coordinates']['width'],
+                    element['coordinates']['y']
+                ])
 
-        # Change y so nothing overlaps
-        done = False
-        while not done:
-            done = True
-            for step in line:
-                for walker in line:
-                    if step != walker and abs(
-                            d['steps_to_fix'][step]['coor']['y'] - d['steps_to_fix'][walker]['coor']['y']) < 200:
-                        d['steps_to_fix'][step]['coor']['y'] += 200
-                        done = False
-                if d['steps_to_fix'][step]['coor']['y'] > max_y:
-                    max_y = d['steps_to_fix'][step]['coor']['y']
-                elif d['steps_to_fix'][step]['coor']['y'] < min_y:
-                    min_y = d['steps_to_fix'][step]['coor']['y']
-
-        # Finally adjust start and end
-        d['steps_to_fix']['0']['coor']['y'] = (min_y + max_y) // 2
-        d['steps_to_fix']['9999']['coor']['y'] = (min_y + max_y) // 2
-
-    return d
+        # Add two waypoints
+        else:
+            element['coordinates']['waypoints'].append([
+                (element['coordinates']['x'] + element['coordinates']['width']) // 2,
+                element['coordinates']['y']
+            ])
+            element['coordinates']['waypoints'].append([
+                (element['coordinates']['x'] + element['coordinates']['width']) // 2,
+                element['coordinates']['height']
+            ])
 
 
-# adds gates(exclusive) if necessary (starting with step_id 10001)
-def advance_dict_gateway(d: dict) -> dict:
-    gatekey = 10000
-    gateways = {}
-    for key, value in d['steps_to_fix'].items():
-        # if step is required for multiple other steps create exclusive(split) gate
-        if len(value['required_for_steps']) > 1:
-            gatekey += 1
-            gateways[str(gatekey)] = {
-                'element_id': f'Gateway_{generate_string_id()}',
-                'element_type': 'gate_split',
-                'depends_on_steps': [key],
-                'required_for_steps': value['required_for_steps'],
-                'flows': {'in': {}, 'out': {}}
-            }
-
-            # make all following steps refer to exclusive(split) gate
-            for required_for_key in value['required_for_steps']:
-                if required_for_key in d['steps_to_fix']:
-                    d['steps_to_fix'][required_for_key]['depends_on_steps'] = [step if step != key else str(gatekey) for
-                                                                               step in
-                                                                               d['steps_to_fix'][required_for_key][
-                                                                                   'depends_on_steps']]
-
-            value['required_for_steps'] = [str(gatekey)]
-
-        # if step depends on multiple other steps create exclusive(unite) gate
-        if len(value['depends_on_steps']) > 1:
-            gatekey += 1
-            gateways[str(gatekey)] = {
-                'element_id': f'Gateway_{generate_string_id()}',
-                'element_type': 'gate_unite',
-                'depends_on_steps': value['depends_on_steps'],
-                'required_for_steps': [key],
-                'flows': {'in': {}, 'out': {}}
-            }
-
-            # make all previous steps refer to exclusive(unite) gate
-            for depends_on_key in value['depends_on_steps']:
-                if depends_on_key in d['steps_to_fix']:
-                    d['steps_to_fix'][depends_on_key]['required_for_steps'] = [step if step != key else str(gatekey) for
-                                                                               step in
-                                                                               d['steps_to_fix'][depends_on_key][
-                                                                                   'required_for_steps']]
-
-            value['depends_on_steps'] = [str(gatekey)]
-
-    # add gates to the usual steps
-    d['steps_to_fix'] = d['steps_to_fix'] | gateways
-
-    return d
-
-
-def add_element_flows(content: dict) -> str:
+# Adds flows to flow list and returns flow as string for bpmn
+def add_element_flows(d: dict, sources: list, targets: list, out: bool) -> str:
     text = ""
-    for key in content['in']:
-        text += f"<bpmn:incoming>{key}</bpmn:incoming>\n"
-    for key in content['out']:
-        text += f"<bpmn:outgoing>{key}</bpmn:outgoing>\n"
+    r = "outgoing" if out else "incoming"
+
+    for end_one in sources:
+        for end_two in targets:
+            if end_one + end_two in d['flows_inverse']:
+                key = d['flows_inverse'][end_one + end_two]
+            elif end_two + end_one in d['flows_inverse']:
+                key = d['flows_inverse'][end_two + end_one]
+            else:
+                key = f'Flow_{generate_string_id()}'
+                d['flows'][key] = {'end_one': end_one, 'end_two': end_two}
+                d['flows_inverse'][end_one + end_two] = key
+                add_to_coordinates(d, key, ElementType.FLOW)
+
+            text += f"<bpmn:{r}>{key}</bpmn:{r}>\n"
     return text
-
-
-def generate_all_element_flows(steps_dict: dict) -> str:
-    text = ""
-    for key, value in steps_dict.items():
-        for flow_id, target in value['flows']['out'].items():
-            text += f"""<bpmn:sequenceFlow id="{flow_id}" sourceRef="{value['element_id']}" targetRef="{steps_dict[target]['element_id']}" />\n"""
-    return text
-
-
-def generate_element_task(element_id: str, content: dict) -> str:
-    return f"""<bpmn:task id="{element_id}" name="{content['command']}">
-{inline(add_element_flows(content['flows']))}
-</bpmn:task>"""
-
-
-def generate_element_start(element_id: str, content: dict) -> str:
-    return f"""<bpmn:startEvent id="{element_id}" name="Start Patch">
-{inline(add_element_flows(content['flows']))}
-</bpmn:startEvent>"""
-
-
-def generate_element_end(element_id: str, content: dict) -> str:
-    return f"""<bpmn:endEvent id="{element_id}" name="Finished Patch">
-{inline(add_element_flows(content['flows']))}
-</bpmn:endEvent>"""
-
-
-def generate_element_gate(element_id: str, content: dict, split_gate: bool) -> str:
-    return f"""<bpmn:exclusiveGateway id="{element_id}" name="{"Split" if split_gate else "Unite"}">
-{inline(add_element_flows(content['flows']))}
-</bpmn:exclusiveGateway>"""
 
 
 # generate the bpmn-file string
@@ -306,59 +286,175 @@ def generate_xml(process_dict: dict) -> str:
     return f"""<?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="ac436f7" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.5.0" camunda:diagramRelationId="0994b581-395e-4bc1-b247-0453712fbfe1">
   <bpmn:process id="{process_id}" name="{process_name}" isExecutable="true">
-{inline(generate_xml_body_process(process_dict["steps_to_fix"]), 4)}
+{inline(generate_xml_body_process(process_dict), 4)}
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="{process_id}">
-{inline(generate_xml_body_diagram(process_dict["steps_to_fix"]), 6)}
+{inline(generate_xml_body_diagram(process_dict), 6)}
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </bpmn:definitions>"""
 
 
 # add the xml process part of a BPMN-file containing the objects
-def generate_xml_body_process(steps_dict: dict) -> str:
+def generate_xml_body_process(d: dict) -> str:
     body_text = ""
-    for step, value in steps_dict.items():
-        if value['element_type'] == 'task':
-            body_text += generate_element_task(element_id=value['element_id'], content=value) + "\n"
-        elif value['element_type'] == 'start':
-            body_text += generate_element_start(element_id=value['element_id'], content=value) + "\n"
-        elif value['element_type'] == 'end':
-            body_text += generate_element_end(element_id=value['element_id'], content=value) + "\n"
-        elif value['element_type'] == 'gate_split':
-            body_text += generate_element_gate(element_id=value['element_id'], content=value, split_gate=True) + "\n"
-        elif value['element_type'] == 'gate_unite':
-            body_text += generate_element_gate(element_id=value['element_id'], content=value, split_gate=False) + "\n"
+
+    # Multiple Options for the patch?
+    # Yes
+    if len(d['subprocesses']) > 1:
+        # Start
+        body_text += f"""<bpmn:startEvent id="Activity_AAAAAAA" name="Start Patch">
+{inline(add_element_flows(d, ['Activity_AAAAAAA'], ['Gateway_BBBBBBB'], True))}
+</bpmn:startEvent>\n"""
+        add_to_coordinates(d, 'Activity_AAAAAAA', ElementType.START)
+
+        # Start gate
+        body_text += f"""<bpmn:exclusiveGateway id="Gateway_BBBBBBB" name="{"Options"}">
+{inline(add_element_flows(d, ['Activity_AAAAAAA'], ['Gateway_BBBBBBB'], False))}
+{inline(add_element_flows(d, ['Gateway_BBBBBBB'], [sub['element_id'] for sub in d['subprocesses'].values()], True))}
+</bpmn:exclusiveGateway>\n"""
+        add_to_coordinates(d, 'Gateway_BBBBBBB', ElementType.GATEWAY)
+
+        # End
+        body_text += f"""<bpmn:endEvent id="Activity_ZZZZZZZ" name="Finished Patch">
+{inline(add_element_flows(d, ['Gateway_YYYYYYY'], ['Activity_ZZZZZZZ'], False))}
+</bpmn:endEvent>\n"""
+        add_to_coordinates(d, 'Activity_ZZZZZZZ', ElementType.END)
+
+        # End gate
+        body_text += f"""<bpmn:exclusiveGateway id="Gateway_YYYYYYY" name="{"Options"}">
+{inline(add_element_flows(d, [sub['element_id'] for sub in d['subprocesses'].values()], ['Gateway_YYYYYYY'], False))}
+{inline(add_element_flows(d, ['Gateway_YYYYYYY'], ['Activity_ZZZZZZZ'], True))}
+</bpmn:exclusiveGateway>\n"""
+        add_to_coordinates(d, 'Gateway_YYYYYYY', ElementType.GATEWAY)
+
+    # No
+    else:
+        # Start
+        body_text += f"""<bpmn:startEvent id="Activity_AAAAAAA" name="Start Patch">
+{inline(add_element_flows(d, ['Activity_AAAAAAA'], [sub['element_id'] for sub in d['subprocesses'].values()], True))}
+</bpmn:startEvent>\n"""
+        add_to_coordinates(d, 'Activity_AAAAAAA', ElementType.START)
+
+        # End
+        body_text += f"""<bpmn:endEvent id="Activity_ZZZZZZZ" name="Finished Patch">
+{inline(add_element_flows(d, [sub['element_id'] for sub in d['subprocesses'].values()], ['Activity_ZZZZZZZ'], False))}
+</bpmn:endEvent>\n"""
+        add_to_coordinates(d, 'Activity_ZZZZZZZ', ElementType.END)
+
+    # Options (here equal to subprocesses)
+    for sub_key, sub in d['subprocesses'].items():
+        # Add subprocess itself
+        add_to_coordinates(d, sub['element_id'], ElementType.SUBPROCESS, sub_key)
+        body_text += f"""<bpmn:subProcess id="{sub['element_id']}">\n"""
+
+        # Add gateway if parallel at the start of this option
+        body_text += inline(add_element_flows(
+            d,
+            ["Gateway_BBBBBBB" if len(d['subprocesses']) > 1 else "Activity_AAAAAAA"],
+            [sub['element_id']],
+            False
+        ), no_next_line=False)
+
+        # Add gateway if parallel at the end of this option
+        body_text += inline(add_element_flows(
+            d,
+            [sub['element_id']],
+            ["Gateway_YYYYYYY" if len(d['subprocesses']) > 1 else "Activity_ZZZZZZZ"],
+            True), no_next_line=False)
+
+        # Gets paths for this specific option(subprocess)
+        path = d['paths'][sub_key]
+
+        # Parallel at start?
+        # Yes
+        if len(path[0]) > 1:
+            # Start
+            body_text += inline(f"""<bpmn:startEvent id="Activity_{sub_key}AAAAAA" name="Start Option">
+{inline(add_element_flows(d, [f'Activity_{sub_key}AAAAAA'], [f'Gateway_{sub_key}BBBBBB'], True))}
+</bpmn:startEvent>\n""", no_next_line=False)
+            add_to_coordinates(d, f"Activity_{sub_key}AAAAAA", ElementType.START, sub_key)
+
+            # Start gate
+            body_text += inline(f"""<bpmn:exclusiveGateway id="Gateway_{sub_key}BBBBBB" name="{"Parallel"}">
+{inline(add_element_flows(d, [f'Activity_{sub_key}AAAAAA'], [f'Gateway_{sub_key}BBBBBB'], False))}
+{inline(add_element_flows(d, [f'Gateway_{sub_key}BBBBBB'], [d['steps_to_fix'][element_key]['element_id'] for element_key in path[0]], True))}
+</bpmn:exclusiveGateway>\n""", no_next_line=False)
+            add_to_coordinates(d, f"Gateway_{sub_key}BBBBBB", ElementType.GATEWAY, sub_key)
+
+        # No
         else:
-            print("JSON-TO-XML: Element Typ unknown")
-    body_text += generate_all_element_flows(steps_dict)
+            body_text += inline(f"""<bpmn:startEvent id="Activity_{sub_key}AAAAAA" name="Start Option">
+{inline(add_element_flows(d, [f'Activity_{sub_key}AAAAAA'], [d['steps_to_fix'][element_key]['element_id'] for element_key in path[0]], True))}
+</bpmn:startEvent>\n""", no_next_line=False)
+            add_to_coordinates(d, f"Activity_{sub_key}AAAAAA", ElementType.START, sub_key)
+
+        # Parallel at end?
+        # Yes
+        if len(path[len(path) - 1]) > 1:
+            # End
+            body_text += inline(f"""<bpmn:endEvent id="Activity_{sub_key}ZZZZZZ" name="Finished Option">
+{inline(add_element_flows(d, [f'Gateway_{sub_key}YYYYYY'], [f'Activity_{sub_key}ZZZZZZ'], False))}
+</bpmn:endEvent>""", no_next_line=False)
+            add_to_coordinates(d, f"Activity_{sub_key}ZZZZZZ", ElementType.END, sub_key)
+
+            # End gate
+            body_text += inline(f"""<bpmn:exclusiveGateway id="Gateway_{sub_key}YYYYYY" name="{"Parallel"}">
+{inline(add_element_flows(d, [f'Gateway_{sub_key}YYYYYY'], [f'Activity_{sub_key}ZZZZZZ'], True))}
+{inline(add_element_flows(d, [d['steps_to_fix'][element_key]['element_id'] for element_key in path[len(path) - 1]], [f'Gateway_{sub_key}YYYYYY'], False))}
+</bpmn:exclusiveGateway>""", no_next_line=False)
+            add_to_coordinates(d, f"Gateway_{sub_key}YYYYYY", ElementType.GATEWAY, sub_key)
+
+        # No
+        else:
+            body_text += inline(f"""<bpmn:endEvent id="Activity_{sub_key}ZZZZZZ" name="Finished Option">
+{inline(add_element_flows(d, [d['steps_to_fix'][element_key]['element_id'] for element_key in path[len(path) - 1]], [f'Activity_{sub_key}ZZZZZZ'], False))}
+</bpmn:endEvent>""", no_next_line=False)
+            add_to_coordinates(d, f"Activity_{sub_key}ZZZZZZ", ElementType.END, sub_key)
+
+        # Add all tasks of this option
+        for step_line_nr in range(len(path)):
+            for step in path[step_line_nr]:
+                value = d['steps_to_fix'][step]
+                body_text += inline(f"""<bpmn:task id="{value['element_id']}" name="{value['command']}">
+{inline(add_element_flows(d, ([f'Gateway_{sub_key}BBBBBB'] if len(path[0]) > 1 else [f'Activity_{sub_key}AAAAAA']) if step_line_nr - 1 < 0 else [d['steps_to_fix'][key]['element_id'] for key in path[step_line_nr - 1]], [value['element_id']], False))}
+{inline(add_element_flows(d, [value['element_id']], [d['steps_to_fix'][key]['element_id'] for key in path[step_line_nr + 1]] if step_line_nr + 1 < len(path) else ([f'Gateway_{sub_key}YYYYYY'] if len(path[len(path) - 1]) > 1 else [f'Activity_{sub_key}ZZZZZZ']), True))}
+</bpmn:task>""", no_next_line=False)
+                add_to_coordinates(d, f"{value['element_id']}", ElementType.TASK, sub_key)
+
+        # Close subprocess
+        body_text += f"""</bpmn:subProcess>\n"""
+
+    # Add all flow lines
+    for flow_key, flow in d['flows'].items():
+        body_text += f"""<bpmn:sequenceFlow id="{flow_key}" sourceRef="{flow['end_one']}" targetRef="{flow['end_two']}" />\n"""
     return body_text
 
 
 # add the xml body part of a BPMN-file containing the positions
-def generate_xml_body_diagram(steps_dict: dict) -> str:
+def generate_xml_body_diagram(d: dict) -> str:
+    # Fill in the right coordinates
+    calculate_coordinates(d)
+
     body_text = ""
-    for step, value in steps_dict.items():
-        body_text += f"""<bpmndi:BPMNShape id="{value['element_id']}_di" bpmnElement="{value['element_id']}">
-  <dc:Bounds x="{value['coor']['x']}" y="{value['coor']['y']}" width="{value['coor']['w']}" height="{value['coor']['h']}" />
-</bpmndi:BPMNShape>
-"""
-        for flow_id, target in value['flows']['out'].items():
-            if value['coor']['y'] + value['coor']['h'] // 2 == steps_dict[target]['coor']['y'] + \
-                    steps_dict[target]['coor']['h'] // 2:
-                body_text += f"""<bpmndi:BPMNEdge id="{flow_id}_di" bpmnElement="{flow_id}">
-  <di:waypoint x="{value['coor']['x'] + value['coor']['w']}" y="{value['coor']['y'] + value['coor']['h'] // 2}" />
-  <di:waypoint x="{steps_dict[target]['coor']['x']}" y="{steps_dict[target]['coor']['y'] + steps_dict[target]['coor']['h'] // 2}" />
+    for element in d['coordinates']:
+        # Is element a flow line?
+        # Yes
+        if element['element_type'] == ElementType.FLOW:
+            body_text += f"""<bpmndi:BPMNEdge id="{element['element_id']}_di" bpmnElement="{element['element_id']}">
+    <di:waypoint x="{element['coordinates']['x']}" y="{element['coordinates']['y']}" />{'' if not element['coordinates']['waypoints'] else "".join([f"""
+    <di:waypoint x="{waypoint[0]}" y="{waypoint[1]}" />""" for waypoint in element['coordinates']['waypoints']])}
+    <di:waypoint x="{element['coordinates']['width']}" y="{element['coordinates']['height']}" />
 </bpmndi:BPMNEdge>
 """
-            else:
-                body_text += f"""<bpmndi:BPMNEdge id="{flow_id}_di" bpmnElement="{flow_id}">
-  <di:waypoint x="{value['coor']['x'] + value['coor']['w']}" y="{value['coor']['y'] + value['coor']['h'] // 2}" />
-  <di:waypoint x="{(value['coor']['x'] + value['coor']['w'] + steps_dict[target]['coor']['x']) // 2}" y="{value['coor']['y'] + value['coor']['h'] // 2}" />
-  <di:waypoint x="{(value['coor']['x'] + value['coor']['w'] + steps_dict[target]['coor']['x']) // 2}" y="{steps_dict[target]['coor']['y'] + steps_dict[target]['coor']['h'] // 2}" />
-  <di:waypoint x="{steps_dict[target]['coor']['x']}" y="{steps_dict[target]['coor']['y'] + steps_dict[target]['coor']['h'] // 2}" />
-</bpmndi:BPMNEdge>
+        # No
+        else:
+            body_text += f"""<bpmndi:BPMNShape id="{element['element_id']}_di" bpmnElement="{element['element_id']}"{' isExpanded="true"' if element['element_type'] == ElementType.SUBPROCESS else ""}>
+    <dc:Bounds x="{element['coordinates']['x']}" y="{element['coordinates']['y']}" width="{element['coordinates']['width']}" height="{element['coordinates']['height']}" />
+{f"""<bpmndi:BPMNLabel>
+  <dc:Bounds x="{element['coordinates']['x']}" y="{element['coordinates']['y']}" width="{element['coordinates']['width']}" height="{element['coordinates']['height']}" />\n</bpmndi:BPMNLabel>
+""" if element['element_type'] == ElementType.TASK else ""}</bpmndi:BPMNShape>
 """
 
     return body_text
