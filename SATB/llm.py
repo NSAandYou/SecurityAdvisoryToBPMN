@@ -3,8 +3,7 @@ import os
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
-# TODO remove
-SECRET_API_KEY = "sk-proj-DkDCIuko5FJRnUDPP8H4T3BlbkFJUmZotEBeaTE591lk7mZQ"
+SECRET_API_KEY = "XXXXX"
 os.environ["OPENAI_API_KEY"] = SECRET_API_KEY
 os.environ.get("OPENAI_API_KEY")
 MODEL = "gpt-4o"
