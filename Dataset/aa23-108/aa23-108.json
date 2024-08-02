@@ -1,0 +1,78 @@
+{
+    "mentioned_cpes": ["CVE-2017-6742"],
+    "issue_name": "APT28 Exploits Known Vulnerability to Carry Out Reconnaissance and Deploy Malware on Cisco Routers",
+    "steps_to_fix": {
+        "1": {
+            "command": "Patch devices",
+            "description": "Patch devices as advised by Cisco."
+        },
+        "2": {
+            "command": "Disable SNMP",
+            "description": "Do not use SNMP if you are not required to configure or manage devices remotely."
+        },
+        "3": {
+            "command": "Establish allow and deny lists for SNMP",
+            "description": "If you are required to manage routers remotely, establish allow and deny lists for SNMP messages."
+        },
+        "4": {
+            "command": "Disable unencrypted management protocols",
+            "description": "Do not allow unencrypted (i.e., plaintext) management protocols, such as SNMP v2 and Telnet."
+        },
+        "5": {
+            "command": "Use encrypted VPN",
+            "description": "Carry out any management activities from outside the organization through an encrypted virtual private network (VPN), where both ends are mutually authenticated."
+        },
+        "6": {
+            "command": "Enforce strong password policy",
+            "description": "Enforce a strong password policy. Don’t reuse the same password for multiple devices. Each device should have a unique password."
+        },
+        "7": {
+            "command": "Implement two-factor authentication",
+            "description": "Where possible, avoid legacy password-based authentication and implement two-factor authentication based on public-private key."
+        },
+        "8": {
+            "command": "Disable legacy unencrypted protocols",
+            "description": "Disable legacy unencrypted protocols such as Telnet and SNMP v1 or v2c."
+        },
+        "9": {
+            "command": "Use modern encrypted protocols",
+            "description": "Where possible, use modern encrypted protocols such as SSH and SNMP v3."
+        },
+        "10": {
+            "command": "Harden encryption protocols",
+            "description": "Harden the encryption protocols based on current best security practice."
+        },
+        "11": {
+            "command": "Retire and replace legacy devices",
+            "description": "Retire and replace legacy devices that can’t be configured to use SNMP v3."
+        },
+        "12": {
+            "command": "Use logging tools",
+            "description": "Use logging tools to record commands executed on your network devices, such as TACACS+ and Syslog."
+        },
+        "13": {
+            "command": "Monitor logs",
+            "description": "Use logs to immediately highlight suspicious events and keep a record of events to support an investigation if the device’s integrity is ever in question."
+        },
+        "14": {
+            "command": "Verify Cisco IOS image",
+            "description": "Follow Cisco’s advice for verifying the Cisco IOS image."
+        },
+        "15": {
+            "command": "Revoke all keys",
+            "description": "Revoke all keys associated with the compromised router."
+        },
+        "16": {
+            "command": "Create new keys",
+            "description": "When replacing the router configuration, create new keys rather than pasting from the old configuration."
+        },
+        "17": {
+            "command": "Replace ROMMON and Cisco IOS image",
+            "description": "Replace both the ROMMON and Cisco IOS image with an image sourced directly from the Cisco website."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, [5, 6], 7, 8, 9, 10, 11, 12, 13],
+        "2": [14, 15, 16, 17]
+    }
+}

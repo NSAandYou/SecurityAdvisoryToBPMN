@@ -1,0 +1,20 @@
+{
+    "mentioned_cpes": ["RUGGEDCOM APE1808"],
+    "issue_name": "CVE-2023-48795",
+    "steps_to_fix": {
+        "1": {
+            "command": "Contact customer support",
+            "description": "Contact customer support to receive patch and update information."
+        }
+    },
+    "workaround": {
+        "1": {
+            "command": "Configure SSH profile",
+            "description": "Configure the in-use SSH profile to contain at least one cipher and at least one MAC algorithm, which removes support for CHACHA20-POLY1305 and all Encrypt-then-MAC algorithms available (ciphers with -etm in the name) in PAN-OS software."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [1]
+    }
+}

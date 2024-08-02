@@ -1,0 +1,26 @@
+{
+    "mentioned_cpes": ["RUGGEDCOM APE1808"],
+    "issue_name": "CVE-2024-3400",
+    "steps_to_fix": {
+        "1": {
+            "command": "Contact customer support",
+            "description": "Contact customer support to receive patch and update information for Palo Alto Networks Virtual NGFW V11.1.2-h3."
+        },
+        "2": {
+            "command": "Upgrade Palo Alto Networks Virtual NGFW",
+            "description": "Upgrade to Palo Alto Networks Virtual NGFW V11.1.2-h3."
+        },
+        "3": {
+            "command": "Block attacks using Threat IDs",
+            "description": "Block attacks for this vulnerability using Threat IDs 95187, 95189, and 95191 (available in Applications and Threats content version 8836-8695 and later)."
+        },
+        "4": {
+            "command": "Disable GlobalProtect gateway and portal",
+            "description": "Disable GlobalProtect gateway and GlobalProtect portal; note that these features are disabled by default in RUGGEDCOM APE1808 deployments."
+        }
+    },
+    "paths": {
+        "1": [1, 2],
+        "2": [3, 4]
+    }
+}

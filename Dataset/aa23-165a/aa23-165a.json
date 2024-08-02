@@ -1,0 +1,25 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Understanding Ransomware Threat Actors: LockBit",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Install security patches",
+            "description": "Install the necessary security patches to mitigate vulnerabilities."
+        },
+        "4": {
+            "command": "Restart Apache Server",
+            "description": "Restart the apache server after patching the system. This is done via: service apache2 start"
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4]
+    }
+}

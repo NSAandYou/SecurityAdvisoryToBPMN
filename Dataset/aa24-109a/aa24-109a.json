@@ -1,0 +1,77 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Akira Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location (e.g., hard drive, storage device, the cloud)."
+        },
+        "2": {
+            "command": "Require all accounts with password logins to comply with NIST’s standards",
+            "description": "Require employees to use long passwords and consider not requiring recurring password changes."
+        },
+        "3": {
+            "command": "Require multifactor authentication",
+            "description": "Enable multifactor authentication for all services to the extent possible, particularly for webmail, VPN, and accounts that access critical systems."
+        },
+        "4": {
+            "command": "Keep all operating systems, software, and firmware up to date",
+            "description": "Timely patching is one of the most efficient and cost-effective steps an organization can take to minimize its exposure to cybersecurity threats. Prioritize patching known exploited vulnerabilities in internet-facing systems."
+        },
+        "5": {
+            "command": "Segment networks",
+            "description": "Network segmentation can help prevent the spread of ransomware by controlling traffic flows between—and access to—various subnetworks and by restricting adversary lateral movement."
+        },
+        "6": {
+            "command": "Identify, detect, and investigate abnormal activity",
+            "description": "Implement a tool that logs and reports all network traffic, including lateral movement activity on a network. Endpoint detection and response (EDR) tools are particularly useful for detecting lateral connections."
+        },
+        "7": {
+            "command": "Filter network traffic",
+            "description": "Prevent unknown or untrusted origins from accessing remote services on internal systems."
+        },
+        "8": {
+            "command": "Install, regularly update, and enable real-time detection for antivirus software",
+            "description": "Ensure antivirus software is installed, regularly updated, and real-time detection is enabled on all hosts."
+        },
+        "9": {
+            "command": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts",
+            "description": "Regularly review and audit for new or unrecognized accounts."
+        },
+        "10": {
+            "command": "Audit user accounts with administrative privileges",
+            "description": "Configure access controls according to the principle of least privilege."
+        },
+        "11": {
+            "command": "Disable unused ports",
+            "description": "Ensure that unused ports are disabled to reduce attack surfaces."
+        },
+        "12": {
+            "command": "Consider adding an email banner to emails received from outside of your organization",
+            "description": "Add an email banner to help identify emails from external sources."
+        },
+        "13": {
+            "command": "Disable hyperlinks in received emails",
+            "description": "Prevent users from clicking on potentially malicious links in emails."
+        },
+        "14": {
+            "command": "Implement time-based access for accounts set at the admin level and higher",
+            "description": "Use the Just-in-Time (JIT) access method to provision privileged access when needed."
+        },
+        "15": {
+            "command": "Disable command-line and scripting activities and permissions",
+            "description": "Prevent privilege escalation and lateral movement by disabling command-line and scripting activities."
+        },
+        "16": {
+            "command": "Maintain offline backups of data",
+            "description": "Regularly maintain backup and restoration to ensure data is not lost."
+        },
+        "17": {
+            "command": "Ensure all backup data is encrypted and immutable",
+            "description": "Make sure backup data cannot be altered or deleted and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    }
+}

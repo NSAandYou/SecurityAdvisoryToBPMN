@@ -1,0 +1,39 @@
+{
+    "mentioned_cpes": [
+        "JT2Go < V14.3.0.8",
+        "Teamcenter Visualization V14.1 < V14.1.0.14",
+        "Teamcenter Visualization V14.2 < V14.2.0.10",
+        "Teamcenter Visualization V14.3 < V14.3.0.8",
+        "Teamcenter Visualization V2312 < V2312.0002"
+    ],
+    "issue_name": "Datalogics File Parsing Vulnerability in Teamcenter Visualization and JT2Go",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update JT2Go",
+            "description": "Update JT2Go to version V14.3.0.8 or later. Download from: https://plm.sw.siemens.com/en-US/plm-components/jt/jt2go/"
+        },
+        "2": {
+            "command": "Update Teamcenter Visualization V14.1",
+            "description": "Update Teamcenter Visualization V14.1 to version V14.1.0.14 or later. Download from: https://support.sw.siemens.com/"
+        },
+        "3": {
+            "command": "Update Teamcenter Visualization V14.2",
+            "description": "Update Teamcenter Visualization V14.2 to version V14.2.0.10 or later. Download from: https://support.sw.siemens.com/"
+        },
+        "4": {
+            "command": "Update Teamcenter Visualization V14.3",
+            "description": "Update Teamcenter Visualization V14.3 to version V14.3.0.8 or later. Download from: https://support.sw.siemens.com/"
+        },
+        "5": {
+            "command": "Update Teamcenter Visualization V2312",
+            "description": "Update Teamcenter Visualization V2312 to version V2312.0002 or later. Download from: https://support.sw.siemens.com/"
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4],
+        "5": [5]
+    }
+}

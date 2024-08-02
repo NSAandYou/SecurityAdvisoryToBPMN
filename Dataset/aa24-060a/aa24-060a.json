@@ -1,0 +1,97 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Phobos Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Secure RDP ports",
+            "description": "Secure RDP ports to prevent threat actors from abusing and leveraging RDP tools."
+        },
+        "2": {
+            "command": "Remediate known vulnerabilities",
+            "description": "Prioritize remediating known exploited vulnerabilities."
+        },
+        "3": {
+            "command": "Implement EDR solutions",
+            "description": "Implement EDR solutions to disrupt threat actor memory allocation techniques."
+        },
+        "4": {
+            "command": "Apply recommendations for remote access software",
+            "description": "Secure remote access software by applying recommendations from the joint Guide to Securing Remote Access Software."
+        },
+        "5": {
+            "command": "Implement application controls",
+            "description": "Implement application controls to manage and control execution of software, including allowlisting remote access programs."
+        },
+        "6": {
+            "command": "Implement log collection best practices",
+            "description": "Implement log collection best practices and use intrusion detection systems to defend against threat actors manipulating firewall configurations through early detection."
+        },
+        "7": {
+            "command": "Limit use of RDP",
+            "description": "Strictly limit the use of RDP and other remote desktop services. If RDP is necessary, rigorously apply best practices."
+        },
+        "8": {
+            "command": "Disable command-line and scripting activities",
+            "description": "Disable command-line and scripting activities and permissions."
+        },
+        "9": {
+            "command": "Review domain controllers",
+            "description": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts."
+        },
+        "10": {
+            "command": "Audit user accounts",
+            "description": "Audit user accounts with administrative privileges and configure access controls according to the principle of least privilege (PoLP)."
+        },
+        "11": {
+            "command": "Implement time-based access",
+            "description": "Implement time-based access for accounts at the admin level and higher."
+        },
+        "12": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "13": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data and regularly maintain backup and restoration (daily or weekly at minimum)."
+        },
+        "14": {
+            "command": "Require password compliance",
+            "description": "Require all accounts with password logins to comply with NIST's standards for developing and managing password policies."
+        },
+        "15": {
+            "command": "Require phishing-resistant MFA",
+            "description": "Require phishing-resistant multifactor authentication (MFA) for all services to the extent possible."
+        },
+        "16": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware."
+        },
+        "17": {
+            "command": "Identify and investigate abnormal activity",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a networking monitoring tool."
+        },
+        "18": {
+            "command": "Install and update antivirus software",
+            "description": "Install, regularly update, and enable real time detection for antivirus software on all hosts."
+        },
+        "19": {
+            "command": "Disable unused ports and protocols",
+            "description": "Disable unused ports and protocols."
+        },
+        "20": {
+            "command": "Add email banner",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "21": {
+            "command": "Disable hyperlinks in emails",
+            "description": "Disable hyperlinks in received emails."
+        },
+        "22": {
+            "command": "Ensure backup data is encrypted",
+            "description": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+    }
+}

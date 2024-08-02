@@ -1,0 +1,58 @@
+{
+    "mentioned_cpes": ["CVE-2024-1709", "CVE-2020-1472", "CVE-2021-42278", "CVE-2021-42287", "CVE-2021-34527"],
+    "issue_name": "Black Basta Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Install updates",
+            "description": "Install updates for operating systems, software, and firmware as soon as they are released."
+        },
+        "2": {
+            "command": "Enable MFA",
+            "description": "Require phishing-resistant multi-factor authentication (MFA) for as many services as possible."
+        },
+        "3": {
+            "command": "Train users",
+            "description": "Train users to recognize and report phishing attempts."
+        },
+        "4": {
+            "command": "Secure remote access",
+            "description": "Secure remote access software by applying mitigations from the joint Guide to Securing Remote Access Software."
+        },
+        "5": {
+            "command": "Make backups",
+            "description": "Make backups of critical systems and device configurations to enable devices to be repaired and restored."
+        },
+        "6": {
+            "command": "Apply mitigations",
+            "description": "Apply mitigations from the joint #StopRansomware Guide."
+        },
+        "7": {
+            "command": "Asset management",
+            "description": "Identify and understand all relationships or interdependencies, functionality of each asset, what it exposes, and what software is running to ensure critical data and systems are protected appropriately."
+        },
+        "8": {
+            "command": "Email security",
+            "description": "Install modern anti-malware software and automatically update signatures where possible."
+        },
+        "9": {
+            "command": "Check hyperlinks",
+            "description": "Validate the URL of the link matches the text of the link itself by hovering your cursor over the link to view the URL of the website to be accessed."
+        },
+        "10": {
+            "command": "Access management",
+            "description": "Prioritize phishing-resistant MFA on accounts with the highest risk, such as privileged administrative accounts on key assets."
+        },
+        "11": {
+            "command": "Vulnerability management",
+            "description": "Evaluate and prioritize vulnerabilities to appropriately deal with the posed risks according to your organization’s risk strategy."
+        },
+        "12": {
+            "command": "Validate security controls",
+            "description": "Exercise, test, and validate your organization’s security program against the threat behaviors mapped to the MITRE ATT&CK for Enterprise framework."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6],
+        "2": [7, 8, 9, 10, 11, 12]
+    }
+}

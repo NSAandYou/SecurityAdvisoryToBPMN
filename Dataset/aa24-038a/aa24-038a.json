@@ -1,0 +1,46 @@
+{
+    "mentioned_cpes": ["Fortinet", "Ivanti", "NETGEAR", "Citrix", "Cisco"],
+    "issue_name": "PRC State-Sponsored Actors Compromise and Maintain Persistent Access to U.S. Critical Infrastructure",
+    "steps_to_fix": {
+        "1": {
+            "command": "Apply patches for internet-facing systems",
+            "description": "Apply patches for internet-facing systems within a risk-informed span of time. Prioritize patching critical assets, known exploited vulnerabilities, and vulnerabilities in appliances known to be frequently exploited by Volt Typhoon."
+        },
+        "2": {
+            "command": "Implement phishing-resistant MFA",
+            "description": "Implement phishing-resistant multi-factor authentication (MFA) for access to assets."
+        },
+        "3": {
+            "command": "Ensure logging is turned on",
+            "description": "Ensure logging is turned on for application, access, and security logs and store logs in a central system."
+        },
+        "4": {
+            "command": "Plan 'end of life' for technology",
+            "description": "Plan 'end of life' for technology beyond manufacturer’s supported lifecycle."
+        },
+        "5": {
+            "command": "Sever the enterprise network from the internet",
+            "description": "Sever the enterprise network from the internet. If you cannot sever from the internet, shutdown all non-essential traffic between the affected enterprise network and the internet."
+        },
+        "6": {
+            "command": "Reset credentials of privileged and non-privileged accounts",
+            "description": "Reset passwords for all domain users and all local accounts, such as Guest, HelpAssistant, DefaultAccount, System, Administrator, and krbtgt. The krbtgt account should be reset twice."
+        },
+        "7": {
+            "command": "Audit all network appliance and edge device configurations",
+            "description": "Audit all network appliance and edge device configurations with indicators of malicious activity for signs of unauthorized or malicious configuration changes."
+        },
+        "8": {
+            "command": "Report the compromise",
+            "description": "Report the compromise to an authoring agency."
+        },
+        "9": {
+            "command": "Reconnect to the internet",
+            "description": "Reconnect to the internet after ensuring all necessary actions have been taken."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4],
+        "2": [5, [6, 7], 8, 9]
+    }
+}

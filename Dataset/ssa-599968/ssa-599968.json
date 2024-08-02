@@ -1,0 +1,326 @@
+{
+    "mentioned_cpes": [
+        "DK Standard Ethernet Controller",
+        "EK-ERTEC 200",
+        "EK-ERTEC 200P",
+        "RUGGEDCOM RM1224 family",
+        "SCALANCE M804PB",
+        "SCALANCE M812-1 ADSL-Router (Annex A)",
+        "SCALANCE M812-1 ADSL-Router (Annex B)",
+        "SCALANCE M816-1 ADSL-Router (Annex A)",
+        "SCALANCE M816-1 ADSL-Router (Annex B)",
+        "SCALANCE M826-2 SHDSL-Router",
+        "SCALANCE M874-2",
+        "SCALANCE M874-3",
+        "SCALANCE M876-3 (EVDO)",
+        "SCALANCE M876-3 (ROK)",
+        "SCALANCE M876-4 (EU)",
+        "SCALANCE M876-4 (NAM)",
+        "SCALANCE S615",
+        "SCALANCE W1748-1 M12",
+        "SCALANCE W1788-1 M12",
+        "SCALANCE W1788-2 EEC M12",
+        "SCALANCE W1788-2 M12",
+        "SCALANCE W1788-2IA M12",
+        "SCALANCE W-700 IEEE 802.11n family",
+        "SCALANCE X200-4P IRT",
+        "SCALANCE X201-3P IRT",
+        "SCALANCE X201-3P IRT PRO",
+        "SCALANCE X202-2IRT",
+        "SCALANCE X202-2P IRT",
+        "SCALANCE X202-2P IRT PRO",
+        "SCALANCE X204-2",
+        "SCALANCE X204-2FM",
+        "SCALANCE X204-2LD",
+        "SCALANCE X204-2LD TS",
+        "SCALANCE X204-2TS",
+        "SCALANCE X204IRT",
+        "SCALANCE X204IRT PRO",
+        "SCALANCE X206-1",
+        "SCALANCE X206-1LD",
+        "SCALANCE X208",
+        "SCALANCE X208PRO",
+        "SCALANCE X212-2",
+        "SCALANCE X212-2LD",
+        "SCALANCE X216",
+        "SCALANCE X224",
+        "SCALANCE X302-7 EEC (2x 24V)",
+        "SCALANCE X302-7 EEC (2x 24V, coated)",
+        "SCALANCE X302-7 EEC (2x 230V)",
+        "SCALANCE X302-7 EEC (2x 230V, coated)",
+        "SCALANCE X302-7 EEC (24V)",
+        "SCALANCE X302-7 EEC (24V, coated)",
+        "SCALANCE X302-7 EEC (230V)",
+        "SCALANCE X302-7 EEC (230V, coated)",
+        "SCALANCE X304-2FE",
+        "SCALANCE X306-1LD FE",
+        "SCALANCE X307-2 EEC (2x 24V)",
+        "SCALANCE X307-2 EEC (2x 24V, coated)",
+        "SCALANCE X307-2 EEC (2x 230V)",
+        "SCALANCE X307-2 EEC (2x 230V, coated)",
+        "SCALANCE X307-2 EEC (24V)",
+        "SCALANCE X307-2 EEC (24V, coated)",
+        "SCALANCE X307-2 EEC (230V)",
+        "SCALANCE X307-2 EEC (230V, coated)",
+        "SCALANCE X307-3",
+        "SCALANCE X307-3LD",
+        "SCALANCE X308-2",
+        "SCALANCE X308-2LD",
+        "SCALANCE X308-2LH",
+        "SCALANCE X308-2LH+",
+        "SCALANCE X308-2M",
+        "SCALANCE X308-2M PoE",
+        "SCALANCE X308-2M TS",
+        "SCALANCE X310",
+        "SCALANCE X310FE",
+        "SCALANCE X320-1 FE",
+        "SCALANCE X320-1-2LD FE",
+        "SCALANCE X408-2",
+        "SCALANCE XB-200",
+        "SCALANCE XC-200",
+        "SCALANCE XF201-3P IRT",
+        "SCALANCE XF202-2P IRT",
+        "SCALANCE XF204",
+        "SCALANCE XF204-2",
+        "SCALANCE XF204-2BA IRT",
+        "SCALANCE XF204IRT",
+        "SCALANCE XF206-1",
+        "SCALANCE XF208",
+        "SCALANCE XF-200BA",
+        "SCALANCE XM-400 Family",
+        "SCALANCE XP-200",
+        "SCALANCE XR324-4M EEC",
+        "SCALANCE XR324-4M PoE",
+        "SCALANCE XR324-12M",
+        "SCALANCE XR500",
+        "SIMATIC CFU DIQ",
+        "SIMATIC CFU PA",
+        "SIMATIC CM 1542-1",
+        "SIMATIC CP1616/CP1604",
+        "SIMATIC CP 1626",
+        "SIMATIC IE/PB-LINK",
+        "SIMATIC MV540 H",
+        "SIMATIC MV540 S",
+        "SIMATIC MV550 H",
+        "SIMATIC MV550 S",
+        "SIMATIC MV560 U",
+        "SIMATIC MV560 X",
+        "SIMATIC NET DK-16xx PN IO",
+        "SIMATIC Power Line Booster PLB, Base Module",
+        "SIMATIC PROFINET Driver",
+        "SIMATIC S7-1200 CPU family",
+        "SIMOCODE pro V Ethernet/IP",
+        "SIMOCODE pro V PROFINET",
+        "SIPLUS NET SCALANCE X308-2",
+        "SOFTNET-IE PNIO"
+    ],
+    "issue_name": "Denial-of-Service Vulnerability in Profinet Devices",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V4.7 or later version",
+            "description": "Update the EK-ERTEC 200P to version V4.7 or later."
+        },
+        "2": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the RUGGEDCOM RM1224 family to version V6.4 or later."
+        },
+        "3": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M804PB to version V6.4 or later."
+        },
+        "4": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M812-1 ADSL-Router (Annex A) to version V6.4 or later."
+        },
+        "5": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M812-1 ADSL-Router (Annex B) to version V6.4 or later."
+        },
+        "6": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M816-1 ADSL-Router (Annex A) to version V6.4 or later."
+        },
+        "7": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M816-1 ADSL-Router (Annex B) to version V6.4 or later."
+        },
+        "8": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M826-2 SHDSL-Router to version V6.4 or later."
+        },
+        "9": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M874-2 to version V6.4 or later."
+        },
+        "10": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M874-3 to version V6.4 or later."
+        },
+        "11": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M876-3 (EVDO) to version V6.4 or later."
+        },
+        "12": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M876-3 (ROK) to version V6.4 or later."
+        },
+        "13": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M876-4 (EU) to version V6.4 or later."
+        },
+        "14": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE M876-4 (NAM) to version V6.4 or later."
+        },
+        "15": {
+            "command": "Update to V6.4 or later version",
+            "description": "Update the SCALANCE S615 to version V6.4 or later."
+        },
+        "16": {
+            "command": "Update to V3.0.0 or later version",
+            "description": "Update the SCALANCE W1748-1 M12 to version V3.0.0 or later."
+        },
+        "17": {
+            "command": "Update to V3.0.0 or later version",
+            "description": "Update the SCALANCE W1788-1 M12 to version V3.0.0 or later."
+        },
+        "18": {
+            "command": "Update to V3.0.0 or later version",
+            "description": "Update the SCALANCE W1788-2 EEC M12 to version V3.0.0 or later."
+        },
+        "19": {
+            "command": "Update to V3.0.0 or later version",
+            "description": "Update the SCALANCE W1788-2 M12 to version V3.0.0 or later."
+        },
+        "20": {
+            "command": "Update to V3.0.0 or later version",
+            "description": "Update the SCALANCE W1788-2IA M12 to version V3.0.0 or later."
+        },
+        "21": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X200-4P IRT to version V5.5.0 or later."
+        },
+        "22": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X201-3P IRT to version V5.5.0 or later."
+        },
+        "23": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X201-3P IRT PRO to version V5.5.0 or later."
+        },
+        "24": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X202-2IRT to version V5.5.0 or later."
+        },
+        "25": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X202-2P IRT to version V5.5.0 or later."
+        },
+        "26": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X202-2P IRT PRO to version V5.5.0 or later."
+        },
+        "27": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X204-2 to version V5.2.5 or later."
+        },
+        "28": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X204-2FM to version V5.2.5 or later."
+        },
+        "29": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X204-2LD to version V5.2.5 or later."
+        },
+        "30": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X204-2LD TS to version V5.2.5 or later."
+        },
+        "31": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X204-2TS to version V5.2.5 or later."
+        },
+        "32": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X204IRT to version V5.5.0 or later."
+        },
+        "33": {
+            "command": "Update to V5.5.0 or later version",
+            "description": "Update the SCALANCE X204IRT PRO to version V5.5.0 or later."
+        },
+        "34": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X206-1 to version V5.2.5 or later."
+        },
+        "35": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X206-1LD to version V5.2.5 or later."
+        },
+        "36": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X208 to version V5.2.5 or later."
+        },
+        "37": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X208PRO to version V5.2.5 or later."
+        },
+        "38": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X212-2 to version V5.2.5 or later."
+        },
+        "39": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X212-2LD to version V5.2.5 or later."
+        },
+        "40": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X216 to version V5.2.5 or later."
+        },
+        "41": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update the SCALANCE X224 to version V5.2.5 or later."
+        },
+        "42": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (2x 24V) to version V4.1.4 or later."
+        },
+        "43": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (2x 24V, coated) to version V4.1.4 or later."
+        },
+        "44": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (2x 230V) to version V4.1.4 or later."
+        },
+        "45": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (2x 230V, coated) to version V4.1.4 or later."
+        },
+        "46": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (24V) to version V4.1.4 or later."
+        },
+        "47": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (24V, coated) to version V4.1.4 or later."
+        },
+        "48": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (230V) to version V4.1.4 or later."
+        },
+        "49": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X302-7 EEC (230V, coated) to version V4.1.4 or later."
+        },
+        "50": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X304-2FE to version V4.1.4 or later."
+        },
+        "51": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X306-1LD FE to version V4.1.4 or later."
+        },
+        "52": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update the SCALANCE X307-2 EEC (2x 24V) to version V4.1.4 or later."
+        }

@@ -1,0 +1,107 @@
+{
+    "mentioned_cpes": [
+        "Totally Integrated Automation Portal (TIA Portal) V16",
+        "SIMATIC STEP 7 Safety V16",
+        "SIMATIC STEP 7 V16",
+        "SIMATIC WinCC Unified V16",
+        "SIMATIC WinCC V16",
+        "SIMOCODE ES V16",
+        "SIMOTION SCOUT TIA V5.4 SP1",
+        "SINAMICS Startdrive V16",
+        "Soft Starter ES V16",
+        "Totally Integrated Automation Portal (TIA Portal) V17",
+        "SIMATIC STEP 7 Safety V17",
+        "SIMATIC STEP 7 V17",
+        "SIMATIC WinCC Unified V17",
+        "SIMATIC WinCC V17",
+        "SIMOCODE ES V17",
+        "SIMOTION SCOUT TIA V5.4 SP3",
+        "SINAMICS Startdrive V17",
+        "SIRIUS Safety ES V17",
+        "SIRIUS Soft Starter ES V17",
+        "Totally Integrated Automation Portal (TIA Portal) V18",
+        "SIMATIC STEP 7 Safety V18",
+        "SIMATIC STEP 7 V18",
+        "SIMATIC WinCC Unified V18",
+        "SIMATIC WinCC V18",
+        "SIMOCODE ES V18",
+        "SIMOTION SCOUT TIA V5.5 SP1",
+        "SINAMICS Startdrive V18",
+        "SIRIUS Safety ES V18",
+        "SIRIUS Soft Starter ES V18",
+        "TIA Portal Cloud V3.0"
+    ],
+    "issue_name": "Catalog-Profile Deserialization Vulnerability in Siemens Engineering Platforms before V19",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V16 Update 7 or later version",
+            "description": "Update SIMATIC STEP 7 Safety V16 to V16 Update 7 or later version."
+        },
+        "2": {
+            "command": "Update to V16 Update 7 or later version",
+            "description": "Update SIMATIC STEP 7 V16 to V16 Update 7 or later version."
+        },
+        "3": {
+            "command": "Update to V16 Update 7 or later version",
+            "description": "Update SIMATIC WinCC Unified V16 to V16 Update 7 or later version."
+        },
+        "4": {
+            "command": "Update to V16.7 or later version",
+            "description": "Update SIMATIC WinCC V16 to V16.7 or later version."
+        },
+        "5": {
+            "command": "Update to V16 Update 7 or later version",
+            "description": "Update SIMOCODE ES V16 to V16 Update 7 or later version."
+        },
+        "6": {
+            "command": "Update to V17 Update 7 or later version",
+            "description": "Update SIMATIC STEP 7 Safety V17 to V17 Update 7 or later version."
+        },
+        "7": {
+            "command": "Update to V17 Update 7 or later version",
+            "description": "Update SIMATIC STEP 7 V17 to V17 Update 7 or later version."
+        },
+        "8": {
+            "command": "Update to V17 Update 7 or later version",
+            "description": "Update SIMATIC WinCC Unified V17 to V17 Update 7 or later version."
+        },
+        "9": {
+            "command": "Update to V17.7 or later version",
+            "description": "Update SIMATIC WinCC V17 to V17.7 or later version."
+        },
+        "10": {
+            "command": "Update to V17 Update 7 or later version",
+            "description": "Update SIMOCODE ES V17 to V17 Update 7 or later version."
+        },
+        "11": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update SIMATIC STEP 7 Safety V18 to V18 Update 2 or later version."
+        },
+        "12": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update SIMATIC STEP 7 V18 to V18 Update 2 or later version."
+        },
+        "13": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update SIMATIC WinCC Unified V18 to V18 Update 2 or later version."
+        },
+        "14": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update SIMATIC WinCC V18 to V18 Update 2 or later version."
+        },
+        "15": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update SIMOCODE ES V18 to V18 Update 2 or later version."
+        },
+        "16": {
+            "command": "Avoid opening untrusted files from unknown sources",
+            "description": "Avoid opening untrusted files from unknown sources in affected products."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5],
+        "2": [6, 7, 8, 9, 10],
+        "3": [11, 12, 13, 14, 15],
+        "4": [16]
+    }
+}

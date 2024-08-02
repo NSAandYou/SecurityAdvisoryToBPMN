@@ -1,0 +1,16 @@
+{
+    "mentioned_cpes": [
+        "SIPLUS TIM 1531 IRC (6AG1543-1MX00-7XE0)",
+        "TIM 1531 IRC (6GK7543-1MX00-0XE0)"
+    ],
+    "issue_name": "Multiple Vulnerabilities in TIM 1531 IRC before V2.4.8",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V2.4.8 or later version",
+            "description": "Update the affected product to version V2.4.8 or later. The update can be found at: https://support.industry.siemens.com/cs/ww/en/view/109954889/"
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

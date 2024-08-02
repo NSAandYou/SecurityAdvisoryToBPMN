@@ -1,0 +1,43 @@
+{
+    "mentioned_cpes": [
+        "OpenPCS 7 V9.1",
+        "SIMATIC BATCH V9.1",
+        "SIMATIC PCS 7 V9.1",
+        "SIMATIC Route Control V9.1",
+        "SIMATIC WinCC Runtime Professional V18",
+        "SIMATIC WinCC Runtime Professional V19",
+        "SIMATIC WinCC V7.4",
+        "SIMATIC WinCC V7.5",
+        "SIMATIC WinCC V8.0"
+    ],
+    "issue_name": "Denial of Service Vulnerabilities in SIMATIC WinCC",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V18 Update 4 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V18 to V18 Update 4 or later version."
+        },
+        "2": {
+            "command": "Update to V19 Update 2 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V19 to V19 Update 2 or later version."
+        },
+        "3": {
+            "command": "Update to V7.5 SP2 Update 15 or later version",
+            "description": "Update SIMATIC WinCC V7.5 to V7.5 SP2 Update 15 or later version."
+        },
+        "4": {
+            "command": "Update to V8.0 Update 4 or later version",
+            "description": "Update SIMATIC WinCC V8.0 to V8.0 Update 4 or later version."
+        },
+        "5": {
+            "command": "Enable Encrypted Communication",
+            "description": "Ensure that SIMATIC WinCC, SIMATIC WinCC Runtime Professional, and SIMATIC PCS 7 stations communicate via encrypted channels by activating the 'Encrypted Communication' feature."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4],
+        "5": [5]
+    }
+}

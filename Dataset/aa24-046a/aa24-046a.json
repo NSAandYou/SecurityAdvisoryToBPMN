@@ -1,0 +1,77 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Threat Actor Leverages Compromised Account of Former Employee to Access State Government Organization",
+    "steps_to_fix": {
+        "1": {
+            "command": "Review current administrator accounts",
+            "description": "Determine the necessity of current administrator accounts and only maintain those essential for network management."
+        },
+        "2": {
+            "command": "Restrict the use of multiple administrator accounts",
+            "description": "Limit the use of multiple administrator accounts for one user."
+        },
+        "3": {
+            "command": "Create separate administrator accounts",
+            "description": "Create separate administrator accounts for on-premises and Azure environments to segment access."
+        },
+        "4": {
+            "command": "Implement the principle of least privilege",
+            "description": "Enable just-in-time and just enough access for administrator accounts to elevate the minimum necessary privileges for a limited time to complete tasks."
+        },
+        "5": {
+            "command": "Use phishing-resistant multifactor authentication (MFA)",
+            "description": "Implement phishing-resistant MFA for remote access and access to any sensitive data repositories."
+        },
+        "6": {
+            "command": "Establish policy and procedure for the prompt removal of unnecessary accounts",
+            "description": "Ensure accounts of offboarded employees are removed and can no longer access the network."
+        },
+        "7": {
+            "command": "Maintain a robust asset management policy",
+            "description": "Track current version information to maintain awareness of outdated software and map assets to business and critical functions."
+        },
+        "8": {
+            "command": "Follow a routine patching cycle",
+            "description": "Regularly patch all operating systems, applications, and software to mitigate the potential for exploitation."
+        },
+        "9": {
+            "command": "Restrict personal devices from connecting to the network",
+            "description": "Ensure personal devices are not subject to the same group policies and security measures as domain joined devices."
+        },
+        "10": {
+            "command": "Evaluate current user permissions in the Azure tenant",
+            "description": "Restrict potentially harmful permissions including users' ability to register applications and create tenants."
+        },
+        "11": {
+            "command": "Restrict access to the Azure AD portal to administrators only",
+            "description": "Ensure only administrators can access the Azure AD portal to prevent unauthorized viewing of user info, group info, device details, and user privileges."
+        },
+        "12": {
+            "command": "Collect access- and security-focused logs",
+            "description": "Enable complete coverage of tools, including Endpoint Detection and Response (EDR), across the environment for thorough analysis of anomalous activity and remediation of potential vulnerabilities."
+        },
+        "13": {
+            "command": "Use tools that identify attack paths",
+            "description": "Enable defenders to identify common attack paths used by threat actors and shut them down before they are exploited."
+        },
+        "14": {
+            "command": "Review the security recommendations list provided by Microsoft 365 Defender",
+            "description": "Focus remediation on critical vulnerabilities on endpoints that are essential to mission execution and contain sensitive data."
+        },
+        "15": {
+            "command": "Review current conditional access policies",
+            "description": "Determine if changes are necessary to current conditional access policies."
+        },
+        "16": {
+            "command": "Reset passwords for all users",
+            "description": "Employ strong password management alongside other attribute-based information, such as device information, time of access, user history, and geolocation data."
+        },
+        "17": {
+            "command": "Store credentials in a secure manner",
+            "description": "Use a credential manager, vault, or other privileged account management solution to store credentials securely."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    }
+}

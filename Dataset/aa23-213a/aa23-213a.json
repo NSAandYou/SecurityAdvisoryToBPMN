@@ -1,0 +1,22 @@
+{
+    "mentioned_cpes": ["Ivanti Endpoint Manager Mobile (EPMM)", "MobileIron Core"],
+    "issue_name": "Threat Actors Exploiting Ivanti EPMM Vulnerabilities",
+    "steps_to_fix": {
+        "1": {
+            "command": "Upgrade Ivanti EPMM",
+            "description": "Upgrade Ivanti EPMM versions to the latest version as soon as possible. See Ivanti CVE-2023-35081 - Remote Arbitrary File Write for patch information. This patch protects against CVE-2023-35078 and CVE-2023-35081."
+        },
+        "2": {
+            "command": "Login to command line shell (CLI) in enable mode",
+            "description": "Login to command line shell (CLI) in enable mode."
+        },
+        "3": {
+            "command": "# install rpm url https://support.mobileiron.com/ivanti-updates/ivanti-security-update-1.0.0-1.noarch.rp",
+            "description": "Run the following command to apply the Ivanti-provided RPM fix for CVE-35078."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2, 3]
+    }
+}

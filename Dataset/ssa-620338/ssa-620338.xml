@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="ac436f7" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.5.0" camunda:diagramRelationId="0994b581-395e-4bc1-b247-0453712fbfe1">
+  <bpmn:process id="Process_yudgavy" name="Buffer Overflow Vulnerability in SICAM AK3 / BC / TM" isExecutable="true">
+    <bpmn:startEvent id="Activity_AAAAAAA" name="Start Patch">
+      <bpmn:outgoing>Flow_bzwmrrn</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Activity_ZZZZZZZ" name="Finished Patch">
+      <bpmn:incoming>Flow_vhvnlml</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_oeisnsd">
+      <bpmn:incoming>Flow_bzwmrrn</bpmn:incoming>
+      <bpmn:outgoing>Flow_vhvnlml</bpmn:outgoing>
+      <bpmn:startEvent id="Activity_1AAAAAA" name="Start Option">
+        <bpmn:outgoing>Flow_uhrwgxv</bpmn:outgoing>
+      </bpmn:startEvent>
+      <bpmn:endEvent id="Activity_1ZZZZZZ" name="Finished Option">
+        <bpmn:incoming>Flow_mjfqprt</bpmn:incoming>
+      </bpmn:endEvent>
+      <bpmn:task id="Activity_tvdulpy" name="Update to V06.02 or later version">
+        <bpmn:incoming>Flow_uhrwgxv</bpmn:incoming>
+        <bpmn:outgoing>Flow_ubufqhn</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:task id="Activity_mvqjpqq" name="Update to V10.46 or later version">
+        <bpmn:incoming>Flow_ubufqhn</bpmn:incoming>
+        <bpmn:outgoing>Flow_kxeqwqp</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:task id="Activity_ikvcuig" name="Update to V03.27 or later version">
+        <bpmn:incoming>Flow_kxeqwqp</bpmn:incoming>
+        <bpmn:outgoing>Flow_zgqnicr</bpmn:outgoing>
+      </bpmn:task>
+      <bpmn:task id="Activity_jakeobr" name="Update to V06.05 or later version">
+        <bpmn:incoming>Flow_zgqnicr</bpmn:incoming>
+        <bpmn:outgoing>Flow_mjfqprt</bpmn:outgoing>
+      </bpmn:task>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_bzwmrrn" sourceRef="Activity_AAAAAAA" targetRef="Activity_oeisnsd" />
+    <bpmn:sequenceFlow id="Flow_vhvnlml" sourceRef="Activity_oeisnsd" targetRef="Activity_ZZZZZZZ" />
+    <bpmn:sequenceFlow id="Flow_uhrwgxv" sourceRef="Activity_1AAAAAA" targetRef="Activity_tvdulpy" />
+    <bpmn:sequenceFlow id="Flow_mjfqprt" sourceRef="Activity_jakeobr" targetRef="Activity_1ZZZZZZ" />
+    <bpmn:sequenceFlow id="Flow_ubufqhn" sourceRef="Activity_tvdulpy" targetRef="Activity_mvqjpqq" />
+    <bpmn:sequenceFlow id="Flow_kxeqwqp" sourceRef="Activity_mvqjpqq" targetRef="Activity_ikvcuig" />
+    <bpmn:sequenceFlow id="Flow_zgqnicr" sourceRef="Activity_ikvcuig" targetRef="Activity_jakeobr" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_yudgavy">
+      <bpmndi:BPMNEdge id="Flow_bzwmrrn_di" bpmnElement="Flow_bzwmrrn">
+          <di:waypoint x="200" y="50" />
+          <di:waypoint x="320" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_AAAAAAA_di" bpmnElement="Activity_AAAAAAA">
+          <dc:Bounds x="160" y="30" width="40" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_vhvnlml_di" bpmnElement="Flow_vhvnlml">
+          <di:waypoint x="1140" y="50" />
+          <di:waypoint x="1260" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_ZZZZZZZ_di" bpmnElement="Activity_ZZZZZZZ">
+          <dc:Bounds x="1260" y="30" width="40" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_oeisnsd_di" bpmnElement="Activity_oeisnsd" isExpanded="true">
+          <dc:Bounds x="320" y="0" width="820" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_uhrwgxv_di" bpmnElement="Flow_uhrwgxv">
+          <di:waypoint x="380" y="50" />
+          <di:waypoint x="460" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1AAAAAA_di" bpmnElement="Activity_1AAAAAA">
+          <dc:Bounds x="340" y="30" width="40" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_mjfqprt_di" bpmnElement="Flow_mjfqprt">
+          <di:waypoint x="1000" y="50" />
+          <di:waypoint x="1080" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_1ZZZZZZ_di" bpmnElement="Activity_1ZZZZZZ">
+          <dc:Bounds x="1080" y="30" width="40" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_ubufqhn_di" bpmnElement="Flow_ubufqhn">
+          <di:waypoint x="580" y="50" />
+          <di:waypoint x="600" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_tvdulpy_di" bpmnElement="Activity_tvdulpy">
+          <dc:Bounds x="460" y="20" width="120" height="60" />
+      <bpmndi:BPMNLabel>
+        <dc:Bounds x="460" y="20" width="120" height="60" />
+      </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_kxeqwqp_di" bpmnElement="Flow_kxeqwqp">
+          <di:waypoint x="720" y="50" />
+          <di:waypoint x="740" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_mvqjpqq_di" bpmnElement="Activity_mvqjpqq">
+          <dc:Bounds x="600" y="20" width="120" height="60" />
+      <bpmndi:BPMNLabel>
+        <dc:Bounds x="600" y="20" width="120" height="60" />
+      </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_zgqnicr_di" bpmnElement="Flow_zgqnicr">
+          <di:waypoint x="860" y="50" />
+          <di:waypoint x="880" y="50" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_ikvcuig_di" bpmnElement="Activity_ikvcuig">
+          <dc:Bounds x="740" y="20" width="120" height="60" />
+      <bpmndi:BPMNLabel>
+        <dc:Bounds x="740" y="20" width="120" height="60" />
+      </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_jakeobr_di" bpmnElement="Activity_jakeobr">
+          <dc:Bounds x="880" y="20" width="120" height="60" />
+      <bpmndi:BPMNLabel>
+        <dc:Bounds x="880" y="20" width="120" height="60" />
+      </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

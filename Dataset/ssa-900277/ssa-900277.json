@@ -1,0 +1,26 @@
+{
+    "mentioned_cpes": [
+        "Tecnomatix Plant Simulation V2302",
+        "Tecnomatix Plant Simulation V2404"
+    ],
+    "issue_name": "MODEL File Parsing Vulnerability",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V2302.0012 or later version",
+            "description": "Update Tecnomatix Plant Simulation V2302 to version V2302.0012 or later."
+        },
+        "2": {
+            "command": "Update to V2404.0001 or later version",
+            "description": "Update Tecnomatix Plant Simulation V2404 to version V2404.0001 or later."
+        },
+        "3": {
+            "command": "Do not open untrusted MODEL files from unknown sources",
+            "description": "Avoid opening MODEL files from untrusted or unknown sources as a workaround."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3]
+    }
+}

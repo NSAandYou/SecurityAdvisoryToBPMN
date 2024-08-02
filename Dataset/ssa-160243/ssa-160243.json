@@ -1,0 +1,24 @@
+{
+    "mentioned_cpes": ["SINEC NMS < V2.0"],
+    "issue_name": "Multiple Vulnerabilities in SINEC NMS before V2.0",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V2.0 or later version",
+            "description": "Siemens recommends updating SINEC NMS to version 2.0 or later to address the vulnerabilities."
+        }
+    },
+    "workarounds": {
+        "1": {
+            "command": "Restrict access to the SNMP servers",
+            "description": "Restrict access to the SNMP servers in the device network to mitigate CVE-2023-44315."
+        },
+        "2": {
+            "command": "Ensure only trusted persons have access",
+            "description": "Ensure that only trusted persons have access to the system and avoid the configuration of additional accounts to mitigate CVE-2022-30527."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [1, [2]]
+    }
+}

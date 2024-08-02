@@ -1,0 +1,39 @@
+{
+    "mentioned_cpes": [
+        "SCALANCE WAM763-1 (6GK5763-1AL00-7DA0)",
+        "SCALANCE WAM763-1 (ME) (6GK5763-1AL00-7DC0)",
+        "SCALANCE WAM763-1 (US) (6GK5763-1AL00-7DB0)",
+        "SCALANCE WAM766-1 (EU) (6GK5766-1GE00-7DA0)",
+        "SCALANCE WAM766-1 (ME) (6GK5766-1GE00-7DC0)",
+        "SCALANCE WAM766-1 (US) (6GK5766-1GE00-7DB0)",
+        "SCALANCE WAM766-1 EEC (EU) (6GK5766-1GE00-7TA0)",
+        "SCALANCE WAM766-1 EEC (ME) (6GK5766-1GE00-7TC0)",
+        "SCALANCE WAM766-1 EEC (US) (6GK5766-1GE00-7TB0)",
+        "SCALANCE WUM763-1 (6GK5763-1AL00-3AA0)",
+        "SCALANCE WUM763-1 (6GK5763-1AL00-3DA0)",
+        "SCALANCE WUM763-1 (US) (6GK5763-1AL00-3AB0)",
+        "SCALANCE WUM763-1 (US) (6GK5763-1AL00-3DB0)",
+        "SCALANCE WUM766-1 (EU) (6GK5766-1GE00-3DA0)",
+        "SCALANCE WUM766-1 (ME) (6GK5766-1GE00-3DC0)",
+        "SCALANCE WUM766-1 (US) (6GK5766-1GE00-3DB0)"
+    ],
+    "issue_name": "Multiple Vulnerabilities in SCALANCE W700 802.11 AX Family",
+    "steps_to_fix": {},
+    "workaround": {
+        "1": {
+            "command": "Protect network access",
+            "description": "Protect network access to devices with appropriate mechanisms."
+        },
+        "2": {
+            "command": "Configure environment",
+            "description": "Configure the environment according to Siemens’ operational guidelines for Industrial Security."
+        },
+        "3": {
+            "command": "Follow product manuals",
+            "description": "Follow the recommendations in the product manuals."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3]
+    }
+}

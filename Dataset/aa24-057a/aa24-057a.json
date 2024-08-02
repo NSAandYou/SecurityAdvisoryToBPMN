@@ -1,0 +1,37 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "SVR Cyber Actors Adapt Tactics for Initial Cloud Access",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement Multi-Factor Authentication (MFA)",
+            "description": "Use multi-factor authentication to reduce the impact of password compromises."
+        },
+        "2": {
+            "command": "Disable Inactive Accounts",
+            "description": "Disable user and system accounts when no longer required and regularly review to identify and disable inactive/dormant accounts."
+        },
+        "3": {
+            "command": "Implement Principle of Least Privilege",
+            "description": "Ensure system and service accounts have tightly scoped access to resources required for the service to function."
+        },
+        "4": {
+            "command": "Create Canary Service Accounts",
+            "description": "Create canary service accounts that appear valid but are never used by legitimate services. Monitor and alert on the use of these accounts."
+        },
+        "5": {
+            "command": "Shorten Session Lifetimes",
+            "description": "Keep session lifetimes as short as practical to reduce the window of opportunity for an adversary to use stolen session tokens."
+        },
+        "6": {
+            "command": "Configure Device Enrollment Policies",
+            "description": "Ensure device enrollment policies are configured to only permit authorized devices to enroll. Use zero-touch enrollment where possible."
+        },
+        "7": {
+            "command": "Monitor Application and Host-Based Logs",
+            "description": "Consider a variety of information sources such as application events and host-based logs to help prevent, detect, and investigate potential malicious behavior."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7]
+    }
+}

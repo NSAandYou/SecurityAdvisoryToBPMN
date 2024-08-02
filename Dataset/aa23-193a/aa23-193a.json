@@ -1,0 +1,46 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Enhanced Monitoring to Detect APT Activity Targeting Outlook Online",
+    "steps_to_fix": {
+        "1": {
+            "command": "Enable Purview Audit (Premium) logging",
+            "description": "Enable Purview Audit (Premium) logging, which requires licensing at the G5/E5 level. See Microsoft’s guidance on Assigning Microsoft 365 Licenses to Users for additional information."
+        },
+        "2": {
+            "command": "Ensure logs are searchable by operators",
+            "description": "Ensure the relevant logs are accessible to operational teams in a platform (e.g., security operations center [SOC] tooling) that enables hunting for this activity and distinguishing it from expected behavior within the environment."
+        },
+        "3": {
+            "command": "Enable Microsoft 365 Unified Audit Logging (UAL)",
+            "description": "Enable Microsoft 365 Unified Audit Logging (UAL). UAL should be enabled by default, but organizations are encouraged to validate these settings."
+        },
+        "4": {
+            "command": "Understand your organization’s cloud baseline",
+            "description": "Organizations are encouraged to look for outliers and become familiar with baseline patterns to better understand abnormal versus normal traffic."
+        },
+        "5": {
+            "command": "Apply CISA’s recommended baseline security configurations",
+            "description": "Apply CISA’s recommended baseline security configurations for Microsoft Defender for Office 365, Azure Active Directory, Exchange Online, OneDrive for Business, Power BI, Power Platform, SharePoint Online, and Teams."
+        },
+        "6": {
+            "command": "Separate administrator accounts from user accounts",
+            "description": "Separate administrator accounts from user accounts according to the National Institute of Standards and Technology’s (NIST’s) guidance, AC-5: Separation of Duties. Only allow designated administrator accounts to be used for administration purposes. If an individual user requires administrative rights over their workstation, use a separate account without administrative access to other hosts."
+        },
+        "7": {
+            "command": "Collect and store access and security logs",
+            "description": "Collect and store access and security logs for secure cloud access (SCA) solutions, endpoint solutions, cloud applications/platforms and security services, such as firewalls, data loss prevention systems, and intrusion detection systems."
+        },
+        "8": {
+            "command": "Use a telemetry hosting solution",
+            "description": "Use a telemetry hosting solution (e.g., SIEM solution) that aggregates logs and telemetry data to facilitate internal organization monitoring, auditing, alerting, and threat detection activities."
+        },
+        "9": {
+            "command": "Review contractual relationships with all Cloud Service Providers (CSPs)",
+            "description": "Review contractual relationships with all Cloud Service Providers (CSPs) and ensure contracts include: Security controls the customer deems appropriate, appropriate monitoring and logging of provider-managed customer systems, appropriate monitoring of the service provider’s presence, activities, and connections to the customer network, and notification of confirmed or suspected activity."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4],
+        "2": [5, 6, 7, 8, 9]
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Protecting Against Malicious Use of Remote Monitoring and Management Software",
+    "steps_to_fix": {
+        "1": {
+            "command": "Audit remote access tools",
+            "description": "Audit remote access tools on your network to identify currently used and/or authorized RMM software."
+        },
+        "2": {
+            "command": "Review logs for RMM software execution",
+            "description": "Review logs for execution of RMM software to detect abnormal use of programs running as a portable executable."
+        },
+        "3": {
+            "command": "Use security software",
+            "description": "Use security software to detect instances of RMM software only being loaded in memory."
+        },
+        "4": {
+            "command": "Implement application controls",
+            "description": "Implement application controls to manage and control execution of software, including allowlisting RMM programs."
+        },
+        "5": {
+            "command": "Require authorized RMM solutions",
+            "description": "Require authorized RMM solutions only be used from within your network over approved remote access solutions, such as virtual private networks (VPNs) or virtual desktop interfaces (VDIs)."
+        },
+        "6": {
+            "command": "Block RMM ports and protocols",
+            "description": "Block both inbound and outbound connections on common RMM ports and protocols at the network perimeter."
+        },
+        "7": {
+            "command": "Implement user training program",
+            "description": "Implement a user training program and phishing exercises to raise awareness among users about the risks of visiting suspicious websites, clicking on suspicious links, and opening suspicious attachments. Reinforce the appropriate user response to phishing and spearphishing emails."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7]
+    }
+}

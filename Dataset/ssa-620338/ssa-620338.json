@@ -1,0 +1,30 @@
+{
+    "mentioned_cpes": [
+        "CPCX26 for CP-2016",
+        "PCCX26 for CP-2019",
+        "ETA4 for SM-2558",
+        "ETA5 for SM-2558"
+    ],
+    "issue_name": "Buffer Overflow Vulnerability in SICAM AK3 / BC / TM",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V06.02 or later version",
+            "description": "Update the firmware CPCX26 to V06.02 or later version. The firmware CPCX26 V06.02 is present within 'SICAM RTUs AK3 Package' V06.02."
+        },
+        "2": {
+            "command": "Update to V10.46 or later version",
+            "description": "Update the firmware ETA4 to V10.46 or later version. The firmware ETA4 V10.46 is present within 'SICAM RTUs AK3 Package' V06.02."
+        },
+        "3": {
+            "command": "Update to V03.27 or later version",
+            "description": "Update the firmware ETA5 to V03.27 or later version. The firmware ETA5 V03.27 is present within 'SICAM RTUs AK3 Package' V06.02."
+        },
+        "4": {
+            "command": "Update to V06.05 or later version",
+            "description": "Update the firmware PCCX26 to V06.05 or later version. The firmware PCCX26 V06.05 is present within 'SICAM RTUs AK3 Package' V06.02."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4]
+    }
+}

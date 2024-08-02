@@ -1,0 +1,209 @@
+{
+    "mentioned_cpes": ["CVE-2022-21587"],
+    "issue_name": "CISA Red Team’s Operations Against a Federal Civilian Executive Branch Organization Highlights the Necessity of Defense-in-Depth",
+    "steps_to_fix": {
+        "1": {
+            "command": "Deploy internal and external network firewalls",
+            "description": "Deploy internal and external network firewalls to inspect, log, and/or block unknown or unauthorized traffic."
+        },
+        "2": {
+            "command": "Perform deep packet inspection",
+            "description": "Perform deep packet inspection to detect mismatched application traffic or encrypted data flows."
+        },
+        "3": {
+            "command": "Restrict outbound internet egress",
+            "description": "Restrict outbound internet egress to hosts whenever possible."
+        },
+        "4": {
+            "command": "Establish a baseline of normal user activity",
+            "description": "Establish a baseline of normal user activity, including unique IPs or domains."
+        },
+        "5": {
+            "command": "Apply the principle of least privilege",
+            "description": "Apply the principle of least privilege to limit the exposure of systems and services in the demilitarized zone (DMZ)."
+        },
+        "6": {
+            "command": "Segment the DMZ",
+            "description": "Segment the DMZ based on the sensitivity of systems and services as well as the internal network."
+        },
+        "7": {
+            "command": "Segment networks",
+            "description": "Segment networks to protect assets and workstations from direct exposure to the internet by considering the criticality of the asset to business functions, sensitivity of the data traversing the asset, and requirements for internet access to the asset."
+        },
+        "8": {
+            "command": "Implement and regularly test firewalls",
+            "description": "Implement and regularly test firewalls, access control lists, and intrusion prevention systems."
+        },
+        "9": {
+            "command": "Create natural network segmentation",
+            "description": "Take advantage of opportunities to create natural network segmentation. Securely configured VPNs used for remote laptops, for instance, create an easy place to filter and monitor incoming traffic."
+        },
+        "10": {
+            "command": "Restrict network connectivity",
+            "description": "Restrict network connectivity (ingress and egress) to only necessary services between trusted domains."
+        },
+        "11": {
+            "command": "Monitor privileged access",
+            "description": "Regularly monitor privileged access via Foreign Security Principals (FSPs)."
+        },
+        "12": {
+            "command": "Perform network defense investigations out-of-band",
+            "description": "Perform network defense investigations out-of-band."
+        },
+        "13": {
+            "command": "Conduct regular security audits and penetration testing",
+            "description": "Conduct regular security audits and penetration testing by internal and external parties."
+        },
+        "14": {
+            "command": "Develop and implement a comprehensive Incident Response Plan (IRP)",
+            "description": "Develop and implement a comprehensive Incident Response Plan (IRP) and conduct regular drills and simulations."
+        },
+        "15": {
+            "command": "Enroll all accounts in IDM solutions",
+            "description": "Enroll all accounts in IDM solutions and test against common credential manipulation techniques."
+        },
+        "16": {
+            "command": "Integrate the IDM solution with other systems",
+            "description": "Integrate the IDM solution with other systems and applications, allowing for the streamlining of workflows."
+        },
+        "17": {
+            "command": "Establish Role-Based Access Controls (RBAC)",
+            "description": "Establish Role-Based Access Controls (RBAC) to systematically assign permissions based on job functions."
+        },
+        "18": {
+            "command": "Implement a comprehensive security model",
+            "description": "Implement a comprehensive security model incorporating micro-segmentation at the host level."
+        },
+        "19": {
+            "command": "Develop and document Standard Operating Procedures (SOPs) for handling EDR alerts",
+            "description": "Develop and document Standard Operating Procedures (SOPs) for handling EDR alerts."
+        },
+        "20": {
+            "command": "Establish and maintain incident response playbooks",
+            "description": "Establish and maintain incident response playbooks."
+        },
+        "21": {
+            "command": "Conduct regular audits and reviews of the EDR alert handling process",
+            "description": "Conduct regular audits and reviews of the EDR alert handling process."
+        },
+        "22": {
+            "command": "Operationalize and deploy File Integrity Monitoring (FIM) solutions",
+            "description": "Operationalize and deploy File Integrity Monitoring (FIM) solutions."
+        },
+        "23": {
+            "command": "Regularly review and adjust access permissions",
+            "description": "Regularly review and adjust access permissions, adhering to the principle of least privilege."
+        },
+        "24": {
+            "command": "Establish proper forensic processes",
+            "description": "Establish proper forensic processes to ensure integrity."
+        },
+        "25": {
+            "command": "Introduce cross-training initiatives",
+            "description": "Introduce cross-training initiatives to cultivate a collaborative culture."
+        },
+        "26": {
+            "command": "Encourage the establishment of cross-functional projects",
+            "description": "Encourage the establishment of cross-functional projects."
+        },
+        "27": {
+            "command": "Utilize collaboration platforms",
+            "description": "Utilize collaboration platforms that seamlessly integrate various tools and systems."
+        },
+        "28": {
+            "command": "Promote a culture of ongoing improvement",
+            "description": "Promote a culture of ongoing improvement while also fostering a proactive approach among employees to promptly report suspicious activities."
+        },
+        "29": {
+            "command": "Treat suspected incidents of compromise as a confirmed breach",
+            "description": "Treat suspected incidents of compromise as a confirmed breach, and account for a threat actor’s ability to move laterally when defining the scope of incident response efforts."
+        },
+        "30": {
+            "command": "Employ centralized logging and tool-agnostic detection methods",
+            "description": "Employ centralized logging and tool-agnostic detection methods."
+        },
+        "31": {
+            "command": "Leverage threat intelligence feeds",
+            "description": "Leverage threat intelligence feeds by integrating them into a SIEM tool."
+        },
+        "32": {
+            "command": "Implement regular updates for IOCs and TTPs",
+            "description": "Implement regular updates for IOCs and TTPs, with the capability for customization to address the specific threat landscape."
+        },
+        "33": {
+            "command": "Integrate runtime detection mechanisms",
+            "description": "Integrate runtime detection mechanisms while removing world-readable configuration files from installer deployments where applicable."
+        },
+        "34": {
+            "command": "Enhance security posture by implementing application allowlisting",
+            "description": "Enhance security posture by implementing application allowlisting to ensure only trusted and approved applications are permitted."
+        },
+        "35": {
+            "command": "Apply the principle of least privilege",
+            "description": "Apply the principle of least privilege by granting users only the minimum level of access necessary to perform job functions."
+        },
+        "36": {
+            "command": "Conduct a comprehensive inventory of assets",
+            "description": "Conduct a comprehensive inventory of assets and establish a baseline for behavior."
+        },
+        "37": {
+            "command": "Utilize a Software Asset Management (SAM) solution",
+            "description": "Utilize a Software Asset Management (SAM) solution that offers comprehensive tracking, reporting, and compliance management capabilities."
+        },
+        "38": {
+            "command": "Deploy automated discovery and monitoring tools",
+            "description": "Deploy automated discovery and monitoring tools to continuously scan and identify new and existing software."
+        },
+        "39": {
+            "command": "Apply the principle of least privilege when assigning permissions",
+            "description": "Apply the principle of least privilege when assigning permissions to user accounts. Audit existing group memberships, strip unnecessary privileges, and prune unnecessary nested groups/users."
+        },
+        "40": {
+            "command": "Monitor for account lockout",
+            "description": "Monitor for account lockout, especially on administrative accounts, and switch to a manual account unlock policy."
+        },
+        "41": {
+            "command": "Increase monitoring for higher-risk accounts",
+            "description": "Increase monitoring for higher-risk accounts, such as service accounts, that are highly privileged and have a predictable pattern of behavior."
+        },
+        "42": {
+            "command": "Privileged users should have dedicated role-based user accounts",
+            "description": "Privileged users should have dedicated role-based user accounts and associated jump hosts to log into critical resources."
+        },
+        "43": {
+            "command": "Ensure all hosts have a form of EDR installed",
+            "description": "Ensure all hosts have a form of EDR installed."
+        },
+        "44": {
+            "command": "Deploy an EDR capable of catching commonly known obfuscation or execution techniques",
+            "description": "Deploy an EDR capable of catching commonly known obfuscation or execution techniques."
+        },
+        "45": {
+            "command": "Ensure sensitive credentials and documents are not stored in an accessible place",
+            "description": "Ensure sensitive credentials and documents are not stored in an accessible place."
+        },
+        "46": {
+            "command": "Mandate strong and complex passwords",
+            "description": "Mandate strong and complex passwords."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4],
+        "2": [5, 6, 7, 8, 9],
+        "3": [10, 11],
+        "4": [12, 13, 14],
+        "5": [15, 16],
+        "6": [17, 18],
+        "7": [19, 20, 21],
+        "8": [22, 23, 24],
+        "9": [25, 26, 27],
+        "10": [28, 29],
+        "11": [30, 31, 32],
+        "12": [33],
+        "13": [34, 35],
+        "14": [36, 37, 38],
+        "15": [39, 40, 41, 42],
+        "16": [43, 44],
+        "17": [45, 46]
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "mentioned_cpes": ["CVE-2021-44228"],
+    "issue_name": "Iranian Government-Sponsored APT Actors Compromise Federal Network, Deploy Crypto Miner, Credential Harvester",
+    "steps_to_fix": {
+        "1": {
+            "command": "Immediately isolate affected systems",
+            "description": "Isolate the affected systems to prevent further compromise."
+        },
+        "2": {
+            "command": "Collect and review relevant logs, data, and artifacts",
+            "description": "Take a memory capture of the device(s) and a forensic image capture for detailed analysis."
+        },
+        "3": {
+            "command": "Solicit support from a third-party incident response organization",
+            "description": "Engage a third-party incident response organization to ensure the actor is eradicated from the network and to avoid residual issues."
+        },
+        "4": {
+            "command": "Report incidents to CISA or FBI",
+            "description": "Report incidents to CISA via CISA’s 24/7 Operations Center or your local FBI field office."
+        },
+        "5": {
+            "command": "Install updated builds",
+            "description": "Ensure affected VMware Horizon and UAG systems are updated to the latest version."
+        },
+        "6": {
+            "command": "Remove vulnerable components from the internet",
+            "description": "Consider removing vulnerable components from the internet to limit the scope of traffic until the update is fully implemented."
+        },
+        "7": {
+            "command": "Implement temporary workarounds",
+            "description": "If upgrading is not immediately feasible, implement temporary solutions using an account with administrative privileges."
+        },
+        "8": {
+            "command": "Verify successful implementation of mitigations",
+            "description": "Execute the vendor supplied script Horizon_Windows_Log4j_Mitigations.zip without parameters to ensure that no vulnerabilities remain."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 8],
+        "2": [1, 2, 3, 4, 7, 8]
+    }
+}

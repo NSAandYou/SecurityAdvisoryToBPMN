@@ -1,0 +1,15 @@
+{
+    "mentioned_cpes": [
+        "RUGGEDCOM APE1808"
+    ],
+    "issue_name": "Multiple Vulnerabilities in Fortigate NGFW on RUGGEDCOM APE1808 devices",
+    "steps_to_fix": {
+        "1": {
+            "command": "Contact customer support",
+            "description": "Contact customer support to receive patch and update information."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

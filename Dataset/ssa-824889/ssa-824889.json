@@ -1,0 +1,26 @@
+{
+    "mentioned_cpes": [
+        "JT Open < V11.5",
+        "PLM XML SDK < V7.1.0.014"
+    ],
+    "issue_name": "XML File Parsing Vulnerabilities in JT Open and PLM XML SDK",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update JT Open",
+            "description": "Update JT Open to version V11.5 or later. Download the update from: https://support.sw.siemens.com/product/259259756/"
+        },
+        "2": {
+            "command": "Update PLM XML SDK",
+            "description": "Update PLM XML SDK to version V7.1.0.014 or later. Download the update from: https://support.sw.siemens.com/product/242354484/"
+        }
+    },
+    "paths": {
+        "1": [1, 2]
+    },
+    "workaround": {
+        "1": {
+            "command": "Do not open untrusted XML files",
+            "description": "Avoid opening untrusted XML files in affected applications to mitigate the risk of exploitation."
+        }
+    }
+}

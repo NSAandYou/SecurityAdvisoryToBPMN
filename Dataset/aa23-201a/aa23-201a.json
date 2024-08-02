@@ -1,0 +1,33 @@
+{
+    "mentioned_cpes": [
+        "NetScaler ADC and NetScaler Gateway 13.1 before 13.1-49.13",
+        "NetScaler ADC and NetScaler Gateway 13.0 before 13.0-91.13",
+        "NetScaler ADC and NetScaler Gateway version 12.1, now end of life",
+        "NetScaler ADC 13.1-FIPS before 13.1-37.159",
+        "NetScaler ADC 12.1-FIPS before 12.1-55.297",
+        "NetScaler ADC 12.1-NDcPP before 12.1-55.297"
+    ],
+    "issue_name": "Threat Actors Exploiting Citrix CVE-2023-3519 to Implant Webshells",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Install the relevant updated version of NetScaler ADC and NetScaler Gateway",
+            "description": "Install the relevant updated version of NetScaler ADC and NetScaler Gateway as soon as possible. See Citrix ADC and Citrix Gateway Security Bulletin for CVE-2023-3519, CVE-2023-3466, CVE-2023-3467 for patch information."
+        },
+        "4": {
+            "command": "Clean rc.netscaler",
+            "description": "If the threat actor used /flash/nsconfig/rc.netscaler to make /bin/sh a setuid binary and to rewrite a webshell on every reboot, organizations should clean rc.netscaler to prevent the webshell from getting rewritten by using the following third-party created command."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3],
+        "2": [4]
+    }
+}

@@ -1,0 +1,101 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Scattered Spider",
+    "steps_to_fix": {
+        "1": {
+            "command": "Audit remote access tools",
+            "description": "Audit remote access tools on your network to identify currently used and/or authorized software."
+        },
+        "2": {
+            "command": "Review logs for remote access software",
+            "description": "Review logs for execution of remote access software to detect abnormal use of programs running as a portable executable."
+        },
+        "3": {
+            "command": "Use security software for remote access detection",
+            "description": "Use security software to detect instances of remote access software being loaded only in memory."
+        },
+        "4": {
+            "command": "Restrict remote access solutions",
+            "description": "Require authorized remote access solutions to be used only from within your network over approved remote access solutions, such as VPNs or VDIs."
+        },
+        "5": {
+            "command": "Block remote access software ports",
+            "description": "Block both inbound and outbound connections on common remote access software ports and protocols at the network perimeter."
+        },
+        "6": {
+            "command": "Implement FIDO/WebAuthn or PKI-based MFA",
+            "description": "Implement FIDO/WebAuthn authentication or PKI-based MFA to resist phishing and prevent push bombing or SIM swap attacks."
+        },
+        "7": {
+            "command": "Limit use of RDP",
+            "description": "Strictly limit the use of Remote Desktop Protocol (RDP) and other remote desktop services."
+        },
+        "8": {
+            "command": "Audit network for RDP",
+            "description": "Audit the network for systems using RDP."
+        },
+        "9": {
+            "command": "Close unused RDP ports",
+            "description": "Close unused RDP ports."
+        },
+        "10": {
+            "command": "Enforce account lockouts",
+            "description": "Enforce account lockouts after a specified number of attempts."
+        },
+        "11": {
+            "command": "Log RDP login attempts",
+            "description": "Log RDP login attempts."
+        },
+        "12": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "13": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data and regularly maintain backup and restoration (daily or weekly at minimum)."
+        },
+        "14": {
+            "command": "Require strong passwords",
+            "description": "Require all accounts with password logins to comply with NIST's standards for developing and managing password policies."
+        },
+        "15": {
+            "command": "Implement phishing-resistant MFA",
+            "description": "Require phishing-resistant multifactor authentication (MFA) for all services to the extent possible."
+        },
+        "16": {
+            "command": "Keep systems up to date",
+            "description": "Keep all operating systems, software, and firmware up to date. Prioritize patching known exploited vulnerabilities in internet-facing systems."
+        },
+        "17": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware."
+        },
+        "18": {
+            "command": "Identify and investigate abnormal activity",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a networking monitoring tool."
+        },
+        "19": {
+            "command": "Install and update antivirus software",
+            "description": "Install, regularly update, and enable real-time detection for antivirus software on all hosts."
+        },
+        "20": {
+            "command": "Disable unused ports and protocols",
+            "description": "Disable unused ports and protocols."
+        },
+        "21": {
+            "command": "Add email banner for external emails",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "22": {
+            "command": "Disable hyperlinks in emails",
+            "description": "Disable hyperlinks in received emails."
+        },
+        "23": {
+            "command": "Encrypt and secure backup data",
+            "description": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, [8, 9, 10, 11], 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+    }
+}

@@ -1,0 +1,85 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Rhysida Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Enable MFA",
+            "description": "Require phishing-resistant MFA for all services to the extent possible, particularly for webmail, VPN, and accounts that access critical systems."
+        },
+        "2": {
+            "command": "Disable command-line and scripting activities",
+            "description": "Disable command-line and scripting activities and permissions to prevent privilege escalation and lateral movement."
+        },
+        "3": {
+            "command": "Implement verbose and enhanced logging",
+            "description": "Implement verbose and enhanced logging within processes such as command line auditing and process tracking."
+        },
+        "4": {
+            "command": "Restrict PowerShell",
+            "description": "Restrict the use of PowerShell using Group Policy and only grant access to specific users on a case-by-case basis."
+        },
+        "5": {
+            "command": "Update PowerShell",
+            "description": "Update Windows PowerShell or PowerShell Core to the latest version and uninstall all earlier PowerShell versions."
+        },
+        "6": {
+            "command": "Enable enhanced PowerShell logging",
+            "description": "Enable enhanced PowerShell logging, including module, script block, and transcription logging."
+        },
+        "7": {
+            "command": "Restrict RDP",
+            "description": "Restrict the use of RDP and other remote desktop services to known user accounts and groups."
+        },
+        "8": {
+            "command": "Secure remote access tools",
+            "description": "Implement application controls to manage and control execution of software, including allowlisting remote access programs."
+        },
+        "9": {
+            "command": "Update systems",
+            "description": "Keep all operating systems, software, and firmware up to date. Prioritize patching known exploited vulnerabilities in internet-facing systems."
+        },
+        "10": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware."
+        },
+        "11": {
+            "command": "Implement network monitoring",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a network monitoring tool."
+        },
+        "12": {
+            "command": "Audit user accounts",
+            "description": "Audit user accounts with administrative privileges and configure access controls according to the principle of least privilege."
+        },
+        "13": {
+            "command": "Implement time-based access",
+            "description": "Implement time-based access for accounts set at the admin level and higher."
+        },
+        "14": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "15": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data and regularly maintain backups and their restoration."
+        },
+        "16": {
+            "command": "Encrypt backup data",
+            "description": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        },
+        "17": {
+            "command": "Forward log files",
+            "description": "Forward log files to a hardened centralized logging server, preferably on a segmented network."
+        },
+        "18": {
+            "command": "Add email banner",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "19": {
+            "command": "Disable hyperlinks in emails",
+            "description": "Disable hyperlinks in received emails."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "mentioned_cpes": [
+        "Version 8.0.0 to 19.2.7",
+        "Version 20.0.0 to 20.1.6",
+        "Version 21.0.0 to 21.2.10",
+        "Version 22.0.0 to 22.0.8"
+    ],
+    "issue_name": "CVE-2023-27350",
+    "steps_to_fix": {
+        "1": {
+            "command": "Upgrade PaperCut",
+            "description": "Upgrade PaperCut to the latest version."
+        },
+        "2": {
+            "command": "Block inbound traffic to web management portal",
+            "description": "Block all inbound traffic from external IP addresses to the web management portal (port 9191 and 9192 by default)."
+        },
+        "3": {
+            "command": "Block all traffic to web management portal",
+            "description": "Block all traffic inbound to the web management portal. Note: The server cannot be managed remotely after this step."
+        },
+        "4": {
+            "command": "Create backup",
+            "description": "Create a backup of the current PaperCut server(s)."
+        },
+        "5": {
+            "command": "Wipe and rebuild server",
+            "description": "Wipe the PaperCut Application Server and/or Site Server and rebuild it."
+        },
+        "6": {
+            "command": "Restore database",
+            "description": "Restore the database from a 'safe' backup point. Using a backup dated prior to April 2023 would be prudent."
+        },
+        "7": {
+            "command": "Execute additional security response procedures",
+            "description": "Execute additional security response procedures and carry out best practices around potential compromise."
+        },
+        "8": {
+            "command": "Report compromise",
+            "description": "Report the compromise to CISA via CISA’s 24/7 Operations Center (report@cisa.gov or 888-282-0870)."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2, 3],
+        "3": [4, 5, 6, 7, 8]
+    }
+}

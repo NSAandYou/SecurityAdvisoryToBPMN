@@ -1,0 +1,13 @@
+{
+    "mentioned_cpes": ["SINEMA Remote Connect Client < V3.2 HF1"],
+    "issue_name": "Multiple Vulnerabilities in SINEMA Remote Connect Client",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V3.2 HF1 or later version",
+            "description": "Update the SINEMA Remote Connect Client to version V3.2 HF1 or later to address the vulnerabilities."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

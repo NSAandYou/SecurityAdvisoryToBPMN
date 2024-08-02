@@ -1,0 +1,160 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "CISA Red Team Shares Key Findings to Improve Monitoring and Hardening of Networks",
+    "steps_to_fix": {
+        "1": {
+            "command": "Establish a security baseline",
+            "description": "Establish a security baseline of normal network traffic and tune network appliances to detect anomalous behavior."
+        },
+        "2": {
+            "command": "Create alerts for Windows event log authentication codes",
+            "description": "Create alerts for Windows event log authentication codes, especially for the domain controllers."
+        },
+        "3": {
+            "command": "Focus on identity and access management (IAM)",
+            "description": "From a detection standpoint, focus on identity and access management (IAM) rather than just network traffic or static host alerts."
+        },
+        "4": {
+            "command": "Limit the use of legitimate administrative pathways and tools",
+            "description": "Reduce the attack surface by limiting the use of legitimate administrative pathways and tools such as PowerShell, PSExec, and WMI."
+        },
+        "5": {
+            "command": "Use honeypot service principal names (SPNs)",
+            "description": "Consider using 'honeypot' service principal names (SPNs) to detect attempts to crack account hashes."
+        },
+        "6": {
+            "command": "Conduct regular assessments",
+            "description": "Conduct regular assessments to ensure processes and procedures are up to date and can be followed by security staff and end users."
+        },
+        "7": {
+            "command": "Use red team tools for AD enumeration",
+            "description": "Consider using red team tools, such as SharpHound, for AD enumeration to identify users with excessive privileges and misconfigured hosts."
+        },
+        "8": {
+            "command": "Regularly tune commercial tools",
+            "description": "Ensure all commercial tools deployed in your environment are regularly tuned to pick up on relevant activity in your environment."
+        },
+        "9": {
+            "command": "Treat endpoint management systems as HVAs",
+            "description": "Treat endpoint management systems as HVAs with additional restrictions and monitoring."
+        },
+        "10": {
+            "command": "Change the krbtgt account password regularly",
+            "description": "Change the krbtgt account password on a regular schedule such as every 6 to 12 months or if it becomes compromised."
+        },
+        "11": {
+            "command": "Implement the principle of least privilege",
+            "description": "Grant standard user rights for standard user tasks such as email, web browsing, and using line-of-business (LOB) applications."
+        },
+        "12": {
+            "command": "Periodically audit standard accounts",
+            "description": "Periodically audit standard accounts and minimize where they have privileged access."
+        },
+        "13": {
+            "command": "Periodically audit AD permissions",
+            "description": "Periodically audit AD permissions to ensure users do not have excessive permissions and have not been added to admin groups."
+        },
+        "14": {
+            "command": "Evaluate administrative groups",
+            "description": "Evaluate which administrative groups should administer which servers/workstations."
+        },
+        "15": {
+            "command": "Separate administrator accounts from user accounts",
+            "description": "Separate administrator accounts from user accounts. Only allow designated admin accounts to be used for admin purposes."
+        },
+        "16": {
+            "command": "Use a privileged access management (PAM) solution",
+            "description": "Consider using a privileged access management (PAM) solution to manage access to privileged accounts and resources."
+        },
+        "17": {
+            "command": "Configure time-based access for admin accounts",
+            "description": "Configure time-based access for accounts set at the admin level and higher."
+        },
+        "18": {
+            "command": "Remove Unconstrained Delegation from all servers",
+            "description": "Remove Unconstrained Delegation from all servers."
+        },
+        "19": {
+            "command": "Disable or limit NTLM and WDigest Authentication",
+            "description": "Consider disabling or limiting NTLM and WDigest Authentication if possible."
+        },
+        "20": {
+            "command": "Enable Extended Protection for Authentication (EPA)",
+            "description": "If NTLM must be enabled, enable Extended Protection for Authentication (EPA) to prevent some NTLM-relay attacks."
+        },
+        "21": {
+            "command": "Keep systems and software up to date",
+            "description": "Keep systems and software up to date."
+        },
+        "22": {
+            "command": "Configure internal firewalls and proxies",
+            "description": "Configure internal firewalls and proxies to restrict internet traffic from hosts that do not require it."
+        },
+        "23": {
+            "command": "Treat password vaults as HVAs",
+            "description": "Treat password vaults as HVAs with additional restrictions and monitoring."
+        },
+        "24": {
+            "command": "Establish a baseline/gold-image for workstations and servers",
+            "description": "Establish a baseline/gold-image for workstations and servers and deploy from that image."
+        },
+        "25": {
+            "command": "Implement software allowlisting",
+            "description": "Implement software allowlisting to ensure users can only install software from an approved list."
+        },
+        "26": {
+            "command": "Remove unnecessary software",
+            "description": "Remove unnecessary, extraneous software from servers and workstations."
+        },
+        "27": {
+            "command": "Consider only requiring changes for memorized passwords in the event of compromise",
+            "description": "Consider only requiring changes for memorized passwords in the event of compromise."
+        },
+        "28": {
+            "command": "Provide users with regular training and exercises",
+            "description": "Provide users with regular training and exercises, specifically related to phishing emails."
+        },
+        "29": {
+            "command": "Enforce phishing-resistant MFA",
+            "description": "Enforce phishing-resistant MFA to the greatest extent possible."
+        },
+        "30": {
+            "command": "Place domain admin accounts in the protected users group",
+            "description": "Place domain admin accounts in the protected users group to prevent caching of password hashes locally."
+        },
+        "31": {
+            "command": "Implement Credential Guard for Windows 10 and Server 2016",
+            "description": "Implement Credential Guard for Windows 10 and Server 2016."
+        },
+        "32": {
+            "command": "Refrain from storing plaintext credentials in scripts",
+            "description": "Refrain from storing plaintext credentials in scripts."
+        },
+        "33": {
+            "command": "Upgrade to Windows Server 2019 or greater and Windows 10 or greater",
+            "description": "Upgrade to Windows Server 2019 or greater and Windows 10 or greater."
+        },
+        "34": {
+            "command": "Implement a Zero Trust network architecture",
+            "description": "Implement a more modern, Zero Trust network architecture."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8],
+        "2": [9],
+        "3": [10],
+        "4": [11, 12, 13, 14, 15, 16, 17],
+        "5": [18, 19, 20],
+        "6": [21],
+        "7": [22],
+        "8": [23],
+        "9": [24],
+        "10": [25, 26],
+        "11": [27],
+        "12": [28],
+        "13": [29],
+        "14": [30, 31, 32],
+        "15": [33],
+        "16": [34]
+    }
+}

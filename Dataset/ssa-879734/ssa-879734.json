@@ -1,0 +1,40 @@
+{
+    "mentioned_cpes": [
+        "SCALANCE XM408-4C (6GK5408-4GP00-2AM2)",
+        "SCALANCE XM408-4C (L3 int.) (6GK5408-4GQ00-2AM2)",
+        "SCALANCE XM408-8C (6GK5408-8GS00-2AM2)",
+        "SCALANCE XM408-8C (L3 int.) (6GK5408-8GR00-2AM2)",
+        "SCALANCE XM416-4C (6GK5416-4GS00-2AM2)",
+        "SCALANCE XM416-4C (L3 int.) (6GK5416-4GR00-2AM2)",
+        "SCALANCE XR524-8C, 1x230V (6GK5524-8GS00-3AR2)",
+        "SCALANCE XR524-8C, 1x230V (L3 int.) (6GK5524-8GR00-3AR2)",
+        "SCALANCE XR524-8C, 2x230V (6GK5524-8GS00-4AR2)",
+        "SCALANCE XR524-8C, 2x230V (L3 int.) (6GK5524-8GR00-4AR2)",
+        "SCALANCE XR524-8C, 24V (6GK5524-8GS00-2AR2)",
+        "SCALANCE XR524-8C, 24V (L3 int.) (6GK5524-8GR00-2AR2)",
+        "SCALANCE XR526-8C, 1x230V (6GK5526-8GS00-3AR2)",
+        "SCALANCE XR526-8C, 1x230V (L3 int.) (6GK5526-8GR00-3AR2)",
+        "SCALANCE XR526-8C, 2x230V (6GK5526-8GS00-4AR2)",
+        "SCALANCE XR526-8C, 2x230V (L3 int.) (6GK5526-8GR00-4AR2)",
+        "SCALANCE XR526-8C, 24V (6GK5526-8GS00-2AR2)",
+        "SCALANCE XR526-8C, 24V (L3 int.) (6GK5526-8GR00-2AR2)",
+        "SCALANCE XR528-6M (2HR2) (6GK5528-0AA00-2HR2)",
+        "SCALANCE XR528-6M (2HR2, L3 int.) (6GK5528-0AR00-2HR2)",
+        "SCALANCE XR528-6M (6GK5528-0AA00-2AR2)",
+        "SCALANCE XR528-6M (L3 int.) (6GK5528-0AR00-2AR2)",
+        "SCALANCE XR552-12M (2HR2) (6GK5552-0AA00-2HR2)",
+        "SCALANCE XR552-12M (2HR2) (6GK5552-0AR00-2HR2)",
+        "SCALANCE XR552-12M (2HR2, L3 int.) (6GK5552-0AR00-2AR2)",
+        "SCALANCE XR552-12M (6GK5552-0AA00-2AR2)"
+    ],
+    "issue_name": "Multiple Vulnerabilities in SCALANCE XM-400/XR-500 before V6.6.1",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V6.6.1 or later version",
+            "description": "Update the affected SCALANCE devices to firmware version V6.6.1 or later. The update can be downloaded from the Siemens support website."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Identification and Disruption of QakBot Infrastructure",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location (i.e., hard drive, storage device, the cloud)."
+        },
+        "2": {
+            "command": "Require all accounts with password logins to comply with NIST’s standards",
+            "description": "Use longer passwords consisting of at least 8 characters and no more than 64 characters in length; store passwords in hashed format using industry-recognized password managers; add password user 'salts' to shared login credentials; avoid reusing passwords; implement multiple failed login attempt account lockouts; disable password 'hints'; refrain from requiring password changes more frequently than once per year; require administrator credentials to install software."
+        },
+        "3": {
+            "command": "Use phishing-resistant multi-factor authentication (MFA)",
+            "description": "Implement phishing-resistant MFA (e.g., security tokens) for remote access and access to any sensitive data repositories. Implement phishing-resistant MFA for as many services as possible—particularly for webmail and VPNs—for accounts that access critical systems and privileged accounts that manage backups. MFA should also be used for remote logins."
+        },
+        "4": {
+            "command": "Keep all operating systems, software, and firmware up to date",
+            "description": "Timely patching is one of the most efficient and cost-effective steps an organization can take to minimize its exposure to cybersecurity threats. Prioritize patching known exploited vulnerabilities of internet-facing systems."
+        },
+        "5": {
+            "command": "Segment networks",
+            "description": "Prevent the spread of ransomware by controlling traffic flows between—and access to—various subnetworks to restrict adversary lateral movement."
+        },
+        "6": {
+            "command": "Identify, detect, and investigate abnormal activity",
+            "description": "Implement a networking monitoring tool that logs and reports all network traffic, including lateral movement activity on a network. Endpoint detection and response (EDR) tools are particularly useful for detecting lateral connections."
+        },
+        "7": {
+            "command": "Install, regularly update, and enable real-time detection for antivirus software",
+            "description": "Ensure antivirus software is installed, regularly updated, and real-time detection is enabled on all hosts."
+        },
+        "8": {
+            "command": "Review domain controllers, servers, workstations, and active directories",
+            "description": "Check for new and/or unrecognized accounts."
+        },
+        "9": {
+            "command": "Audit user accounts with administrative privileges",
+            "description": "Configure access controls according to the principle of least privilege."
+        },
+        "10": {
+            "command": "Disable unused ports",
+            "description": "Ensure that unused ports are disabled."
+        },
+        "11": {
+            "command": "Consider adding an email banner",
+            "description": "Add an email banner to emails received from outside your organization."
+        },
+        "12": {
+            "command": "Disable hyperlinks in received emails",
+            "description": "Ensure that hyperlinks in received emails are disabled."
+        },
+        "13": {
+            "command": "Implement time-based access for accounts set at the admin level and higher",
+            "description": "Use the Just-in-Time access method to provision privileged access when needed and support enforcement of the principle of least privilege."
+        },
+        "14": {
+            "command": "Disable command-line and scripting activities and permissions",
+            "description": "Prevent privilege escalation and lateral movement by disabling software utilities running from the command line."
+        },
+        "15": {
+            "command": "Perform regular secure system backups",
+            "description": "Create known good copies of all device configurations for repairs and/or restoration. Store copies off-network in physically secure locations and test regularly."
+        },
+        "16": {
+            "command": "Ensure all backup data is encrypted and immutable",
+            "description": "Make sure backup data cannot be altered or deleted and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    }
+}

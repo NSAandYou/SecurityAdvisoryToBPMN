@@ -1,0 +1,32 @@
+{
+    "mentioned_cpes": ["Simcenter Femap < V2406"],
+    "issue_name": "Multiple File Parsing Vulnerabilities in Simcenter Femap",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V2406 or later version",
+            "description": "Siemens has released a new version for Simcenter Femap and recommends updating to the latest version."
+        }
+    },
+    "workaround": {
+        "1": {
+            "command": "Do not open untrusted IGS files",
+            "description": "Avoid opening untrusted IGS files in the affected applications to mitigate the risk."
+        },
+        "2": {
+            "command": "Do not open untrusted BDF files",
+            "description": "Avoid opening untrusted BDF files in the affected applications to mitigate the risk."
+        },
+        "3": {
+            "command": "Do not open untrusted BMP files",
+            "description": "Avoid opening untrusted BMP files in the affected applications to mitigate the risk."
+        },
+        "4": {
+            "command": "Do not open untrusted IGS, BDF or BMP files",
+            "description": "Avoid opening untrusted IGS, BDF, or BMP files using Simcenter Femap to mitigate the risk."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [1, [2, 3, 4]]
+    }
+}

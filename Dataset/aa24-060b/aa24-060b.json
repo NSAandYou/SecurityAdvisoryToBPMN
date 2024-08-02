@@ -1,0 +1,66 @@
+{
+    "mentioned_cpes": ["Ivanti Connect Secure", "Ivanti Policy Secure"],
+    "issue_name": "Threat Actors Exploit Multiple Vulnerabilities in Ivanti Connect Secure and Policy Secure Gateways",
+    "steps_to_fix": {
+        "1": {
+            "command": "Quarantine or take offline potentially affected hosts",
+            "description": "Isolate the affected Ivanti appliances to prevent further compromise."
+        },
+        "2": {
+            "command": "Reimage compromised hosts",
+            "description": "Reinstall the operating system and applications on the compromised Ivanti appliances."
+        },
+        "3": {
+            "command": "Reset all credentials",
+            "description": "Reset all user and service account credentials that may have been exposed during the compromise."
+        },
+        "4": {
+            "command": "Identify Ivanti hosts with Active Directory access",
+            "description": "Identify Ivanti hosts that have access to Active Directory and assume that domain administrator credentials may have been compromised."
+        },
+        "5": {
+            "command": "Collect and review artifacts",
+            "description": "Collect and analyze logs, running processes, unusual authentications, and recent network connections for signs of malicious activity."
+        },
+        "6": {
+            "command": "Limit outbound internet connections",
+            "description": "Restrict outbound internet connections from SSL VPN appliances to required services only."
+        },
+        "7": {
+            "command": "Ensure low privilege accounts for LDAP bind",
+            "description": "Configure SSL VPN appliances with Active Directory or LDAP authentication to use low privilege accounts for the LDAP bind."
+        },
+        "8": {
+            "command": "Limit SSL VPN connections to unprivileged accounts",
+            "description": "Restrict SSL VPN connections to unprivileged accounts to limit the exposure of privileged account credentials."
+        },
+        "9": {
+            "command": "Keep all systems up to date",
+            "description": "Ensure all operating systems, software, and firmware are up to date, prioritizing patching known exploited vulnerabilities in internet-facing systems."
+        },
+        "10": {
+            "command": "Implement application controls",
+            "description": "Manage and control the execution of software, including allowlisting remote access programs to prevent unauthorized software execution."
+        },
+        "11": {
+            "command": "Limit use of Remote Desktop Protocols",
+            "description": "Strictly limit the use of RDP and other remote desktop services, applying best practices such as account lockouts and multifactor authentication."
+        },
+        "12": {
+            "command": "Configure Windows Registry for UAC approval",
+            "description": "Require User Account Control (UAC) approval for any PsExec operations requiring administrator privileges."
+        },
+        "13": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive data and servers in a physically separate, segmented, and secure location."
+        },
+        "14": {
+            "command": "Require strong passwords",
+            "description": "Ensure all accounts with password logins comply with NIST's standards for developing and managing password policies, including using long passwords and storing them in hashed format."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5],
+        "2": [6, 7, 8, 9, 10, 11, 12, 13, 14]
+    }
+}

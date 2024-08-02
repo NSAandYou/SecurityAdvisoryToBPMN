@@ -1,0 +1,57 @@
+{
+    "mentioned_cpes": ["CVE-2023-42793"],
+    "issue_name": "Russian Foreign Intelligence Service (SVR) Exploiting JetBrains TeamCity CVE Globally",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Apply available patches",
+            "description": "Apply available patches for CVE-2023-42793 issued by JetBrains TeamCity in mid-September 2023, if not already completed."
+        },
+        "4": {
+            "command": "Monitor network",
+            "description": "Monitor the network for evidence of encoded commands and execution of network scanning tools."
+        },
+        "5": {
+            "command": "Enable host-based anti-virus/endpoint monitoring",
+            "description": "Ensure host-based anti-virus/endpoint monitoring solutions are enabled and set to alert if monitoring or reporting is disabled, or if communication is lost with a host agent for more than a reasonable amount of time."
+        },
+        "6": {
+            "command": "Require multi-factor authentication",
+            "description": "Require use of multi-factor authentication for all services to the extent possible, particularly for email, virtual private networks, and accounts that access critical systems."
+        },
+        "7": {
+            "command": "Keep systems up to date",
+            "description": "Keep all operating systems, software, and firmware up to date. Immediately configure newly-added systems to the network, including those used for testing or development work, to follow the organization’s security baseline and incorporate into enterprise monitoring tools."
+        },
+        "8": {
+            "command": "Audit log files",
+            "description": "Audit log files to identify attempts to access privileged certificates and creation of fake identity providers."
+        },
+        "9": {
+            "command": "Deploy software to identify suspicious behavior",
+            "description": "Deploy software to identify suspicious behavior on systems."
+        },
+        "10": {
+            "command": "Deploy endpoint protection systems",
+            "description": "Deploy endpoint protection systems with the ability to monitor for behavioral indicators of compromise."
+        },
+        "11": {
+            "command": "Use public resources to identify credential abuse",
+            "description": "Use available public resources to identify credential abuse with cloud environments."
+        },
+        "12": {
+            "command": "Configure authentication mechanisms",
+            "description": "Configure authentication mechanisms to confirm certain user activities on systems, including registering new devices."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    }
+}

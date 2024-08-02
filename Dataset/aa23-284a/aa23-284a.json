@@ -1,0 +1,155 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "AvosLocker Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement application controls",
+            "description": "Implement application controls to manage and control execution of software, including allowlisting remote access programs."
+        },
+        "2": {
+            "command": "Apply recommendations",
+            "description": "Apply recommendations in CISA's joint Guide to Securing Remote Access Software."
+        },
+        "3": {
+            "command": "Audit the network",
+            "description": "Audit the network for systems using RDP."
+        },
+        "4": {
+            "command": "Close unused RDP ports",
+            "description": "Close unused RDP ports."
+        },
+        "5": {
+            "command": "Enforce account lockouts",
+            "description": "Enforce account lockouts after a specified number of attempts."
+        },
+        "6": {
+            "command": "Apply phishing-resistant MFA",
+            "description": "Apply phishing-resistant multifactor authentication (MFA)."
+        },
+        "7": {
+            "command": "Log RDP login attempts",
+            "description": "Log RDP login attempts."
+        },
+        "8": {
+            "command": "Disable command-line and scripting activities",
+            "description": "Disable command-line and scripting activities and permissions."
+        },
+        "9": {
+            "command": "Restrict PowerShell usage",
+            "description": "Restrict the use of PowerShell, using Group Policy, and only grant access to specific users on a case-by-case basis."
+        },
+        "10": {
+            "command": "Update PowerShell",
+            "description": "Update Windows PowerShell or PowerShell Core to the latest version and uninstall all earlier PowerShell versions."
+        },
+        "11": {
+            "command": "Enable enhanced PowerShell logging",
+            "description": "Enable enhanced PowerShell logging."
+        },
+        "12": {
+            "command": "Configure Windows Registry",
+            "description": "Configure the Windows Registry to require User Account Control (UAC) approval for any PsExec operations requiring administrator privileges."
+        },
+        "13": {
+            "command": "Disable File and Printer sharing services",
+            "description": "Disable File and Printer sharing services. If these services are required, use strong passwords or Active Directory authentication."
+        },
+        "14": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "15": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data, and regularly maintain backup and restoration (daily or weekly at minimum)."
+        },
+        "16": {
+            "command": "Require password compliance",
+            "description": "Require all accounts with password logins to comply with NIST's standards for developing and managing password policies."
+        },
+        "17": {
+            "command": "Use longer passwords",
+            "description": "Use longer passwords consisting of at least 15 characters."
+        },
+        "18": {
+            "command": "Store passwords in hashed format",
+            "description": "Store passwords in hashed format using industry-recognized password managers."
+        },
+        "19": {
+            "command": "Add password user “salts”",
+            "description": "Add password user “salts” to shared login credentials."
+        },
+        "20": {
+            "command": "Avoid reusing passwords",
+            "description": "Avoid reusing passwords."
+        },
+        "21": {
+            "command": "Implement account lockouts",
+            "description": "Implement multiple failed login attempt account lockouts."
+        },
+        "22": {
+            "command": "Disable password “hints”",
+            "description": "Disable password “hints.”"
+        },
+        "23": {
+            "command": "Refrain from frequent password changes",
+            "description": "Refrain from requiring password changes more frequently than once per year."
+        },
+        "24": {
+            "command": "Require administrator credentials",
+            "description": "Require administrator credentials to install software."
+        },
+        "25": {
+            "command": "Require phishing-resistant MFA",
+            "description": "Require phishing-resistant multifactor authentication for all services to the extent possible."
+        },
+        "26": {
+            "command": "Keep systems up to date",
+            "description": "Keep all operating systems, software, and firmware up to date."
+        },
+        "27": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware."
+        },
+        "28": {
+            "command": "Implement network monitoring tool",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a networking monitoring tool."
+        },
+        "29": {
+            "command": "Install and update antivirus software",
+            "description": "Install, regularly update, and enable real time detection for antivirus software on all hosts."
+        },
+        "30": {
+            "command": "Disable unused ports",
+            "description": "Disable unused ports."
+        },
+        "31": {
+            "command": "Add email banner",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "32": {
+            "command": "Encrypt backup data",
+            "description": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2],
+        "2": [3, 4, 5, 6, 7],
+        "3": [8],
+        "4": [9],
+        "5": [10],
+        "6": [11],
+        "7": [12],
+        "8": [13],
+        "9": [14],
+        "10": [15],
+        "11": [16, 17, 18, 19, 20, 21, 22, 23, 24],
+        "12": [25],
+        "13": [26],
+        "14": [27],
+        "15": [28],
+        "16": [29],
+        "17": [30],
+        "18": [31],
+        "19": [32]
+    }
+}

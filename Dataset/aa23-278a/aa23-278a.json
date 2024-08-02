@@ -1,0 +1,61 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Top Ten Cybersecurity Misconfigurations",
+    "steps_to_fix": {
+        "1": {
+            "command": "Remove default credentials and harden configurations",
+            "description": "Change or disable vendor-supplied default usernames and passwords of services, software, and equipment when installing or commissioning."
+        },
+        "2": {
+            "command": "Disable unused services and implement access controls",
+            "description": "Disable services that are not required and implement access controls to limit access to necessary services."
+        },
+        "3": {
+            "command": "Update regularly and automate patching",
+            "description": "Update software regularly by employing patch management for externally exposed applications, internal enterprise endpoints, and servers. Prioritize patching known exploited vulnerabilities."
+        },
+        "4": {
+            "command": "Reduce, restrict, audit, and monitor administrative accounts and privileges",
+            "description": "Implement authentication, authorization, and accounting (AAA) systems to limit actions users can perform, and review logs of user actions to detect unauthorized use and abuse. Apply least privilege principles to user accounts and groups allowing only the performance of authorized actions."
+        },
+        "5": {
+            "command": "Ensure secure configuration of Active Directory Certificate Services (ADCS)",
+            "description": "Regularly update and patch the controlling infrastructure, employ monitoring and auditing mechanisms, and implement strong access controls to protect the infrastructure."
+        },
+        "6": {
+            "command": "Disable LLMNR and NetBIOS",
+            "description": "Determine if LLMNR and NetBIOS are required for essential business operations. If not required, disable them in local computer security settings or by group policy."
+        },
+        "7": {
+            "command": "Require SMB signing",
+            "description": "Require SMB signing for both SMB client and server on all systems to prevent certain adversary-in-the-middle and pass-the-hash techniques."
+        },
+        "8": {
+            "command": "Implement network segmentation",
+            "description": "Engineer network segments to isolate critical systems, functions, and resources. Establish physical and logical segmentation controls, such as VLAN configurations and properly configured access control lists (ACLs) on infrastructure devices."
+        },
+        "9": {
+            "command": "Implement a security information and event management (SIEM) system",
+            "description": "Provide log aggregation, correlation, querying, visualization, and alerting from network endpoints, logging systems, endpoint and detection response (EDR) systems and intrusion detection systems (IDS)."
+        },
+        "10": {
+            "command": "Enforce phishing-resistant MFA",
+            "description": "Enforce phishing-resistant MFA universally for access to sensitive data and on as many other resources and services as possible."
+        },
+        "11": {
+            "command": "Implement secure configurations for all storage devices and network shares",
+            "description": "Apply the principle of least privilege to important information resources to reduce risk of unauthorized data access and manipulation."
+        },
+        "12": {
+            "command": "Follow NIST guidelines for password policies",
+            "description": "Enforce use of 'strong' passwords that cannot be cracked. Consider using password managers to generate and store passwords."
+        },
+        "13": {
+            "command": "Enable system settings to prevent running applications from untrusted sources",
+            "description": "Use application control tools that restrict program execution by default, also known as allowlisting. Ensure that the tools examine digital signatures and other key attributes."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    }
+}

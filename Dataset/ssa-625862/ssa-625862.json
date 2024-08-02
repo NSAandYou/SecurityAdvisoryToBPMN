@@ -1,0 +1,20 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC CP 1542SP-1 (6GK7542-6UX00-0XE0)",
+        "SIMATIC CP 1542SP-1 IRC (6GK7542-6VX00-0XE0)",
+        "SIMATIC CP 1543SP-1 (6GK7543-6WX00-0XE0)",
+        "SIPLUS ET 200SP CP 1542SP-1 IRC TX RAIL (6AG2542-6VX00-4XE0)",
+        "SIPLUS ET 200SP CP 1543SP-1 ISEC (6AG1543-6WX00-7XE0)",
+        "SIPLUS ET 200SP CP 1543SP-1 ISEC TX RAIL (6AG2543-6WX00-4XE0)"
+    ],
+    "issue_name": "Multiple Vulnerabilities in Third-Party Components in SIMATIC CP 1542SP-1 and CP 1543SP-1 before V2.3",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V2.3 or later version",
+            "description": "Update the affected products to version V2.3 or later. The update can be found at: https://support.industry.siemens.com/cs/ww/en/view/109954475/"
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

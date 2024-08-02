@@ -1,0 +1,42 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC Field PG M6",
+        "SIMATIC IPC627E",
+        "SIMATIC IPC647E",
+        "SIMATIC IPC677E",
+        "SIMATIC IPC847E",
+        "SIMATIC IPC1047",
+        "SIMATIC IPC1047E",
+        "SIMATIC IPC BX-39A",
+        "SIMATIC IPC PX-39A",
+        "SIMATIC IPC PX-39A PRO",
+        "SIMATIC IPC RW-543A"
+    ],
+    "issue_name": "Information Disclosure Vulnerability in Intel-CPUs (CVE-2022-40982)",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V25.02.14 or later version",
+            "description": "Update SIMATIC IPC627E to V25.02.14 or later version."
+        },
+        "2": {
+            "command": "Update to V25.02.14 or later version",
+            "description": "Update SIMATIC IPC647E to V25.02.14 or later version."
+        },
+        "3": {
+            "command": "Update to V25.02.14 or later version",
+            "description": "Update SIMATIC IPC677E to V25.02.14 or later version."
+        },
+        "4": {
+            "command": "Update to V25.02.14 or later version",
+            "description": "Update SIMATIC IPC847E to V25.02.14 or later version."
+        },
+        "5": {
+            "command": "Update to V1.1.2 or later version",
+            "description": "Update SIMATIC IPC RW-543A to V1.1.2 or later version."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4],
+        "2": [5]
+    }
+}

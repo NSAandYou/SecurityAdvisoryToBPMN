@@ -1,0 +1,77 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Cuba Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location (i.e., hard drive, storage device, the cloud)."
+        },
+        "2": {
+            "command": "Require all accounts with password logins to comply with NIST standards",
+            "description": "Use longer passwords consisting of at least 8 characters and no more than 64 characters in length. Store passwords in hashed format using industry-recognized password managers. Add password user 'salts' to shared login credentials. Avoid reusing passwords. Implement multiple failed login attempt account lockouts. Disable password 'hints.' Refrain from requiring password changes more frequently than once per year."
+        },
+        "3": {
+            "command": "Require administrator credentials to install software",
+            "description": "Ensure that only users with administrator credentials can install software."
+        },
+        "4": {
+            "command": "Require multifactor authentication",
+            "description": "Implement multifactor authentication for all services to the extent possible, particularly for webmail, virtual private networks, and accounts that access critical systems."
+        },
+        "5": {
+            "command": "Keep all operating systems, software, and firmware up to date",
+            "description": "Timely patching is one of the most efficient and cost-effective steps an organization can take to minimize its exposure to cybersecurity threats. Prioritize patching SonicWall firewall vulnerabilities and known exploited vulnerabilities in internet-facing systems."
+        },
+        "6": {
+            "command": "Segment networks",
+            "description": "Network segmentation can help prevent the spread of ransomware by controlling traffic flows between—and access to—various subnetworks and by restricting adversary lateral movement."
+        },
+        "7": {
+            "command": "Identify, detect, and investigate abnormal activity",
+            "description": "Implement a tool that logs and reports all network traffic, including lateral movement activity on a network. Endpoint detection and response (EDR) tools are particularly useful for detecting lateral connections as they have insight into common and uncommon network connections for each host."
+        },
+        "8": {
+            "command": "Install, regularly update, and enable real-time detection for antivirus software",
+            "description": "Ensure antivirus software is installed, regularly updated, and real-time detection is enabled on all hosts."
+        },
+        "9": {
+            "command": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts",
+            "description": "Regularly audit these systems to ensure no unauthorized accounts are present."
+        },
+        "10": {
+            "command": "Audit user accounts with administrative privileges",
+            "description": "Configure access controls according to the principle of least privilege."
+        },
+        "11": {
+            "command": "Disable unused ports",
+            "description": "Ensure that all unused ports are disabled to reduce the attack surface."
+        },
+        "12": {
+            "command": "Consider adding an email banner to emails received from outside your organization",
+            "description": "This helps users identify potentially malicious emails."
+        },
+        "13": {
+            "command": "Disable hyperlinks in received emails",
+            "description": "Prevent users from clicking on potentially malicious links."
+        },
+        "14": {
+            "command": "Implement time-based access for accounts set at the admin level and higher",
+            "description": "Use the Just-in-Time (JIT) access method to provision privileged access when needed and support enforcement of the principle of least privilege."
+        },
+        "15": {
+            "command": "Disable command-line and scripting activities and permissions",
+            "description": "Prevent privilege escalation and lateral movement by disabling these activities."
+        },
+        "16": {
+            "command": "Maintain offline backups of data",
+            "description": "Regularly maintain backup and restoration to ensure data is not lost."
+        },
+        "17": {
+            "command": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure",
+            "description": "This ensures that backup data cannot be altered or deleted and is secure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    }
+}

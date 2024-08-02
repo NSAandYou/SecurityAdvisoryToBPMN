@@ -1,0 +1,21 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Hunting Russian Intelligence “Snake” Malware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Change Credentials",
+            "description": "System owners who are believed to be compromised by Snake are advised to change their credentials immediately (from a non-compromised system) and to not use any type of passwords similar to those used before."
+        },
+        "2": {
+            "command": "Apply Updates",
+            "description": "System owners are advised to apply updates to their Operating Systems. Modern versions of Windows, Linux, and MacOS make it much harder for adversaries to operate in the kernel space."
+        },
+        "3": {
+            "command": "Execute Organizational Incident Response Plan",
+            "description": "If system owners receive detection signatures of Snake implant activity or have other indicators of compromise that are associated with FSB actors using Snake, the impacted organization should immediately initiate their documented incident response plan."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3]
+    }
+}

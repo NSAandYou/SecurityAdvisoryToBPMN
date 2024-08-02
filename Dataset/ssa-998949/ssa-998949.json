@@ -1,0 +1,13 @@
+{
+    "mentioned_cpes": ["Mendix Encryption Module V10.0.0", "Mendix Encryption Module V10.0.1"],
+    "issue_name": "Hard-coded Default Encryption Key in Mendix Encryption Module V10.0.0 and V10.0.1",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update Mendix Encryption Module",
+            "description": "Update the Mendix Encryption module to version V10.0.2 or later. This can be done by downloading the latest version from the Mendix Marketplace: https://marketplace.mendix.com/link/component/1011"
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

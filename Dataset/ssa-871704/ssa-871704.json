@@ -1,0 +1,29 @@
+{
+    "mentioned_cpes": [
+        "CPC80 for CP-8000/CP-8021/CP-8022",
+        "CPCI85 and OPUPI0 for CP-8031/CP-8050",
+        "SICORE"
+    ],
+    "issue_name": "Multiple Vulnerabilities in SICAM Products",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V16.41 or later version",
+            "description": "Update the firmware CPC80 to V16.41 or later version. The firmware CPC80 V16.41 is present within 'CP-8000/CP-8021/CP-8022 Package' V16.41. URL: https://support.industry.siemens.com/cs/ww/en/view/109812178/"
+        },
+        "2": {
+            "command": "Update to V5.30 or later version",
+            "description": "Update the firmware CPCI85 to V5.30 or later version. The firmware CPCI85 V5.30 is present within 'CP-8031/CP-8050 Package' V5.30. URL: https://support.industry.siemens.com/cs/ww/en/view/109804985/"
+        },
+        "3": {
+            "command": "Update to V5.30 or later version",
+            "description": "Update the firmware OPUPI0 to V5.30 or later version. The firmware OPUPI0 V5.30 is present within 'CP-8031/CP-8050 Package' V5.30. URL: https://support.industry.siemens.com/cs/ww/en/view/109804985/"
+        },
+        "4": {
+            "command": "Update to V1.3.0 or later version",
+            "description": "Update the firmware SICORE to V1.3.0 or later version. The firmware SICORE V1.3.0 is present within 'SICAM 8 Software Solution Package' V5.30. URL: https://support.industry.siemens.com/cs/ww/en/view/109818240/"
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4]
+    }
+}

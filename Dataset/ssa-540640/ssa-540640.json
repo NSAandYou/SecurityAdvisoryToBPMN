@@ -1,0 +1,33 @@
+{
+    "mentioned_cpes": [
+        "Mendix Runtime >= V9.3",
+        "Mendix 9 >= V9.3.0 < V9.24.22",
+        "Mendix 10 < V10.11.0",
+        "Mendix 10 (V10.6) < V10.6.9"
+    ],
+    "issue_name": "Improper Privilege Management Vulnerability in Mendix Runtime",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V9.24.22 or later version",
+            "description": "Update Mendix 9 applications to version 9.24.22 or later."
+        },
+        "2": {
+            "command": "Update to V10.11.0 or later version",
+            "description": "Update Mendix 10 applications to version 10.11.0 or later."
+        },
+        "3": {
+            "command": "Update to V10.6.9 or later version",
+            "description": "Update Mendix 10 (V10.6) applications to version 10.6.9 or later."
+        },
+        "4": {
+            "command": "Set the runtime setting ‘StrictReferenceChecks‘ to false",
+            "description": "Set the runtime setting ‘StrictReferenceChecks‘ to false to reduce the risk, but note that this makes the reference checks less secure."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4]
+    }
+}

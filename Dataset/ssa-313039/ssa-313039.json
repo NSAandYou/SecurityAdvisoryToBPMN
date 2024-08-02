@@ -1,0 +1,16 @@
+{
+    "mentioned_cpes": [
+        "Totally Integrated Automation Portal (TIA Portal) V18",
+        "SIMATIC STEP 7 Safety V18"
+    ],
+    "issue_name": "Deserialization Vulnerability in STEP 7 Safety before V19",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V18 Update 2 or later version",
+            "description": "Update the Totally Integrated Automation Portal (TIA Portal) to V18 Update 2 or a later version."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

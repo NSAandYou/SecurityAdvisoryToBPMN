@@ -1,0 +1,49 @@
+{
+    "mentioned_cpes": [
+        "CVE-2017-9841",
+        "CVE-2018-15133",
+        "CVE-2021-41773"
+    ],
+    "issue_name": "Androxgh0st Malware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Ensure Apache version",
+            "description": "Ensure that Apache servers are not running versions 2.4.49 or 2.4.50."
+        },
+        "4": {
+            "command": "Deny all requests by default",
+            "description": "Verify that the default configuration for all URIs is to deny all requests unless there is a specific need for it to be accessible."
+        },
+        "5": {
+            "command": "Disable debug mode",
+            "description": "Ensure that any live Laravel applications are not in 'debug' or testing mode."
+        },
+        "6": {
+            "command": "Remove cloud credentials",
+            "description": "Remove all cloud credentials from .env files and revoke them."
+        },
+        "7": {
+            "command": "Review platforms for unauthorized access",
+            "description": "On a one-time basis for previously stored cloud credentials, and on an ongoing basis for other types of credentials that cannot be removed, review any platforms or services that have credentials listed in the .env file for unauthorized access or use."
+        },
+        "8": {
+            "command": "Scan for unrecognized PHP files",
+            "description": "Scan the server’s file system for unrecognized PHP files, particularly in the root directory or /vendor/phpunit/phpunit/src/Util/PHP folder."
+        },
+        "9": {
+            "command": "Review outgoing GET requests",
+            "description": "Review outgoing GET requests (via cURL command) to file hosting sites such as GitHub, pastebin, etc., particularly when the request accesses a .php file."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }
+}

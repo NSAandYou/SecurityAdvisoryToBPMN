@@ -1,0 +1,78 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Enhancing Cyber Resilience: Insights from the CISA Healthcare and Public Health Sector Risk and Vulnerability Assessment",
+    "steps_to_fix": {
+        "1": {
+            "command": "Use phishing-resistant multi-factor authentication (MFA) for all administrative access",
+            "description": "Implement MFA to ensure that administrative access is protected against phishing attacks."
+        },
+        "2": {
+            "command": "Verify the implementation of appropriate hardening measures, and change, remove, or deactivate all default credentials",
+            "description": "Ensure that all default credentials are changed, removed, or deactivated to prevent unauthorized access."
+        },
+        "3": {
+            "command": "Implement network segregation controls",
+            "description": "Apply network segregation to limit the spread of potential threats within the network."
+        },
+        "4": {
+            "command": "Follow National Institute of Standards and Technologies (NIST) guidelines when creating password policies",
+            "description": "Enforce the use of strong passwords that cannot be easily cracked."
+        },
+        "5": {
+            "command": "Use Managed Service Accounts",
+            "description": "Manage service account passwords automatically to ensure they are secure."
+        },
+        "6": {
+            "command": "Do not reuse local administrator account passwords across systems",
+            "description": "Ensure that passwords are strong and unique for each system."
+        },
+        "7": {
+            "command": "Disable deprecated protocols (including NetBIOS, LLMNR, and mDNS)",
+            "description": "Disable unnecessary network services to minimize risk."
+        },
+        "8": {
+            "command": "Run daemon applications using a non-Administrator account",
+            "description": "Configure service accounts with only the necessary permissions."
+        },
+        "9": {
+            "command": "Require SMB signing for both SMB client and server on all systems",
+            "description": "Prevent adversary-in-the-middle and pass-the-hash attacks by enabling SMB signing."
+        },
+        "10": {
+            "command": "Discontinue reuse or sharing of administrative credentials among user/administrative accounts",
+            "description": "Use unique credentials across workstations to enhance security."
+        },
+        "11": {
+            "command": "Enforce consistent patch management across all systems and hosts within the network environment",
+            "description": "Ensure that all systems are up-to-date with the latest patches to mitigate vulnerabilities."
+        },
+        "12": {
+            "command": "Evaluate the use of unsupported hardware and software and discontinue where possible",
+            "description": "Discontinue the use of unsupported hardware and software to reduce security risks."
+        },
+        "13": {
+            "command": "Require phishing-resistant MFA for all user accounts that have access to sensitive data or systems",
+            "description": "Enhance authentication measures to protect sensitive data."
+        },
+        "14": {
+            "command": "Implement a process to review files and systems for insecure handling of PII",
+            "description": "Secure or remove sensitive information and conduct periodic scans to ensure data is not stored in cleartext."
+        },
+        "15": {
+            "command": "Remove Unconstrained Delegation from all servers",
+            "description": "Upgrade systems to leverage other approaches or isolate systems to mitigate risks."
+        },
+        "16": {
+            "command": "Implement a review process for files and systems to look for cleartext account credentials",
+            "description": "Remove or change cleartext credentials to maintain security."
+        },
+        "17": {
+            "command": "Restrict access to file shares containing sensitive data to only certain authenticated and authorized users",
+            "description": "Ensure that only authorized users have access to sensitive data."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3],
+        "2": [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    }
+}

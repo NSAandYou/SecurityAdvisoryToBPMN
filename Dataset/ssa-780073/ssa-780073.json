@@ -1,0 +1,195 @@
+{
+    "mentioned_cpes": [
+        "Development/Evaluation Kits for PROFINET IO",
+        "PROFINET Driver for Controller",
+        "SCALANCE M-800 family",
+        "RUGGEDCOM RM1224 family",
+        "SCALANCE M804PB",
+        "SCALANCE M812-1 ADSL-Router family",
+        "SCALANCE M816-1 ADSL-Router family",
+        "SCALANCE M826-2 SHDSL-Router",
+        "SCALANCE M874-2",
+        "SCALANCE M874-3",
+        "SCALANCE M876-3",
+        "SCALANCE M876-4",
+        "SCALANCE S615 family",
+        "SCALANCE W-700 IEEE 802.11n family",
+        "SCALANCE X200-4P IRT",
+        "SCALANCE X201-3P IRT",
+        "SCALANCE X201-3P IRT PRO",
+        "SCALANCE X202-2IRT",
+        "SCALANCE X202-2P IRT",
+        "SCALANCE X202-2P IRT PRO",
+        "SCALANCE X204-2",
+        "SCALANCE X204-2FM",
+        "SCALANCE X204-2LD",
+        "SCALANCE X204-2LD TS",
+        "SCALANCE X204-2TS",
+        "SCALANCE X204IRT",
+        "SCALANCE X204IRT PRO",
+        "SCALANCE X206-1",
+        "SCALANCE X206-1LD",
+        "SCALANCE X208",
+        "SCALANCE X208PRO",
+        "SCALANCE X212-2",
+        "SCALANCE X212-2LD",
+        "SCALANCE X216",
+        "SCALANCE X224",
+        "SCALANCE X-300 family",
+        "SCALANCE X-300 EEC family",
+        "SCALANCE X302-7 EEC",
+        "SCALANCE X307-2 EEC",
+        "SCALANCE X307-2 EEC (2x 230V)",
+        "SCALANCE X307-2 EEC (2x 24V)",
+        "SCALANCE X307-3",
+        "SCALANCE X307-3LD",
+        "SCALANCE X308-2",
+        "SCALANCE X308-2LD",
+        "SCALANCE X308-2LH",
+        "SCALANCE X308-2LH+",
+        "SCALANCE X310",
+        "SCALANCE X310FE",
+        "SCALANCE X-300 RD family",
+        "SCALANCE X308-2M family",
+        "SCALANCE X408 family",
+        "SCALANCE XR-300 family",
+        "SCALANCE XR324-12M",
+        "SCALANCE XR324-4M EEC",
+        "SCALANCE XR-300 POE family",
+        "SCALANCE XB-200/XC-200/XP-200/XF-200BA/XR-300WG family",
+        "SCALANCE XF201-3P IRT",
+        "SCALANCE XF202-2P IRT",
+        "SCALANCE XF204",
+        "SCALANCE XF204-2",
+        "SCALANCE XF204-2BA IRT",
+        "SCALANCE XF204IRT",
+        "SCALANCE XF206-1",
+        "SCALANCE XF208",
+        "SCALANCE XF-200BA",
+        "SCALANCE XM-400/XR-500 family",
+        "SIMATIC CP 343-1",
+        "SIMATIC CP 343-1 Advanced",
+        "SIMATIC CP 343-1 ERPC",
+        "SIMATIC CP 343-1 Lean",
+        "SIMATIC CP 443-1",
+        "SIMATIC CP 443-1 Advanced",
+        "SIMATIC CP 443-1 OPC UA",
+        "SIMATIC CP 1616 and CP 1604",
+        "SIMATIC ET200ecoPN",
+        "SIMATIC ET200S",
+        "SIMATIC ET 200AL IM 157-1 PN",
+        "SIMATIC ET 200M IM 153-4 PN IO HF",
+        "SIMATIC ET 200M IM 153-4 PN IO ST",
+        "SIMATIC ET 200MP IM 155-5 PN HF",
+        "SIMATIC ET 200MP IM 155-5 PN ST",
+        "SIMATIC ET 200pro IM 154-3 PN HF",
+        "SIMATIC ET 200pro IM 154-4 PN HF",
+        "SIMATIC ET 200SP IM 155-6 PN BA",
+        "SIMATIC ET 200SP IM 155-6 PN HF",
+        "SIMATIC ET 200SP IM 155-6 PN ST",
+        "SIMATIC IPC Support, Package for VxWorks",
+        "SIMATIC MV400 family",
+        "SIMATIC PN/PN Coupler",
+        "SIMATIC RF180C",
+        "SIMATIC RF182C",
+        "SIMATIC RF600R family",
+        "SIMOTION C",
+        "SIMOTION D",
+        "SIMOTION P",
+        "SINAMICS DCP",
+        "SIPLUS NET CP 343-1",
+        "SIPLUS NET CP 343-1 Advanced",
+        "SIPLUS NET CP 343-1 Lean",
+        "SIPLUS NET CP 443-1",
+        "SOFTNET-IE PNIO"
+    ],
+    "issue_name": "Denial of Service Vulnerability in PROFINET Devices via DCE-RPC Packets",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V4.5 Patch 01",
+            "description": "Update Development/Evaluation Kits for PROFINET IO: EK-ERTEC 200 to V4.5 Patch 01."
+        },
+        "2": {
+            "command": "Update to V4.6",
+            "description": "Update Development/Evaluation Kits for PROFINET IO: EK-ERTEC 200P to V4.6."
+        },
+        "3": {
+            "command": "Update to V2.1 Patch 03",
+            "description": "Update PROFINET Driver for Controller to V2.1 Patch 03."
+        },
+        "4": {
+            "command": "Update to V6.1.2 or later version",
+            "description": "Update SCALANCE M-800 family, RUGGEDCOM RM1224 family, SCALANCE M804PB, SCALANCE M812-1 ADSL-Router family, SCALANCE M816-1 ADSL-Router family, SCALANCE M826-2 SHDSL-Router, SCALANCE M874-2, SCALANCE M874-3, SCALANCE M876-3, SCALANCE M876-4, SCALANCE S615 family to V6.1.2 or later version."
+        },
+        "5": {
+            "command": "Create a firewall rule",
+            "description": "Create a firewall rule that blocks the PROFINET Context Manager port (34964/udp)."
+        },
+        "6": {
+            "command": "Update to V6.4",
+            "description": "Update SCALANCE W-700 IEEE 802.11n family to V6.4."
+        },
+        "7": {
+            "command": "Update to V5.4.2",
+            "description": "Update SCALANCE X200-4P IRT, SCALANCE X201-3P IRT, SCALANCE X201-3P IRT PRO, SCALANCE X202-2IRT, SCALANCE X202-2P IRT, SCALANCE X202-2P IRT PRO, SCALANCE XF201-3P IRT, SCALANCE XF202-2P IRT, SCALANCE XF204-2BA IRT, SCALANCE XF204IRT to V5.4.2."
+        },
+        "8": {
+            "command": "Update to V5.2.5 or later version",
+            "description": "Update SCALANCE X204-2, SCALANCE X204-2FM, SCALANCE X204-2LD, SCALANCE X204-2LD TS, SCALANCE X204-2TS, SCALANCE X206-1, SCALANCE X206-1LD, SCALANCE X208, SCALANCE X208PRO, SCALANCE X212-2, SCALANCE X212-2LD, SCALANCE XF204, SCALANCE XF204-2, SCALANCE XF206-1, SCALANCE XF208 to V5.2.5 or later version."
+        },
+        "9": {
+            "command": "Update to V4.1.4 or later version",
+            "description": "Update SCALANCE X-300 family, SCALANCE X-300 EEC family, SCALANCE X302-7 EEC, SCALANCE X307-2 EEC, SCALANCE X307-2 EEC (2x 230V), SCALANCE X307-2 EEC (2x 24V), SCALANCE X307-3, SCALANCE X307-3LD, SCALANCE X308-2, SCALANCE X308-2LD, SCALANCE X308-2LH, SCALANCE X308-2LH+, SCALANCE X310, SCALANCE X310FE, SCALANCE X-300 RD family, SCALANCE X308-2M family, SCALANCE X408 family, SCALANCE XR-300 family, SCALANCE XR324-12M, SCALANCE XR324-4M EEC, SCALANCE XR-300 POE family to V4.1.4 or later version."
+        },
+        "10": {
+            "command": "Update to V4.1",
+            "description": "Update SCALANCE XB-200/XC-200/XP-200/XF-200BA/XR-300WG family to V4.1."
+        },
+        "11": {
+            "command": "Update to V6.2.3",
+            "description": "Update SCALANCE XM-400/XR-500 family to V6.2.3."
+        },
+        "12": {
+            "command": "Update to V3.3 or later version",
+            "description": "Update SIMATIC CP 443-1, SIMATIC CP 443-1 Advanced, SIPLUS NET CP 443-1, SIPLUS NET CP 443-1 Advanced to V3.3 or later version."
+        },
+        "13": {
+            "command": "Update to V2.8.1",
+            "description": "Update SIMATIC CP 1616 and CP 1604 to V2.8.1."
+        },
+        "14": {
+            "command": "Update to V4.2.0 or later version",
+            "description": "Update SIMATIC ET 200MP IM 155-5 PN HF, SIPLUS ET 200MP IM 155-5 PN HF, SIMATIC ET 200SP IM 155-6 PN HF to V4.2.0 or later version."
+        },
+        "15": {
+            "command": "Update to V4.1.0 or later version",
+            "description": "Update SIMATIC ET 200MP IM 155-5 PN ST, SIPLUS ET 200MP IM 155-5 PN ST, SIMATIC ET 200SP IM 155-6 PN ST to V4.1.0 or later version."
+        },
+        "16": {
+            "command": "Update to V7.0.6 or later version",
+            "description": "Update SIMATIC MV400 family to V7.0.6 or later version."
+        },
+        "17": {
+            "command": "Update to V3.2.1",
+            "description": "Update SIMATIC RF600R family to V3.2.1."
+        },
+        "18": {
+            "command": "Update to V4.5 or later version",
+            "description": "Update SIMOTION C, SIMOTION D, SIMOTION P to V4.5 or later version."
+        },
+        "19": {
+            "command": "Update to V1.3",
+            "description": "Update SINAMICS DCP to V1.3."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3],
+        "2": [4, [5, 6]],
+        "3": [7, 8, 9],
+        "4": [10, 11],
+        "5": [12, 13],
+        "6": [14, 15],
+        "7": [16, 17],
+        "8": [18, 19]
+    }
+}

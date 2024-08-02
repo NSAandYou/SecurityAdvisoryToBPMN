@@ -1,0 +1,105 @@
+{
+    "mentioned_cpes": [
+        "S7-PCT",
+        "Security Configuration Tool (SCT)",
+        "SIMATIC Automation Tool",
+        "SIMATIC BATCH V9.1",
+        "SIMATIC NET PC Software V16",
+        "SIMATIC NET PC Software V17",
+        "SIMATIC NET PC Software V18",
+        "SIMATIC PCS 7 V9.1",
+        "SIMATIC PDM V9.2",
+        "SIMATIC Route Control V9.1",
+        "SIMATIC STEP 7 V5",
+        "SIMATIC WinCC OA V3.17",
+        "SIMATIC WinCC OA V3.18",
+        "SIMATIC WinCC OA V3.19",
+        "SIMATIC WinCC Runtime Advanced",
+        "SIMATIC WinCC Runtime Professional V16",
+        "SIMATIC WinCC Runtime Professional V17",
+        "SIMATIC WinCC Runtime Professional V18",
+        "SIMATIC WinCC Runtime Professional V19",
+        "SIMATIC WinCC V7.4",
+        "SIMATIC WinCC V7.5",
+        "SIMATIC WinCC V8.0",
+        "SINAMICS Startdrive",
+        "SINUMERIK ONE virtual",
+        "SINUMERIK PLC Programming Tool",
+        "TIA Portal Cloud Connector",
+        "Totally Integrated Automation Portal (TIA Portal) V18",
+        "Totally Integrated Automation Portal (TIA Portal) V15.1",
+        "Totally Integrated Automation Portal (TIA Portal) V16",
+        "Totally Integrated Automation Portal (TIA Portal) V17",
+        "Totally Integrated Automation Portal (TIA Portal) V19"
+    ],
+    "issue_name": "Out of Bounds Read Vulnerability in Industrial Products",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V18 SP1 or later version",
+            "description": "Update SIMATIC NET PC Software to V18 SP1 or later version."
+        },
+        "2": {
+            "command": "Update to V3.18 P025 or later version",
+            "description": "Update SIMATIC WinCC OA to V3.18 P025 or later version."
+        },
+        "3": {
+            "command": "Update to V3.19 P010 or later version",
+            "description": "Update SIMATIC WinCC OA to V3.19 P010 or later version."
+        },
+        "4": {
+            "command": "Update to V16 Update 6 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional to V16 Update 6 or later version."
+        },
+        "5": {
+            "command": "Update to V18 Update 4 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional to V18 Update 4 or later version."
+        },
+        "6": {
+            "command": "Update to V19 Update 2 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional to V19 Update 2 or later version."
+        },
+        "7": {
+            "command": "Update to V7.5 SP2 Update 17 or later version",
+            "description": "Update SIMATIC WinCC to V7.5 SP2 Update 17 or later version."
+        },
+        "8": {
+            "command": "Update to V8.0 Update 5 or later version",
+            "description": "Update SIMATIC WinCC to V8.0 Update 5 or later version."
+        },
+        "9": {
+            "command": "Update to V19 SP1 or later version",
+            "description": "Update SINAMICS Startdrive to V19 SP1 or later version."
+        },
+        "10": {
+            "command": "Update to V6.23 or later version",
+            "description": "Update SINUMERIK ONE virtual to V6.23 or later version."
+        },
+        "11": {
+            "command": "Update to V2.0 or later version",
+            "description": "Update TIA Portal Cloud Connector to V2.0 or later version."
+        },
+        "12": {
+            "command": "Update to V18 Update 4 or later version",
+            "description": "Update Totally Integrated Automation Portal (TIA Portal) to V18 Update 4 or later version."
+        },
+        "13": {
+            "command": "Update to V19 Update 2 or later version",
+            "description": "Update Totally Integrated Automation Portal (TIA Portal) to V19 Update 2 or later version."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4],
+        "5": [5],
+        "6": [6],
+        "7": [7],
+        "8": [8],
+        "9": [9],
+        "10": [10],
+        "11": [11],
+        "12": [12],
+        "13": [13]
+    }
+}

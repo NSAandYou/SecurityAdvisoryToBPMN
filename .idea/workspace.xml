@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 2.0 (for evaluation incl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SATB/llm.py" beforeDir="false" afterPath="$PROJECT_DIR$/SATB/llm.py" afterDir="false" />
-    </list>
+    <list default="true" id="be66629c-63d6-4f87-977c-cd2133ed11f2" name="Changes" comment="Version 2.0 (for publishing excl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -240,7 +237,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722348418377</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Version 2.0 (for publishing excl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly">
+      <option name="closed" value="true" />
+      <created>1722432289568</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1722432289568</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +269,7 @@
     <MESSAGE value="Version 1.1&#10;- first finished version without revision" />
     <MESSAGE value="Version 1.2&#10;- testversion (incl. secret key)&#10;- changed python version&#10;- removed useless stuff&#10;- use gpt-4o instead of 4-turbo" />
     <MESSAGE value="Version 2.0 (for evaluation incl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0 (for evaluation incl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly" />
+    <MESSAGE value="Version 2.0 (for publishing excl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 2.0 (for publishing excl. secret key)&#10;- rebuild json_to_xml totally&#10;- added subprocesses and better view for multiple options&#10;- modified prompt slightly" />
   </component>
 </project>

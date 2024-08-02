@@ -1,0 +1,39 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC Energy Manager Basic",
+        "SIMATIC Energy Manager PRO",
+        "SIMATIC IPC DiagBase",
+        "SIMATIC IPC DiagMonitor",
+        "SIMIT V10",
+        "SIMIT V11"
+    ],
+    "issue_name": "Denial of Service Vulnerability in the OPC UA Server Implementations of Several Industrial Products",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V7.5 or later version",
+            "description": "Update SIMATIC Energy Manager Basic to version 7.5 or later."
+        },
+        "2": {
+            "command": "Update to V7.5 or later version",
+            "description": "Update SIMATIC Energy Manager PRO to version 7.5 or later."
+        },
+        "3": {
+            "command": "Update to V11.1 or later version",
+            "description": "Update SIMIT V11 to version 11.1 or later."
+        },
+        "4": {
+            "command": "Disable the OPC UA server",
+            "description": "Disable the OPC UA server in the affected product, if possible and OPC UA is not used."
+        },
+        "5": {
+            "command": "Restrict access to the OPC UA interface",
+            "description": "Restrict access to the OPC UA interface to trusted clients."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [ [4, 5] ]
+    }
+}

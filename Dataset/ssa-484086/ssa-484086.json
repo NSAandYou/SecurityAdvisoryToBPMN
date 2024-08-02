@@ -1,0 +1,13 @@
+{
+    "mentioned_cpes": ["SINEMA Remote Connect Server < V3.1"],
+    "issue_name": "Multiple Vulnerabilities in SINEMA Remote Connect Server",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V3.1 or later version",
+            "description": "Siemens has released an update for the SINEMA Remote Connect Server. Update to the latest version to address the vulnerabilities."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

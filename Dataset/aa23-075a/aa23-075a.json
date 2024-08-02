@@ -1,0 +1,73 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "LockBit 3.0 Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "2": {
+            "command": "Require all accounts with password logins to comply with NIST standards",
+            "description": "Use longer passwords, store passwords in hashed format, add password user 'salts', avoid reusing passwords, implement multiple failed login attempt account lockouts, disable password 'hints', and refrain from requiring frequent password changes."
+        },
+        "3": {
+            "command": "Require administrator credentials to install software",
+            "description": "Ensure that only administrators can install software to prevent unauthorized installations."
+        },
+        "4": {
+            "command": "Require phishing-resistant multifactor authentication",
+            "description": "Implement multifactor authentication for all services, especially for webmail, VPNs, and accounts accessing critical systems."
+        },
+        "5": {
+            "command": "Keep all operating systems, software, and firmware up to date",
+            "description": "Regularly update systems to minimize exposure to cybersecurity threats."
+        },
+        "6": {
+            "command": "Segment networks",
+            "description": "Control traffic flows between subnetworks and restrict adversary lateral movement."
+        },
+        "7": {
+            "command": "Identify, detect, and investigate abnormal activity",
+            "description": "Use a network monitoring tool to log and report all network traffic, including lateral movement activity."
+        },
+        "8": {
+            "command": "Install, regularly update, and enable real-time detection for antivirus software",
+            "description": "Ensure antivirus software is up to date and enabled on all hosts."
+        },
+        "9": {
+            "command": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts",
+            "description": "Regularly audit user accounts with administrative privileges and configure access controls according to the principle of least privilege."
+        },
+        "10": {
+            "command": "Disable unused ports",
+            "description": "Close any ports that are not in use to reduce potential attack vectors."
+        },
+        "11": {
+            "command": "Consider adding an email banner to emails received from outside your organization",
+            "description": "Mark external emails to help users identify potential phishing attempts."
+        },
+        "12": {
+            "command": "Disable hyperlinks in received emails",
+            "description": "Prevent users from clicking on potentially malicious links."
+        },
+        "13": {
+            "command": "Implement time-based access for admin-level accounts",
+            "description": "Use Just-in-Time (JIT) access to provision privileged access when needed and enforce the principle of least privilege."
+        },
+        "14": {
+            "command": "Disable command-line and scripting activities and permissions",
+            "description": "Prevent threat actors from running tools that facilitate privilege escalation and lateral movement."
+        },
+        "15": {
+            "command": "Maintain offline backups of data",
+            "description": "Regularly maintain backup and restoration to ensure data is not irretrievable."
+        },
+        "16": {
+            "command": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure",
+            "description": "Protect backup data from being altered or deleted."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    }
+}

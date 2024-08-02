@@ -1,0 +1,37 @@
+{
+    "mentioned_cpes": [
+        "MOVEit Transfer 2023.0.0",
+        "MOVEit Transfer 2022.1.x",
+        "MOVEit Transfer 2022.0.x",
+        "MOVEit Transfer 2021.1.x",
+        "MOVEit Transfer 2021.0.x",
+        "MOVEit Transfer 2020.1.x",
+        "MOVEit Transfer 2020.0.x"
+    ],
+    "issue_name": "CVE-2023-34362 MOVEit Vulnerability",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop MOVEit Transfer service",
+            "description": "Stop the MOVEit Transfer service to prevent further exploitation."
+        },
+        "2": {
+            "command": "Apply the patch",
+            "description": "Download and apply the latest patch from Progress Software for the affected MOVEit Transfer versions."
+        },
+        "3": {
+            "command": "Restart MOVEit Transfer service",
+            "description": "Restart the MOVEit Transfer service after applying the patch."
+        },
+        "4": {
+            "command": "Audit for active administrative accounts",
+            "description": "Use the SQL query to audit for active administrative accounts and validate that only intended accounts are present: SELECT * FROM [<database name>].[dbo].[users] WHERE Permission=30 AND Status='active' and Deleted='0'"
+        },
+        "5": {
+            "command": "Remove unauthorized accounts",
+            "description": "Remove any unauthorized accounts identified during the audit."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5]
+    }
+}

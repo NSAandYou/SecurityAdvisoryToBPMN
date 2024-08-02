@@ -1,0 +1,275 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC BRAUMAT",
+        "SIMATIC Cloud Connect 7 CC712",
+        "SIMATIC Cloud Connect 7 CC716",
+        "SIMATIC Comfort/Mobile RT",
+        "SIMATIC Drive Controller CPU 1504D TF",
+        "SIMATIC Drive Controller CPU 1507D TF",
+        "SIMATIC ET 200SP Open Controller CPU 1515SP PC2",
+        "SIMATIC IPC DiagMonitor",
+        "SIMATIC NET PC Software",
+        "SIMATIC PCS 7 V9.1",
+        "SIMATIC PCS neo V4.0",
+        "SIMATIC PCS neo V4.1",
+        "SIMATIC S7-1500 CPU 1510SP F-1 PN",
+        "SIMATIC S7-1500 CPU 1510SP-1 PN",
+        "SIMATIC S7-1500 CPU 1511-1 PN",
+        "SIMATIC S7-1500 CPU 1511C-1 PN",
+        "SIMATIC S7-1500 CPU 1511F-1 PN",
+        "SIMATIC S7-1500 CPU 1511T-1 PN",
+        "SIMATIC S7-1500 CPU 1511TF-1 PN",
+        "SIMATIC S7-1500 CPU 1512C-1 PN",
+        "SIMATIC S7-1500 CPU 1512SP F-1 PN",
+        "SIMATIC S7-1500 CPU 1512SP-1 PN",
+        "SIMATIC S7-1500 CPU 1513-1 PN",
+        "SIMATIC S7-1500 CPU 1513F-1 PN",
+        "SIMATIC S7-1500 CPU 1514SP F-2 PN",
+        "SIMATIC S7-1500 CPU 1514SP-2 PN",
+        "SIMATIC S7-1500 CPU 1514SPT F-2 PN",
+        "SIMATIC S7-1500 CPU 1514SPT-2 PN",
+        "SIMATIC S7-1500 CPU 1515-2 PN",
+        "SIMATIC S7-1500 CPU 1515F-2 PN",
+        "SIMATIC S7-1500 CPU 1515T-2 PN",
+        "SIMATIC S7-1500 CPU 1515TF-2 PN",
+        "SIMATIC S7-1500 CPU 1516-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1516F-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1516T-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1516TF-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1517-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1517F-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1517T-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1517TF-3 PN/DP",
+        "SIMATIC S7-1500 CPU 1518-4 PN/DP",
+        "SIMATIC S7-1500 CPU 1518-4 PN/DP MFP",
+        "SIMATIC S7-1500 CPU 1518F-4 PN/DP",
+        "SIMATIC S7-1500 CPU 1518F-4 PN/DP MFP",
+        "SIMATIC S7-1500 CPU 1518T-4 PN/DP",
+        "SIMATIC S7-1500 CPU 1518TF-4 PN/DP",
+        "SIMATIC S7-1500 CPU S7-1518-4 PN/DP ODK",
+        "SIMATIC S7-1500 CPU S7-1518F-4 PN/DP ODK",
+        "SIMATIC S7-1500 ET 200pro: CPU 1513PRO F-2 PN",
+        "SIMATIC S7-1500 ET 200pro: CPU 1513PRO-2 PN",
+        "SIMATIC S7-1500 ET 200pro: CPU 1516PRO F-2 PN",
+        "SIMATIC S7-1500 ET 200pro: CPU 1516PRO-2 PN",
+        "SIMATIC S7-1500 Software Controller V2",
+        "SIMATIC S7-1500 Software Controller V3",
+        "SIMATIC S7-PLCSIM Advanced",
+        "SIMATIC SISTAR",
+        "SIMATIC WinCC OA V3.17",
+        "SIMATIC WinCC OA V3.18",
+        "SIMATIC WinCC OA V3.19",
+        "SIMATIC WinCC OPC UA Client",
+        "SIMATIC WinCC Runtime Professional V16",
+        "SIMATIC WinCC Runtime Professional V17",
+        "SIMATIC WinCC Runtime Professional V18",
+        "SIMATIC WinCC Runtime Professional V19",
+        "SIMATIC WinCC Unified OPC UA Server",
+        "SIMATIC WinCC V7.4",
+        "SIMATIC WinCC V7.5",
+        "SIMATIC WinCC V8.0",
+        "SIPLUS ET 200SP CPU 1510SP F-1 PN",
+        "SIPLUS ET 200SP CPU 1510SP F-1 PN RAIL",
+        "SIPLUS ET 200SP CPU 1510SP-1 PN",
+        "SIPLUS ET 200SP CPU 1510SP-1 PN RAIL",
+        "SIPLUS ET 200SP CPU 1512SP F-1 PN",
+        "SIPLUS ET 200SP CPU 1512SP F-1 PN RAIL",
+        "SIPLUS ET 200SP CPU 1512SP-1 PN",
+        "SIPLUS ET 200SP CPU 1512SP-1 PN RAIL",
+        "SIPLUS S7-1500 CPU 1511-1 PN",
+        "SIPLUS S7-1500 CPU 1511-1 PN T1 RAIL",
+        "SIPLUS S7-1500 CPU 1511-1 PN TX RAIL",
+        "SIPLUS S7-1500 CPU 1511F-1 PN",
+        "SIPLUS S7-1500 CPU 1513-1 PN",
+        "SIPLUS S7-1500 CPU 1513F-1 PN",
+        "SIPLUS S7-1500 CPU 1515F-2 PN",
+        "SIPLUS S7-1500 CPU 1515F-2 PN RAIL",
+        "SIPLUS S7-1500 CPU 1515F-2 PN T2 RAIL",
+        "SIPLUS S7-1500 CPU 1516-3 PN/DP",
+        "SIPLUS S7-1500 CPU 1516-3 PN/DP RAIL",
+        "SIPLUS S7-1500 CPU 1516-3 PN/DP TX RAIL",
+        "SIPLUS S7-1500 CPU 1516F-3 PN/DP",
+        "SIPLUS S7-1500 CPU 1516F-3 PN/DP RAIL",
+        "SIPLUS S7-1500 CPU 1518-4 PN/DP",
+        "SIPLUS S7-1500 CPU 1518-4 PN/DP MFP",
+        "SIPLUS S7-1500 CPU 1518F-4 PN/DP"
+    ],
+    "issue_name": "Denial of Service Vulnerability in the OPC UA Implementations of SIMATIC Products",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V8.1 SP1 or later version",
+            "description": "Update SIMATIC BRAUMAT to V8.1 SP1 or later version."
+        },
+        "2": {
+            "command": "Update to V2.2 or later version",
+            "description": "Update SIMATIC Cloud Connect 7 CC712 to V2.2 or later version."
+        },
+        "3": {
+            "command": "Update to V2.2 or later version",
+            "description": "Update SIMATIC Cloud Connect 7 CC716 to V2.2 or later version."
+        },
+        "4": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIMATIC Drive Controller CPU 1504D TF to V2.9.7 or later version."
+        },
+        "5": {
+            "command": "Update to V3.0.3 or later version",
+            "description": "Update SIMATIC Drive Controller CPU 1504D TF to V3.0.3 or later version."
+        },
+        "6": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIMATIC Drive Controller CPU 1507D TF to V2.9.7 or later version."
+        },
+        "7": {
+            "command": "Update to V3.0.3 or later version",
+            "description": "Update SIMATIC Drive Controller CPU 1507D TF to V3.0.3 or later version."
+        },
+        "8": {
+            "command": "Update to V21.9.7 or later version",
+            "description": "Update SIMATIC ET 200SP Open Controller CPU 1515SP PC2 to V21.9.7 or later version."
+        },
+        "9": {
+            "command": "Update to V30.1.0 or later version",
+            "description": "Update SIMATIC ET 200SP Open Controller CPU 1515SP PC2 to V30.1.0 or later version."
+        },
+        "10": {
+            "command": "Update to V17 SP1 Update 1 or later version",
+            "description": "Update SIMATIC NET PC Software V17 to V17 SP1 Update 1 or later version."
+        },
+        "11": {
+            "command": "Update to V18 Update 1 or later version",
+            "description": "Update SIMATIC NET PC Software V18 to V18 Update 1 or later version."
+        },
+        "12": {
+            "command": "Update to V5.0 Update 2 or later version",
+            "description": "Update SIMATIC S7-PLCSIM Advanced to V5.0 Update 2 or later version."
+        },
+        "13": {
+            "command": "Update to V3.17 P029 or later version",
+            "description": "Update SIMATIC WinCC OA V3.17 to V3.17 P029 or later version."
+        },
+        "14": {
+            "command": "Update to V3.18 P019 or later version",
+            "description": "Update SIMATIC WinCC OA V3.18 to V3.18 P019 or later version."
+        },
+        "15": {
+            "command": "Update to V3.19 P005 or later version",
+            "description": "Update SIMATIC WinCC OA V3.19 to V3.19 P005 or later version."
+        },
+        "16": {
+            "command": "Update to V2.0.0.1 or later version",
+            "description": "Update SIMATIC WinCC OPC UA Client to V2.0.0.1 or later version."
+        },
+        "17": {
+            "command": "Update to V19 Update 2 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V19 to V19 Update 2 or later version."
+        },
+        "18": {
+            "command": "Update to V5.0.0.0 or later version",
+            "description": "Update SIMATIC WinCC Unified OPC UA Server to V5.0.0.0 or later version."
+        },
+        "19": {
+            "command": "Update to V8.0 Update 5 or later version",
+            "description": "Update SIMATIC WinCC V8.0 to V8.0 Update 5 or later version."
+        },
+        "20": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1510SP F-1 PN to V2.9.7 or later version."
+        },
+        "21": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1510SP F-1 PN RAIL to V2.9.7 or later version."
+        },
+        "22": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1510SP-1 PN to V2.9.7 or later version."
+        },
+        "23": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1510SP-1 PN RAIL to V2.9.7 or later version."
+        },
+        "24": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1512SP F-1 PN to V2.9.7 or later version."
+        },
+        "25": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1512SP F-1 PN RAIL to V2.9.7 or later version."
+        },
+        "26": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1512SP-1 PN to V2.9.7 or later version."
+        },
+        "27": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS ET 200SP CPU 1512SP-1 PN RAIL to V2.9.7 or later version."
+        },
+        "28": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1511-1 PN to V2.9.7 or later version."
+        },
+        "29": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1511-1 PN T1 RAIL to V2.9.7 or later version."
+        },
+        "30": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1511-1 PN TX RAIL to V2.9.7 or later version."
+        },
+        "31": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1511F-1 PN to V2.9.7 or later version."
+        },
+        "32": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1513-1 PN to V2.9.7 or later version."
+        },
+        "33": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1513F-1 PN to V2.9.7 or later version."
+        },
+        "34": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1515F-2 PN to V2.9.7 or later version."
+        },
+        "35": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1515F-2 PN RAIL to V2.9.7 or later version."
+        },
+        "36": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1515F-2 PN T2 RAIL to V2.9.7 or later version."
+        },
+        "37": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1516-3 PN/DP to V2.9.7 or later version."
+        },
+        "38": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1516-3 PN/DP RAIL to V2.9.7 or later version."
+        },
+        "39": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1516-3 PN/DP TX RAIL to V2.9.7 or later version."
+        },
+        "40": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1516F-3 PN/DP to V2.9.7 or later version."
+        },
+        "41": {
+            "command": "Update to V2.9.7 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1516F-3 PN/DP RAIL to V2.9.7 or later version."
+        },
+        "42": {
+            "command": "Update to V3.0.3 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1518-4 PN/DP to V3.0.3 or later version."
+        },
+        "43": {
+            "command": "Update to V3.0.3 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1518-4 PN/DP MFP to V3.0.3 or later version."
+        },
+        "44": {
+            "command": "Update to V3.0.3 or later version",
+            "description": "Update SIPLUS S7-1500 CPU 1518F-4 PN/DP to V3.0.3 or later version."
+        }
+    }

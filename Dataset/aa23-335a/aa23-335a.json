@@ -1,0 +1,38 @@
+{
+    "mentioned_cpes": ["Unitronics Vision Series PLCs"],
+    "issue_name": "IRGC-Affiliated Cyber Actors Exploit PLCs",
+    "steps_to_fix": {
+        "1": {
+            "command": "Upgrade devices to 9.9.00 VisiLogic software",
+            "description": "Upgrade devices to 9.9.00 VisiLogic software, which requires users to change the default passwords on PLCs and HMIs. Use a strong password."
+        },
+        "2": {
+            "command": "Disconnect the PLC from the public-facing internet",
+            "description": "Disconnect the PLC from the public-facing internet to prevent unauthorized access."
+        },
+        "3": {
+            "command": "Implement multifactor authentication",
+            "description": "Implement multifactor authentication for access to the operational technology (OT) network whenever applicable."
+        },
+        "4": {
+            "command": "Implement a firewall and/or VPN",
+            "description": "If you require remote access, implement a firewall and/or virtual private network (VPN) in front of the PLC to control network access."
+        },
+        "5": {
+            "command": "Create strong backups",
+            "description": "Create strong backups of the logic and configurations of PLCs to enable fast recovery."
+        },
+        "6": {
+            "command": "Keep PLC devices updated",
+            "description": "Keep your Unitronics and other PLC devices updated with the latest versions by the manufacturer."
+        },
+        "7": {
+            "command": "Confirm third-party vendors are applying countermeasures",
+            "description": "Confirm third-party vendors are applying the recommended countermeasures to mitigate exposure of these devices and all installed equipment."
+        }
+    },
+    "paths": {
+        "1": [1, 2],
+        "2": [3, 4, 5, 6, 7]
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "People's Republic of China State-Sponsored Cyber Actor Living off the Land to Evade Detection",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Harden Domain Controllers",
+            "description": "Defenders should harden domain controllers and monitor event logs for ntdsutil.exe and similar process creations."
+        },
+        "4": {
+            "command": "Limit Port Proxy Usage",
+            "description": "Administrators should limit port proxy usage within environments and only enable them for the period of time in which they are required."
+        },
+        "5": {
+            "command": "Investigate Unusual IP Addresses and Ports",
+            "description": "Defenders should investigate unusual IP addresses and ports in command lines, registry entries, and firewall logs to identify other hosts that are potentially involved in actor actions."
+        },
+        "6": {
+            "command": "Review Perimeter Firewall Configurations",
+            "description": "Defenders should review perimeter firewall configurations for unauthorized changes and/or entries that may permit external connections to internal hosts."
+        },
+        "7": {
+            "command": "Look for Abnormal Account Activity",
+            "description": "Defenders should look for abnormal account activity, such as logons outside of normal working hours and impossible time-and-distance logons."
+        },
+        "8": {
+            "command": "Forward Log Files to Centralized Logging Server",
+            "description": "Defenders should forward log files to a hardened centralized logging server, preferably on a segmented network."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+}

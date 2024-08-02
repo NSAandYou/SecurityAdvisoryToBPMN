@@ -1,0 +1,39 @@
+{
+    "mentioned_cpes": [
+        "Adobe ColdFusion 2018 Update 15 (and earlier)",
+        "Adobe ColdFusion 2021 Update 5 (and earlier)",
+        "Adobe ColdFusion 2016",
+        "Adobe ColdFusion 11"
+    ],
+    "issue_name": "Threat Actors Exploit Adobe ColdFusion CVE-2023-26360 for Initial Access to Government Servers",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Upgrade ColdFusion",
+            "description": "Upgrade all versions affected by this vulnerability. Keep all software up to date and prioritize patching according to CISA’s Known Exploited Vulnerabilities Catalog."
+        },
+        "4": {
+            "command": "Employ proper network segmentation",
+            "description": "Implement network segmentation to separate network segments based on role and functionality."
+        },
+        "5": {
+            "command": "Enable multifactor authentication (MFA)",
+            "description": "Require phishing-resistant multifactor authentication (MFA) for all services to the extent possible, particularly for webmail, VPN, and accounts that access critical systems."
+        },
+        "6": {
+            "command": "Use a firewall or web-application firewall (WAF)",
+            "description": "Use a firewall or web-application firewall (WAF) and enable logging to prevent/detect potential exploitation attempts."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3],
+        "2": [4, [5, 6]]
+    }
+}

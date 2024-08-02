@@ -1,0 +1,14 @@
+{
+    "mentioned_cpes": ["SIMATIC S7-1500 TM MFP - GNU/Linux subsystem"],
+    "issue_name": "Vulnerabilities in the additional GNU/Linux subsystem of the SIMATIC S7-1500 TM MFP V1.1",
+    "steps_to_fix": {},
+    "workaround": {
+        "1": {
+            "command": "Only build and run applications from trusted sources",
+            "description": "Ensure that all applications built and run on the system are from trusted sources to mitigate the risk of exploitation."
+        }
+    },
+    "paths": {
+        "1": [1]
+    }
+}

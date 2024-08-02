@@ -1,0 +1,47 @@
+{
+    "mentioned_cpes": [
+        "CVE-2021-44228",
+        "CVE-2021-31207",
+        "CVE-2021-26084",
+        "CVE-2021-34523",
+        "CVE-2021-34473"
+    ],
+    "issue_name": "People’s Republic of China (PRC) Ministry of State Security APT40 Tradecraft in Action",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Patch applications",
+            "description": "Promptly patch all internet exposed devices and services, including web servers, web applications, and remote access gateways."
+        },
+        "4": {
+            "command": "Implement centralized patch management",
+            "description": "Consider implementing a centralized patch management system to automate and expedite the process."
+        },
+        "5": {
+            "command": "Network segmentation",
+            "description": "Segment networks to limit or block lateral movement by denying traffic between computers unless required."
+        },
+        "6": {
+            "command": "Enforce least privilege",
+            "description": "Limit access to servers, file shares, and other resources."
+        },
+        "7": {
+            "command": "Use multi-factor authentication",
+            "description": "Apply MFA to all internet accessible remote access services, including web and cloud-based email, collaboration platforms, VPN connections, and remote desktop services."
+        },
+        "8": {
+            "command": "Replace end-of-life equipment",
+            "description": "Replace any end-of-life equipment to ensure security."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+}

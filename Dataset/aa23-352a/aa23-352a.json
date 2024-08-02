@@ -1,0 +1,82 @@
+{
+    "mentioned_cpes": [
+        "CVE-2018-13379",
+        "CVE-2020-12812",
+        "CVE-2022-41040",
+        "CVE-2022-41082"
+    ],
+    "issue_name": "Play Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Implement a recovery plan",
+            "description": "Maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "2": {
+            "command": "Require password compliance",
+            "description": "Ensure all accounts with password logins comply with NIST’s standards for developing and managing password policies."
+        },
+        "3": {
+            "command": "Enable multifactor authentication",
+            "description": "Require multifactor authentication for all services to the extent possible, particularly for webmail, VPN, and accounts that access critical systems."
+        },
+        "4": {
+            "command": "Update systems",
+            "description": "Keep all operating systems, software, and firmware up to date. Prioritize patching known exploited vulnerabilities in internet-facing systems."
+        },
+        "5": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware by controlling traffic flows between subnetworks and restricting adversary lateral movement."
+        },
+        "6": {
+            "command": "Implement network monitoring",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a network monitoring tool."
+        },
+        "7": {
+            "command": "Filter network traffic",
+            "description": "Prevent unknown or untrusted origins from accessing remote services on internal systems."
+        },
+        "8": {
+            "command": "Install antivirus software",
+            "description": "Install, regularly update, and enable real-time detection for antivirus software on all hosts."
+        },
+        "9": {
+            "command": "Review accounts",
+            "description": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts."
+        },
+        "10": {
+            "command": "Audit user accounts",
+            "description": "Audit user accounts with administrative privileges and configure access controls according to the principle of least privilege."
+        },
+        "11": {
+            "command": "Disable unused ports",
+            "description": "Disable unused ports to reduce the attack surface."
+        },
+        "12": {
+            "command": "Add email banner",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "13": {
+            "command": "Disable hyperlinks",
+            "description": "Disable hyperlinks in received emails to prevent phishing attacks."
+        },
+        "14": {
+            "command": "Implement time-based access",
+            "description": "Implement time-based access for accounts set at the admin level and higher using the just-in-time (JIT) access method."
+        },
+        "15": {
+            "command": "Disable command-line activities",
+            "description": "Disable command-line and scripting activities and permissions to prevent privileged escalation and lateral movement."
+        },
+        "16": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data and regularly maintain backup and restoration."
+        },
+        "17": {
+            "command": "Encrypt backup data",
+            "description": "Ensure backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+    }
+}

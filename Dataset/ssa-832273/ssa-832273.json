@@ -1,0 +1,28 @@
+{
+    "mentioned_cpes": [
+        "RUGGEDCOM APE1808"
+    ],
+    "issue_name": "Multiple Vulnerabilities in Fortigate NGFW before V7.4.3 on RUGGEDCOM APE1808 devices",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update Fortigate NGFW to V7.4.3",
+            "description": "Contact customer support to receive patch and update information."
+        },
+        "2": {
+            "command": "Set a non form-based authentication scheme",
+            "description": "For CVE-2023-42789 and CVE-2023-42790, set a non form-based authentication scheme. See https://fortiguard.fortinet.com/psirt/FG-IR-23-328 for details."
+        },
+        "3": {
+            "command": "Disable SSL VPN",
+            "description": "For CVE-2024-21762, disable SSL VPN. Note that disabling webmode is NOT a valid workaround. See https://www.fortiguard.com/psirt/FG-IR-24-015 for details."
+        },
+        "4": {
+            "command": "Remove fgfm access for each interface",
+            "description": "For CVE-2024-23113, remove the fgfm access for each interface. See https://www.fortiguard.com/psirt/FG-IR-24-029 for details."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2, 3, 4]
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Russian FSB Cyber Actor Star Blizzard Continues Worldwide Spear-phishing Campaigns",
+    "steps_to_fix": {
+        "1": {
+            "command": "Use strong passwords",
+            "description": "Use a separate password for email accounts and avoid password re-use across multiple services."
+        },
+        "2": {
+            "command": "Use multi-factor authentication",
+            "description": "Use multi-factor authentication (2-factor authentication/two-step authentication) to reduce the impact of password compromises."
+        },
+        "3": {
+            "command": "Keep devices and networks up to date",
+            "description": "Use the latest supported versions, apply security updates promptly, use anti-virus and scan regularly to guard against known malware threats."
+        },
+        "4": {
+            "command": "Exercise vigilance",
+            "description": "Be cautious of spear-phishing emails. Verify the legitimacy of emails via another means if suspicious."
+        },
+        "5": {
+            "command": "Enable automated email scanning features",
+            "description": "Turn on automated email scanning features provided by email providers."
+        },
+        "6": {
+            "command": "Disable mail-forwarding",
+            "description": "Disable mail-forwarding or monitor settings regularly to ensure that a forwarding rule has not been set up by an external malicious actor."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6]
+    }
+}

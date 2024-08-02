@@ -1,0 +1,34 @@
+{
+    "mentioned_cpes": ["CVE-2022-47966", "CVE-2022-42475"],
+    "issue_name": "Multiple Nation-State Threat Actors Exploit CVE-2022-47966 and CVE-2022-42475",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Patch Zoho ManageEngine ServiceDesk Plus",
+            "description": "Patch the Zoho ManageEngine ServiceDesk Plus to the latest version to mitigate CVE-2022-47966."
+        },
+        "4": {
+            "command": "Patch firewall security appliances",
+            "description": "Patch all firewall security appliances to mitigate CVE-2022-42475."
+        },
+        "5": {
+            "command": "Monitor for unauthorized use of remote access software",
+            "description": "Use endpoint detection tools to monitor for unauthorized use of remote access software."
+        },
+        "6": {
+            "command": "Remove unnecessary accounts and groups",
+            "description": "Remove unnecessary (disabled) accounts and groups from the enterprise that are no longer needed, especially privileged accounts."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4],
+        "2": [5, 6]
+    }
+}

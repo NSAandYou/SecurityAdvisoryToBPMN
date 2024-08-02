@@ -1,0 +1,45 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC PCS 7 V9.1",
+        "SIMATIC WinCC Runtime Professional V18",
+        "SIMATIC WinCC Runtime Professional V19",
+        "SIMATIC WinCC V7.4",
+        "SIMATIC WinCC V7.5",
+        "SIMATIC WinCC V8.0"
+    ],
+    "issue_name": "Information Disclosure Vulnerability in SIMATIC WinCC",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update WinCC to V7.5 SP2 Update 17 or later version",
+            "description": "Update SIMATIC PCS 7 V9.1 to WinCC V7.5 SP2 Update 17 or later version."
+        },
+        "2": {
+            "command": "Update to V19 Update 2 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V19 to V19 Update 2 or later version."
+        },
+        "3": {
+            "command": "Update to V7.4 SP1 Update 23 or later version",
+            "description": "Update SIMATIC WinCC V7.4 to V7.4 SP1 Update 23 or later version."
+        },
+        "4": {
+            "command": "Update to V7.5 SP2 Update 17 or later version",
+            "description": "Update SIMATIC WinCC V7.5 to V7.5 SP2 Update 17 or later version."
+        },
+        "5": {
+            "command": "Update to V8.0 Update 5 or later version",
+            "description": "Update SIMATIC WinCC V8.0 to V8.0 Update 5 or later version."
+        },
+        "6": {
+            "command": "Restrict access to application webserver for trusted users only",
+            "description": "Restrict access to the application webserver to trusted users only as a workaround."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4],
+        "5": [5],
+        "6": [6]
+    }
+}

@@ -1,0 +1,67 @@
+{
+    "mentioned_cpes": [
+        "CVE-2020-12812",
+        "CVE-2021-31207",
+        "CVE-2021-34473",
+        "CVE-2021-34523"
+    ],
+    "issue_name": "Hive Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Verify Hive actors no longer have access to the network",
+            "description": "Ensure that Hive actors are no longer present in the network to prevent further compromise."
+        },
+        "2": {
+            "command": "Install updates for operating systems, software, and firmware",
+            "description": "Install updates as soon as they are released, prioritizing VPN servers, remote access software, virtual machine software, and known exploited vulnerabilities."
+        },
+        "3": {
+            "command": "Require phishing-resistant MFA",
+            "description": "Enable and enforce multifactor authentication for as many services as possible, particularly for webmail, VPNs, accounts that access critical systems, and privileged accounts that manage backups."
+        },
+        "4": {
+            "command": "Secure and monitor RDP",
+            "description": "Limit access to resources over internal networks, especially by restricting RDP and using virtual desktop infrastructure. If RDP is necessary, restrict the originating sources and require MFA."
+        },
+        "5": {
+            "command": "Maintain offline backups of data",
+            "description": "Regularly maintain backup and restoration to ensure the organization is not severely interrupted and has retrievable data."
+        },
+        "6": {
+            "command": "Ensure all backup data is encrypted and immutable",
+            "description": "Ensure backup data covers the entire organization’s data infrastructure and is not already infected."
+        },
+        "7": {
+            "command": "Monitor cyber threat reporting",
+            "description": "Monitor reports regarding the publication of compromised VPN login credentials and change passwords/settings if applicable."
+        },
+        "8": {
+            "command": "Install and regularly update anti-virus or anti-malware software",
+            "description": "Install and update anti-virus or anti-malware software on all hosts."
+        },
+        "9": {
+            "command": "Enable PowerShell Logging",
+            "description": "Enable module logging, script block logging, and transcription for PowerShell."
+        },
+        "10": {
+            "command": "Install an enhanced monitoring tool",
+            "description": "Install tools like Sysmon from Microsoft for increased logging."
+        },
+        "11": {
+            "command": "Isolate the infected system",
+            "description": "Remove the infected system from all networks and disable its wireless, Bluetooth, and other networking capabilities."
+        },
+        "12": {
+            "command": "Turn off other computers and devices",
+            "description": "Power-off and segregate infected and potentially infected computers and devices to allow for recovery of partially encrypted files."
+        },
+        "13": {
+            "command": "Secure your backups",
+            "description": "Ensure backup data is offline and secure, and scan it with an antivirus program to check for malware."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+        "2": [11, 12, 13]
+    }
+}

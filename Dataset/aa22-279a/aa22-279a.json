@@ -1,0 +1,54 @@
+{
+    "mentioned_cpes": [
+        "Apache Log4j",
+        "Pulse Connect Secure",
+        "GitLab CE/EE",
+        "Atlassian",
+        "Microsoft Exchange",
+        "F5 Big-IP",
+        "VMware vCenter Server",
+        "Citrix ADC",
+        "Cisco Hyperflex",
+        "Buffalo WSR",
+        "Atlassian Confluence Server and Data Center",
+        "Hikvision Webserver",
+        "Sitecore XP",
+        "Apache HTTP Server",
+        "ZOHO"
+    ],
+    "issue_name": "Top CVEs Actively Exploited By People’s Republic of China State-Sponsored Cyber Actors",
+    "steps_to_fix": {
+        "1": {
+            "command": "Apply patches provided by vendor and perform required system updates",
+            "description": "Update and patch systems as soon as possible. Prioritize patching vulnerabilities identified in this CSA and other known exploited vulnerabilities."
+        },
+        "2": {
+            "command": "Utilize phishing-resistant multi-factor authentication",
+            "description": "Require all accounts with password logins to have strong, unique passwords, and change passwords immediately if there are indications that a password may have been compromised."
+        },
+        "3": {
+            "command": "Block obsolete or unused protocols at the network edge",
+            "description": "Block obsolete or unused protocols at the network edge."
+        },
+        "4": {
+            "command": "Upgrade or replace end-of-life devices",
+            "description": "Upgrade or replace end-of-life devices."
+        },
+        "5": {
+            "command": "Move toward the Zero Trust security model",
+            "description": "Move toward the Zero Trust security model."
+        },
+        "6": {
+            "command": "Enable robust logging of Internet-facing systems and monitor the logs for anomalous activity",
+            "description": "Enable robust logging of Internet-facing systems and monitor the logs for anomalous activity."
+        },
+        "7": {
+            "command": "Immediately block all Internet traffic to and from affected products AND apply the update per vendor instructions",
+            "description": "Ensure Internet-facing servers are up-to-date and have secure compliance practices."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6],
+        "2": [7]
+    }
+}

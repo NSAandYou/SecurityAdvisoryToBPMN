@@ -1,0 +1,62 @@
+{
+    "mentioned_cpes": [
+        "NetScaler ADC and NetScaler Gateway 14.1 before 14.1-8.50",
+        "NetScaler ADC and NetScaler Gateway 13.1 before 13.1-49.15",
+        "NetScaler ADC and NetScaler Gateway 13.0 before 13.0-92.19",
+        "NetScaler ADC and NetScaler Gateway version 12.1 (EOL)",
+        "NetScaler ADC 13.1FIPS before 13.1-37.163",
+        "NetScaler ADC 12.1-FIPS before 12.1-55.300",
+        "NetScaler ADC 12.1-NDcPP before 12.1-55.300"
+    ],
+    "issue_name": "CVE-2023-4966 Citrix Bleed Vulnerability",
+    "steps_to_fix": {
+        "1": {
+            "command": "Isolate NetScaler ADC and Gateway appliances",
+            "description": "Isolate NetScaler ADC and Gateway appliances for testing until patching is ready and deployable."
+        },
+        "2": {
+            "command": "Upgrade NetScaler ADC and Gateway appliances",
+            "description": "Upgrade vulnerable NetScaler ADC and Gateway appliances to the latest version available to lower the risk of compromise."
+        },
+        "3": {
+            "command": "Implement application controls",
+            "description": "Implement application controls to manage and control the execution of software, including allowlisting remote access programs."
+        },
+        "4": {
+            "command": "Limit RDP usage",
+            "description": "Strictly limit the use of RDP and other remote desktop services. If RDP is necessary, rigorously apply best practices."
+        },
+        "5": {
+            "command": "Restrict PowerShell usage",
+            "description": "Restrict the use of PowerShell, using Group Policy, and only grant access to specific users on a case-by-case basis."
+        },
+        "6": {
+            "command": "Update PowerShell",
+            "description": "Update Windows PowerShell or PowerShell Core to the latest version and uninstall all earlier PowerShell versions."
+        },
+        "7": {
+            "command": "Enable enhanced PowerShell logging",
+            "description": "Ensure PowerShell instances, using the latest version, have module, script block, and transcription logging enabled."
+        },
+        "8": {
+            "command": "Configure Windows Registry for UAC",
+            "description": "Configure the Windows Registry to require User Account Control (UAC) approval for any PsExec operations requiring administrator privileges."
+        },
+        "9": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "10": {
+            "command": "Enforce strong password policies",
+            "description": "Require all accounts with password logins to comply with NIST's standards for developing and managing password policies."
+        },
+        "11": {
+            "command": "Keep systems up to date",
+            "description": "Keep all operating systems, software, and firmware up to date. Patch vulnerable software and hardware systems within 24 to 48 hours of vulnerability disclosure."
+        }
+    },
+    "paths": {
+        "1": [1, 2],
+        "2": [3, 4, 5, 6, 7, 8, 9, 10, 11]
+    }
+}

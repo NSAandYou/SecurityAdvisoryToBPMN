@@ -1,0 +1,37 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC Field PG M5",
+        "SIMATIC Field PG M6",
+        "SIMATIC IPC427E",
+        "SIMATIC IPC477E",
+        "SIMATIC IPC477E Pro",
+        "SIMATIC IPC627E",
+        "SIMATIC IPC647E",
+        "SIMATIC IPC677E",
+        "SIMATIC IPC847E",
+        "SIMATIC IPC BX-39A",
+        "SIMATIC IPC PX-39A",
+        "SIMATIC IPC PX-39A PRO",
+        "SIMATIC ITP1000"
+    ],
+    "issue_name": "CVE-2022-21198",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update BIOS",
+            "description": "Update the BIOS to V22.01.11 or later version for SIMATIC Field PG M5."
+        },
+        "2": {
+            "command": "Update BIOS",
+            "description": "Update the BIOS to V25.02.14 or later version for SIMATIC IPC627E, IPC647E, IPC677E, IPC847E."
+        },
+        "3": {
+            "command": "Update BIOS",
+            "description": "Update the BIOS to V29.01.03 or later version for SIMATIC IPC BX-39A, IPC PX-39A, IPC PX-39A PRO."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3]
+    }
+}

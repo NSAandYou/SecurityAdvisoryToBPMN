@@ -1,0 +1,43 @@
+{
+    "mentioned_cpes": [
+        "cpe:2.3:a:fortinet:fortios:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:microsoft:exchange_server:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:zoho:manageengine_adselfservice_plus:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:atlassian:confluence_server:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:apache:log4j:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:vmware:workspace_one_access:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:f5:big-ip:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:microsoft:support_diagnostic_tool:*:*:*:*:*:*:*:*",
+        "cpe:2.3:a:atlassian:confluence_data_center:*:*:*:*:*:*:*:*"
+    ],
+    "issue_name": "2022 Top Routinely Exploited Vulnerabilities",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Apply timely patches",
+            "description": "Apply timely patches to systems. First check for signs of compromise if CVEs identified in this CSA have not been patched."
+        },
+        "4": {
+            "command": "Implement centralized patch management",
+            "description": "Implement a centralized patch management system."
+        },
+        "5": {
+            "command": "Use security tools",
+            "description": "Use security tools, such as endpoint detection and response (EDR), web application firewalls, and network protocol analyzers."
+        },
+        "6": {
+            "command": "Ask software providers",
+            "description": "Ask your software providers to discuss their secure by design program and to provide links to information about how they are working to remove classes of vulnerabilities and to set secure default settings."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6]
+    }
+}

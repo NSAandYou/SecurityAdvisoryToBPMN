@@ -1,0 +1,192 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "BianLian Ransomware Group",
+    "steps_to_fix": {
+        "1": {
+            "command": "Audit remote access tools",
+            "description": "Audit remote access tools on your network to identify currently used and/or authorized software."
+        },
+        "2": {
+            "command": "Review logs for remote access software",
+            "description": "Review logs for execution of remote access software to detect abnormal use of programs running as a portable executable."
+        },
+        "3": {
+            "command": "Use security software",
+            "description": "Use security software to detect instances of remote access software only being loaded in memory."
+        },
+        "4": {
+            "command": "Require authorized remote access solutions",
+            "description": "Require authorized remote access solutions only be used from within your network over approved remote access solutions, such as VPNs or VDIs."
+        },
+        "5": {
+            "command": "Block remote access software ports",
+            "description": "Block both inbound and outbound connections on common remote access software ports and protocols at the network perimeter."
+        },
+        "6": {
+            "command": "Implement application controls",
+            "description": "Implement application controls to manage and control execution of software, including allowlisting remote access programs."
+        },
+        "7": {
+            "command": "Strictly limit RDP",
+            "description": "Strictly limit the use of RDP and other remote desktop services. If RDP is necessary, rigorously apply best practices."
+        },
+        "8": {
+            "command": "Audit network for RDP",
+            "description": "Audit the network for systems using RDP."
+        },
+        "9": {
+            "command": "Close unused RDP ports",
+            "description": "Close unused RDP ports."
+        },
+        "10": {
+            "command": "Enforce account lockouts",
+            "description": "Enforce account lockouts after a specified number of attempts."
+        },
+        "11": {
+            "command": "Apply phishing-resistant MFA",
+            "description": "Apply phishing-resistant multifactor authentication (MFA)."
+        },
+        "12": {
+            "command": "Log RDP login attempts",
+            "description": "Log RDP login attempts."
+        },
+        "13": {
+            "command": "Disable command-line and scripting activities",
+            "description": "Disable command-line and scripting activities and permissions."
+        },
+        "14": {
+            "command": "Restrict PowerShell use",
+            "description": "Restrict the use of PowerShell, using Group Policy, and only grant to specific users on a case-by-case basis."
+        },
+        "15": {
+            "command": "Update PowerShell",
+            "description": "Update Windows PowerShell or PowerShell Core to the latest version and uninstall all earlier PowerShell versions."
+        },
+        "16": {
+            "command": "Enable enhanced PowerShell logging",
+            "description": "Enable enhanced PowerShell logging."
+        },
+        "17": {
+            "command": "Configure Windows Registry for UAC",
+            "description": "Configure the Windows Registry to require User Account Control (UAC) approval for any PsExec operations requiring administrator privileges."
+        },
+        "18": {
+            "command": "Review domain controllers",
+            "description": "Review domain controllers, servers, workstations, and active directories for new and/or unrecognized accounts."
+        },
+        "19": {
+            "command": "Audit user accounts with admin privileges",
+            "description": "Audit user accounts with administrative privileges and configure access controls according to the principle of least privilege."
+        },
+        "20": {
+            "command": "Place domain admin accounts in protected users group",
+            "description": "Place domain admin accounts in the protected users’ group to prevent caching of password hashes locally."
+        },
+        "21": {
+            "command": "Implement Credential Guard",
+            "description": "Implement Credential Guard for Windows 10 and Server 2016."
+        },
+        "22": {
+            "command": "Refrain from storing plaintext credentials",
+            "description": "Refrain from storing plaintext credentials in scripts."
+        },
+        "23": {
+            "command": "Implement time-based access for admin accounts",
+            "description": "Implement time-based access for accounts set at the admin level and higher."
+        },
+        "24": {
+            "command": "Implement a recovery plan",
+            "description": "Implement a recovery plan to maintain and retain multiple copies of sensitive or proprietary data and servers in a physically separate, segmented, and secure location."
+        },
+        "25": {
+            "command": "Maintain offline backups",
+            "description": "Maintain offline backups of data, and regularly maintain backup and restoration (daily or weekly at minimum)."
+        },
+        "26": {
+            "command": "Require password compliance with NIST standards",
+            "description": "Require all accounts with password logins to comply with NIST standards for developing and managing password policies."
+        },
+        "27": {
+            "command": "Use longer passwords",
+            "description": "Use longer passwords consisting of at least 15 characters."
+        },
+        "28": {
+            "command": "Store passwords in hashed format",
+            "description": "Store passwords in hashed format using industry-recognized password managers."
+        },
+        "29": {
+            "command": "Add password user salts",
+            "description": "Add password user “salts” to shared login credentials."
+        },
+        "30": {
+            "command": "Avoid reusing passwords",
+            "description": "Avoid reusing passwords."
+        },
+        "31": {
+            "command": "Implement account lockouts",
+            "description": "Implement multiple failed login attempt account lockouts."
+        },
+        "32": {
+            "command": "Disable password hints",
+            "description": "Disable password “hints”."
+        },
+        "33": {
+            "command": "Require admin credentials for software installation",
+            "description": "Require administrator credentials to install software."
+        },
+        "34": {
+            "command": "Require phishing-resistant MFA",
+            "description": "Require phishing-resistant multifactor authentication for all services to the extent possible."
+        },
+        "35": {
+            "command": "Keep systems up to date",
+            "description": "Keep all operating systems, software, and firmware up to date."
+        },
+        "36": {
+            "command": "Segment networks",
+            "description": "Segment networks to prevent the spread of ransomware."
+        },
+        "37": {
+            "command": "Implement network monitoring tool",
+            "description": "Identify, detect, and investigate abnormal activity and potential traversal of the indicated ransomware with a networking monitoring tool."
+        },
+        "38": {
+            "command": "Install and update antivirus software",
+            "description": "Install, regularly update, and enable real time detection for antivirus software on all hosts."
+        },
+        "39": {
+            "command": "Disable unused ports",
+            "description": "Disable unused ports."
+        },
+        "40": {
+            "command": "Add email banner",
+            "description": "Consider adding an email banner to emails received from outside your organization."
+        },
+        "41": {
+            "command": "Ensure backup data is encrypted",
+            "description": "Ensure all backup data is encrypted, immutable, and covers the entire organization’s data infrastructure."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5],
+        "2": [6],
+        "3": [7, 8, 9, 10, 11, 12],
+        "4": [13],
+        "5": [14, 15, 16],
+        "6": [17],
+        "7": [18],
+        "8": [19],
+        "9": [20, 21, 22],
+        "10": [23],
+        "11": [24, 25],
+        "12": [26, 27, 28, 29, 30, 31, 32, 33],
+        "13": [34],
+        "14": [35],
+        "15": [36],
+        "16": [37],
+        "17": [38],
+        "18": [39],
+        "19": [40],
+        "20": [41]
+    }
+}

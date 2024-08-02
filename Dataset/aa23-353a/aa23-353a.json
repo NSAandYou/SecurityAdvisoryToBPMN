@@ -1,0 +1,41 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "ALPHV Blackcat Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Apache Server",
+            "description": "The apache server has to be stopped in order to patch the system. This is done via: service apache2 stop"
+        },
+        "2": {
+            "command": "Update system",
+            "description": "Update the whole linux server using the command: sudo apt-get update && apt-get upgrade -y"
+        },
+        "3": {
+            "command": "Quarantine or take offline potentially affected hosts",
+            "description": "Isolate the affected systems to prevent further spread of the ransomware."
+        },
+        "4": {
+            "command": "Reimage compromised hosts",
+            "description": "Reinstall the operating system on compromised hosts to ensure they are clean."
+        },
+        "5": {
+            "command": "Provision new account credentials",
+            "description": "Create new account credentials to replace those that may have been compromised."
+        },
+        "6": {
+            "command": "Collect and review artifacts",
+            "description": "Collect and review artifacts such as running processes/services, unusual authentications, and recent network connections."
+        },
+        "7": {
+            "command": "Report the compromise",
+            "description": "Report the compromise or phishing incident to CISA via CISA’s 24/7 Operations Center (report@cisa.gov or 888-282-0870). State, local, tribal, or territorial government entities can also report to MS-ISAC (SOC@cisecurity.org or 866-787-4722)."
+        },
+        "8": {
+            "command": "File a complaint with the FBI’s Internet Crime Complaint Center (IC3)",
+            "description": "To report spoofing or phishing attempts (or to report that you’ve been a victim), file a complaint with the FBI’s Internet Crime Complaint Center (IC3), or contact your local FBI Field Office to report an incident."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8]
+    }
+}

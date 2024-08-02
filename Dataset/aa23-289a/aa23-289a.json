@@ -1,0 +1,41 @@
+{
+    "mentioned_cpes": [
+        "Atlassian Confluence Data Center",
+        "Atlassian Confluence Server"
+    ],
+    "issue_name": "CVE-2023-22515",
+    "steps_to_fix": {
+        "1": {
+            "command": "Stop Confluence Server",
+            "description": "Stop the Confluence server to apply necessary updates."
+        },
+        "2": {
+            "command": "Upgrade Confluence",
+            "description": "Upgrade to the fixed version of Confluence as per Atlassian's upgrading instructions."
+        },
+        "3": {
+            "command": "Restrict Network Access",
+            "description": "If unable to immediately apply upgrades, restrict untrusted network access until feasible."
+        },
+        "4": {
+            "command": "Quarantine Hosts",
+            "description": "Quarantine and take offline potentially affected hosts."
+        },
+        "5": {
+            "command": "Provision New Credentials",
+            "description": "Provision new account credentials."
+        },
+        "6": {
+            "command": "Reimage Hosts",
+            "description": "Reimage compromised hosts."
+        },
+        "7": {
+            "command": "Report Compromise",
+            "description": "Report the compromise to CISA, FBI, or MS-ISAC."
+        }
+    },
+    "paths": {
+        "1": [1, 2],
+        "2": [3, [4, 5, 6], 7]
+    }
+}

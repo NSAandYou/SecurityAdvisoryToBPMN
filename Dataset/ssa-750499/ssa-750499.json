@@ -1,0 +1,252 @@
+{
+    "mentioned_cpes": [
+        "SIPROTEC 5 Compact 7SX800 (CP050)",
+        "SIPROTEC 5 7SA82 (CP100)",
+        "SIPROTEC 5 7SD82 (CP100)",
+        "SIPROTEC 5 7SJ81 (CP100)",
+        "SIPROTEC 5 7SJ82 (CP100)",
+        "SIPROTEC 5 7SK82 (CP100)",
+        "SIPROTEC 5 7SL82 (CP100)",
+        "SIPROTEC 5 7UT82 (CP100)",
+        "SIPROTEC 5 7SA82 (CP150)",
+        "SIPROTEC 5 7SD82 (CP150)",
+        "SIPROTEC 5 7SJ81 (CP150)",
+        "SIPROTEC 5 7SJ82 (CP150)",
+        "SIPROTEC 5 7SK82 (CP150)",
+        "SIPROTEC 5 7SL82 (CP150)",
+        "SIPROTEC 5 7SX82 (CP150)",
+        "SIPROTEC 5 7UT82 (CP150)",
+        "SIPROTEC 5 6MD85 (CP200)",
+        "SIPROTEC 5 6MD86 (CP200)",
+        "SIPROTEC 5 7KE85 (CP200)",
+        "SIPROTEC 5 7SA84 (CP200)",
+        "SIPROTEC 5 7SA86 (CP200)",
+        "SIPROTEC 5 7SA87 (CP200)",
+        "SIPROTEC 5 7SD84 (CP200)",
+        "SIPROTEC 5 7SD86 (CP200)",
+        "SIPROTEC 5 7SD87 (CP200)",
+        "SIPROTEC 5 7SJ85 (CP200)",
+        "SIPROTEC 5 7SJ86 (CP200)",
+        "SIPROTEC 5 7SK85 (CP200)",
+        "SIPROTEC 5 7SL86 (CP200)",
+        "SIPROTEC 5 7SL87 (CP200)",
+        "SIPROTEC 5 7SS85 (CP200)",
+        "SIPROTEC 5 7ST85 (CP200)",
+        "SIPROTEC 5 7UT85 (CP200)",
+        "SIPROTEC 5 7UT86 (CP200)",
+        "SIPROTEC 5 7UT87 (CP200)",
+        "SIPROTEC 5 7VK87 (CP200)",
+        "SIPROTEC 5 6MD84 (CP300)",
+        "SIPROTEC 5 6MD85 (CP300)",
+        "SIPROTEC 5 6MD86 (CP300)",
+        "SIPROTEC 5 6MD89 (CP300)",
+        "SIPROTEC 5 6MU85 (CP300)",
+        "SIPROTEC 5 7KE85 (CP300)",
+        "SIPROTEC 5 7SA86 (CP300)",
+        "SIPROTEC 5 7SA87 (CP300)",
+        "SIPROTEC 5 7SD86 (CP300)",
+        "SIPROTEC 5 7SD87 (CP300)",
+        "SIPROTEC 5 7SJ85 (CP300)",
+        "SIPROTEC 5 7SJ86 (CP300)",
+        "SIPROTEC 5 7SK85 (CP300)",
+        "SIPROTEC 5 7SL86 (CP300)",
+        "SIPROTEC 5 7SL87 (CP300)",
+        "SIPROTEC 5 7SS85 (CP300)",
+        "SIPROTEC 5 7ST85 (CP300)",
+        "SIPROTEC 5 7ST86 (CP300)",
+        "SIPROTEC 5 7SX85 (CP300)",
+        "SIPROTEC 5 7UM85 (CP300)",
+        "SIPROTEC 5 7UT85 (CP300)",
+        "SIPROTEC 5 7UT86 (CP300)",
+        "SIPROTEC 5 7UT87 (CP300)",
+        "SIPROTEC 5 7VE85 (CP300)",
+        "SIPROTEC 5 7VK87 (CP300)",
+        "SIPROTEC 5 7VU85 (CP300)",
+        "SIPROTEC 5 Communication Module ETH-BA-2EL (Rev.1)",
+        "SIPROTEC 5 Communication Module ETH-BB-2FO (Rev. 1)",
+        "SIPROTEC 5 Communication Module ETH-BD-2FO"
+    ],
+    "issue_name": "Weak Encryption Vulnerability in SIPROTEC 5 Devices",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 Compact 7SX800 (CP050) to V9.64 or later version."
+        },
+        "2": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7SA82 (CP100) to V9.64 or later version."
+        },
+        "3": {
+            "command": "Update to V8.89 or later version",
+            "description": "Update SIPROTEC 5 7SJ81 (CP100) to V8.89 or later version."
+        },
+        "4": {
+            "command": "Update to V8.89 or later version",
+            "description": "Update SIPROTEC 5 7SJ82 (CP100) to V8.89 or later version."
+        },
+        "5": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SA82 (CP150) to V9.65 or later version."
+        },
+        "6": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SD82 (CP150) to V9.65 or later version."
+        },
+        "7": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SJ81 (CP150) to V9.65 or later version."
+        },
+        "8": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SJ82 (CP150) to V9.65 or later version."
+        },
+        "9": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SK82 (CP150) to V9.65 or later version."
+        },
+        "10": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SL82 (CP150) to V9.65 or later version."
+        },
+        "11": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SX82 (CP150) to V9.65 or later version."
+        },
+        "12": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7UT82 (CP150) to V9.65 or later version."
+        },
+        "13": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 6MD84 (CP300) to V9.64 or later version."
+        },
+        "14": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 6MD85 (CP300) to V9.64 or later version."
+        },
+        "15": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 6MD86 (CP300) to V9.64 or later version."
+        },
+        "16": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 6MD89 (CP300) to V9.64 or later version."
+        },
+        "17": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 6MU85 (CP300) to V9.64 or later version."
+        },
+        "18": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7KE85 (CP300) to V9.64 or later version."
+        },
+        "19": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SA86 (CP300) to V9.65 or later version."
+        },
+        "20": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SA87 (CP300) to V9.65 or later version."
+        },
+        "21": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SD86 (CP300) to V9.65 or later version."
+        },
+        "22": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SD87 (CP300) to V9.65 or later version."
+        },
+        "23": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SJ85 (CP300) to V9.65 or later version."
+        },
+        "24": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SJ86 (CP300) to V9.65 or later version."
+        },
+        "25": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SK85 (CP300) to V9.65 or later version."
+        },
+        "26": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SL86 (CP300) to V9.65 or later version."
+        },
+        "27": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SL87 (CP300) to V9.65 or later version."
+        },
+        "28": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7SS85 (CP300) to V9.64 or later version."
+        },
+        "29": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7ST85 (CP300) to V9.64 or later version."
+        },
+        "30": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7ST86 (CP300) to V9.64 or later version."
+        },
+        "31": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7SX85 (CP300) to V9.65 or later version."
+        },
+        "32": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7UM85 (CP300) to V9.64 or later version."
+        },
+        "33": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7UT85 (CP300) to V9.65 or later version."
+        },
+        "34": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7UT86 (CP300) to V9.65 or later version."
+        },
+        "35": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7UT87 (CP300) to V9.65 or later version."
+        },
+        "36": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7VE85 (CP300) to V9.64 or later version."
+        },
+        "37": {
+            "command": "Update to V9.65 or later version",
+            "description": "Update SIPROTEC 5 7VK87 (CP300) to V9.65 or later version."
+        },
+        "38": {
+            "command": "Update to V9.64 or later version",
+            "description": "Update SIPROTEC 5 7VU85 (CP300) to V9.64 or later version."
+        },
+        "39": {
+            "command": "Update to V8.89 or later version",
+            "description": "Update SIPROTEC 5 Communication Module ETH-BA-2EL (Rev.1) installed on CP100 devices to V8.89 or later version."
+        },
+        "40": {
+            "command": "Update to V9.62 or later version",
+            "description": "Update SIPROTEC 5 Communication Module ETH-BA-2EL (Rev.1) installed on CP150 and CP300 devices to V9.62 or later version."
+        },
+        "41": {
+            "command": "Update to V8.89 or later version",
+            "description": "Update SIPROTEC 5 Communication Module ETH-BB-2FO (Rev. 1) installed on CP100 devices to V8.89 or later version."
+        },
+        "42": {
+            "command": "Update to V9.62 or later version",
+            "description": "Update SIPROTEC 5 Communication Module ETH-BB-2FO (Rev. 1) installed on CP150 and CP300 devices to V9.62 or later version."
+        },
+        "43": {
+            "command": "Update to V9.62 or later version",
+            "description": "Update SIPROTEC 5 Communication Module ETH-BD-2FO to V9.62 or later version."
+        },
+        "44": {
+            "command": "Restrict access to port 443/tcp, 4443/tcp, and configurable port for syslog over TLS",
+            "description": "Restrict access to port 443/tcp for web, 4443/tcp for DIGSI 5, and configurable port for syslog over TLS to trusted IP addresses only."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43],
+        "2": [44]
+    }
+}

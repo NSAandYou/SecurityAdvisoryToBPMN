@@ -1,0 +1,45 @@
+{
+    "mentioned_cpes": [
+        "SIMATIC PCS 7 V9.1",
+        "SIMATIC WinCC Runtime Professional V17",
+        "SIMATIC WinCC Runtime Professional V18",
+        "SIMATIC WinCC Runtime Professional V19",
+        "SIMATIC WinCC V7.5",
+        "SIMATIC WinCC V8.0"
+    ],
+    "issue_name": "Denial of Service Vulnerability in SIMATIC WinCC",
+    "steps_to_fix": {
+        "1": {
+            "command": "Update to V9.1 SP2 UC04 or later version",
+            "description": "Update SIMATIC PCS 7 V9.1 to V9.1 SP2 UC04 or later version."
+        },
+        "2": {
+            "command": "Update to V18 Update 4 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V18 to V18 Update 4 or later version."
+        },
+        "3": {
+            "command": "Update to V19 Update 1 or later version",
+            "description": "Update SIMATIC WinCC Runtime Professional V19 to V19 Update 1 or later version."
+        },
+        "4": {
+            "command": "Update to V7.5 SP2 Update 16 or later version",
+            "description": "Update SIMATIC WinCC V7.5 to V7.5 SP2 Update 16 or later version."
+        },
+        "5": {
+            "command": "Update to V8.0 Update 5 or later version",
+            "description": "Update SIMATIC WinCC V8.0 to V8.0 Update 5 or later version."
+        },
+        "6": {
+            "command": "Activate SIMATIC Logon in the User Administrator of the SIMATIC PCS 7 Operator Stations",
+            "description": "Activate SIMATIC Logon in the User Administrator to mitigate the issue."
+        }
+    },
+    "paths": {
+        "1": [1],
+        "2": [2],
+        "3": [3],
+        "4": [4],
+        "5": [5],
+        "6": [6]
+    }
+}

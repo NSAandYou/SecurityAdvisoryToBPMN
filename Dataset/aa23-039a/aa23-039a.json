@@ -1,0 +1,81 @@
+{
+    "mentioned_cpes": ["VMware ESXi"],
+    "issue_name": "ESXiArgs Ransomware",
+    "steps_to_fix": {
+        "1": {
+            "command": "Quarantine or take affected hosts offline",
+            "description": "Ensure that repeat infection does not occur."
+        },
+        "2": {
+            "command": "wget -O /tmp/recover.sh https://raw.githubusercontent.com/cisagov/ESXiArgs-Recover/main/recover.sh",
+            "description": "Download CISA’s recovery script and save it as /tmp/recover.sh."
+        },
+        "3": {
+            "command": "chmod +x /tmp/recover.sh",
+            "description": "Give the script execute permissions."
+        },
+        "4": {
+            "command": "cd /vmfs/volumes/datastore1/example",
+            "description": "Navigate to the folder of a VM you would like to recover and run ls to view the files."
+        },
+        "5": {
+            "command": "ls",
+            "description": "View files and note the name of the VM (via naming convention: [name].vmdk)."
+        },
+        "6": {
+            "command": "/tmp/recover.sh [name]",
+            "description": "Run the recovery script with /tmp/recover.sh [name], where [name] is the name of the VM determined previously."
+        },
+        "7": {
+            "command": "/tmp/recover.sh [name] thin",
+            "description": "If the VM is a thin format, run /tmp/recover.sh [name] thin."
+        },
+        "8": {
+            "command": "Re-register the VM",
+            "description": "If the script succeeded, re-register the VM."
+        },
+        "9": {
+            "command": "cd /usr/lib/vmware/hostd/docroot/ui/ && mv index.html ransom.html && mv index1.html index.html",
+            "description": "Remove the ransom note and restore access if the ESXi web interface is inaccessible."
+        },
+        "10": {
+            "command": "cd /usr/lib/vmware/hostd/docroot && mv index.html ransom.html && rm index.html && mv index1.html index.html",
+            "description": "Continue removing the ransom note and restoring access."
+        },
+        "11": {
+            "command": "reboot",
+            "description": "Reboot the ESXi server. After a few minutes, you should be able to navigate to the web interface."
+        },
+        "12": {
+            "command": "Navigate to the Virtual Machines page in the ESXi web interface",
+            "description": "If the VM you restored already exists, right click on the VM and select Unregister."
+        },
+        "13": {
+            "command": "Select Create / Register VM",
+            "description": "Select Register an existing virtual machine."
+        },
+        "14": {
+            "command": "Select one or more virtual machines, a datastore or a directory",
+            "description": "Navigate to the folder of the VM you restored. Select the vmx file in the folder."
+        },
+        "15": {
+            "command": "Select Next and Finish",
+            "description": "Finalize the registration. You should now be able to use the VM as normal."
+        },
+        "16": {
+            "command": "Update servers to the latest software version",
+            "description": "Update servers to the latest version of VMware ESXi software."
+        },
+        "17": {
+            "command": "Disable the Service Location Protocol (SLP) service",
+            "description": "Harden ESXi hypervisors by disabling the Service Location Protocol (SLP) service."
+        },
+        "18": {
+            "command": "Ensure the ESXi hypervisor is not configured to be exposed to the public internet",
+            "description": "Ensure the ESXi hypervisor is not exposed to the public internet before putting systems back online."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, [9, 10], 11, 12, 13, 14, 15, 16, 17, 18]
+    }
+}

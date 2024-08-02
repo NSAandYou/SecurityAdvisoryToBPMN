@@ -1,0 +1,91 @@
+{
+    "mentioned_cpes": [],
+    "issue_name": "Preventing Web Application Access Control Abuse",
+    "steps_to_fix": {
+        "1": {
+            "command": "Conduct code reviews",
+            "description": "Conduct code reviews against peer coding standards, checking for backdoors, malicious content, or logic flaws. Use automated code analysis tools for all supported releases to identify and remediate vulnerabilities."
+        },
+        "2": {
+            "command": "Use indirect reference maps",
+            "description": "Use indirect reference maps, ensuring that IDs, names, and keys are not exposed in URLs. Replace them with cryptographically strong, random values—specifically use a UUID or a GUID."
+        },
+        "3": {
+            "command": "Configure applications to deny access by default",
+            "description": "Configure applications to deny access by default and ensure the application performs authentication and authorization checks for every request to modify data, delete data, and access sensitive data."
+        },
+        "4": {
+            "command": "Normalize requests",
+            "description": "Decode and normalize inputs before creating access control checkpoints. Ensure the access control system and other parts of the web application perform the same normalization."
+        },
+        "5": {
+            "command": "Implement parameter verification",
+            "description": "Implement parameter verification leveraging syntactic and logical validation, such that web applications validate all inputs received with every HTTP/S request."
+        },
+        "6": {
+            "command": "Use CAPTCHA",
+            "description": "Use CAPTCHA to limit automated invalid user requests where feasible."
+        },
+        "7": {
+            "command": "Use memory-safe programming languages",
+            "description": "Use memory-safe programming languages where possible."
+        },
+        "8": {
+            "command": "Test code to identify vulnerabilities",
+            "description": "Use automated testing tools to facilitate testing, fuzz testing tools to find issues with input handling, and penetration testing to simulate how a threat actor may exploit the software."
+        },
+        "9": {
+            "command": "Conduct role-based training",
+            "description": "Conduct role-based training for personnel responsible for secure software development."
+        },
+        "10": {
+            "command": "Exercise due diligence when selecting third-party libraries or frameworks",
+            "description": "Review and evaluate third-party components in the context of their expected use. Verify the integrity of the product through hash or signature verification. Keep all third-party frameworks and dependencies up to date."
+        },
+        "11": {
+            "command": "Establish a vulnerability disclosure program",
+            "description": "Establish a vulnerability disclosure program to verify and resolve security vulnerabilities disclosed by people who may be internal or external to the organization."
+        },
+        "12": {
+            "command": "Apply software patches",
+            "description": "Apply software patches for web applications as soon as possible."
+        },
+        "13": {
+            "command": "Configure application logging and alerts",
+            "description": "Configure the application to log and generate alerts from tamper attempts. Aggregate logs into a centralized solution to facilitate active monitoring and threat hunting."
+        },
+        "14": {
+            "command": "Create and maintain a cyber incident response plan",
+            "description": "Create, maintain, and exercise a basic cyber incident response plan and associated communications plan. Plans should include response and notification procedures for data breach and cyber incidents."
+        },
+        "15": {
+            "command": "Conduct regular penetration testing",
+            "description": "Conduct regular, proactive penetration testing to ensure network boundaries, as well as web applications, are secure. Prioritize web applications that are internet-facing and contain user login functionality."
+        },
+        "16": {
+            "command": "Use web application penetration testing tools",
+            "description": "Use web application penetration testing tools to capture the user identifier sent to the web server when requesting a web page containing sensitive data and map all locations where user input is used to reference objects directly."
+        },
+        "17": {
+            "command": "Use DAST and other vulnerability scanners",
+            "description": "Use DAST and other vulnerability scanners to detect IDOR vulnerabilities. Ensure the environment is configured in a specific way and custom rules are in place if necessary."
+        },
+        "18": {
+            "command": "Report detected vulnerabilities",
+            "description": "Immediately report detected vulnerabilities to the vendor or developer. Alternatively, report the vulnerability to CISA."
+        },
+        "19": {
+            "command": "Use a web application firewall (WAF)",
+            "description": "Use a web application firewall (WAF) to filter, monitor, and block malicious HTTP/S traffic traveling to the web application."
+        },
+        "20": {
+            "command": "Use a data loss prevention (DLP) tool",
+            "description": "Use a data loss prevention (DLP) tool to prevent unauthorized data from leaving the application."
+        }
+    },
+    "paths": {
+        "1": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        "2": [12, 13, 14],
+        "3": [15, 16, 17, 18, 19, 20]
+    }
+}
